@@ -1,0 +1,2389 @@
+body {
+    font-family: 'poppins', 'mitr', sans-serif;
+    font-weight: 300;
+}
+
+/*-----------------------------------------
+    LAYOUT
+-------------------------------------------*/
+.container-fluid.container-f30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container-fluid.container-f60 {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.container.container-small {
+    max-width: 1170px;
+}
+
+/*-----------------------------------------
+    FONT STYLE
+-------------------------------------------*/
+.text-green {
+    color: #8ec63f;
+}
+
+.text-green2 {
+    color: #78a933;
+}
+
+.text-darkGray {
+    color: #363636;
+}
+
+.text-gray {
+    color: #6f6f6f;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-26 {
+    font-size: 26px;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+table th {
+    font-weight: 500;
+}
+
+/*-----------------------------------------
+    BUTTON STYLE
+-------------------------------------------*/
+.btn-green {
+    background-color: #8ec63f;
+    color: #fff;
+}
+
+.btn-green:hover {
+    background-color: #78a933;
+    color: #fff;
+}
+
+.btn-red {
+    background-color: #a90007;
+    color: #fff;
+}
+
+.btn-red:hover {
+    background-color: #870006;
+    color: #fff;
+}
+
+.btn-outline-green {
+    background-color: #fff;
+    color: #8ec63f;
+    border: 1px solid #8ec63f
+}
+
+.btn-outline-green:hover {
+    background-color: #8ec63f;
+    color: #fff;
+    border: 1px solid #8ec63f
+}
+
+.btn-dark {
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+}
+
+.btn-dark:hover {
+    background-color: #fff;
+    border: 2px solid #363636;
+    color: #cfcfcf;
+}
+
+
+.btn-gray {
+    background-color: #fff;
+    border: 1px solid #6c757e;
+    color: #6c757e;
+}
+
+.btn-gray:hover {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    color: #cfcfcf;
+}
+
+/*-----------------------------------------
+    BG COLOR
+-------------------------------------------*/
+.bg-gray {
+    background-color: #f1f1f1;
+}
+
+.bg-gray2 {
+    background-color: #ebebeb;
+}
+
+.bg-gray3 {
+    background-color: #6c757e;
+}
+
+.bg-gray4 {
+    background-color: #f8f9fb;
+}
+
+.bg-gray5 {
+    background-color: #b5babe;
+}
+
+.bg-gray6 {
+    background-color: #e1e1e1;
+}
+
+.bg-gray7 {
+    background-color: #f2f2f2;
+}
+
+.bg-grayL {
+    background-color: #e6e6e6;
+}
+
+.bg-green {
+    background-color: #8ec63f;
+}
+
+/*-----------------------------------------
+    NAVBAR
+-------------------------------------------*/
+
+#desktopMenu {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+}
+
+#linkMenuTop li a {
+    color: #58585a;
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+}
+
+#linkMenuTop li a:hover {
+    border-bottom: 5px solid #8ec63f;
+}
+
+#linkMenuTop li.active .nav-link {
+    border-bottom: 5px solid #8ec63f;
+}
+
+#linkMenuTop ul .show {
+    border-left: 5px solid #8ec63f;
+}
+
+#navbarDropdown2 .dropdown-menu {
+    left: 100%;
+}
+
+.dropdown-menu[data-bs-popper] {
+    left: unset;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: unset !important;
+}
+
+.dropdown-item:hover {
+    color: #58585a;
+    border-bottom: 1px solid #8ec63f !important;
+    border-right: 3px solid #8ec63f;
+}
+
+.tab a.active {
+    color: #8ec63f !important;
+    border-bottom: 1px solid #8ec63f !important;
+    border-right: 3px solid #8ec63f;
+}
+
+.tab a {
+    padding: 0.25rem 0.5rem !important;
+}
+
+.dropdown-item {
+    border-right: 3px solid #eee;
+}
+
+#menuMega .tabcontent {
+    display: none;
+}
+
+#menuMega .tabcontent a {
+    text-decoration: none;
+}
+
+#menuMega .tabcontent a:hover {
+    border: none;
+    color: #78a933;
+}
+
+
+#myModal.modal {
+    display: none;
+    position: fixed;
+    z-index: 5000;
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+#myModal .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+#myModal .close {
+    color: #000;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#myModal .close:hover,
+#myModal .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myModal .modal-header {
+    padding: 2px 16px;
+    color: #000;
+    justify-content: end;
+}
+
+#myModal .modal-body {
+    padding: 2px 5px;
+}
+
+
+/*-----------------------------------------
+    FOOTER STYLE
+-------------------------------------------*/
+#footer {
+    background-image: url('../images/img-footer.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#footer .nav-item a {
+    color: rgba(0, 0, 0, .7) !important;
+}
+
+/*-----------------------------------------
+    BannerTitle
+-------------------------------------------*/
+.bg-bannerTitleAbout {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/architecture-1448221_1920-min.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.bg-bannerTitleContact {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/iphone-technology-iphone-6-plus-apple-17663.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.bg-bannerTitleWWU {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/img-bannerCareer.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    height: 350px;
+}
+
+.bg-bannerTitleSolution {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/pexels-dayvison-de-oliveira-silva-5696291.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    height: 350px;
+}
+
+.bg-bannerTitleNews {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/pexels-trang-doan-723072.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.bg-bannerTitleNewsDetail {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/News/newsDetail.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.bg-bannerTitleInnovation {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/smart-microchip-background-motherboard-closeup-technology-remix.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.bg-bannerTitleInnovationDetail {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/banner/bannerInnoDetail.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 90%;
+    height: 350px;
+}
+
+.bg-bannerTitleProducts {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/jabraproducts.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+
+.bg-bannerTitleProductsSearch {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/iphone-technology-iphone-6-plus-apple-17663.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.bg-bannerWorkplace {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/pexels-christina-morillo-1181406.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    height: 470px;
+}
+
+.bg-bannerSolution1 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/pexels-christina-morillo-1181357.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+
+.bg-bannerSolution2 {
+    background-image: linear-gradient(to left top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/bannerSolution2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerSolution3 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/pexels-julia-m-cameron-4144923.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerOurcomp {
+    background-image: url('../images/banner-vision.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    height: 470px;
+}
+
+.bg-bannerTitleSolutionStep2 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/pexels-christina-morillo-1181357.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    height: 350px;
+}
+
+.bg-bannerSolution1_Step2 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/image-from-rawpixel-id-2335465-original.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerSolution2_Step2 {
+    background-image: linear-gradient(to left top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/solutionStep2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerSolution3_Step2 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/solutionStep3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerTitleSolutionStep3 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/image-from-rawpixel-id-2335465-original.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    height: 350px;
+}
+
+.bg-bannerSolution1_Step3 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/pexels-anna-shvets-4226140.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerSolution2_Step3 {
+    background-image: linear-gradient(to left top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/pexels-christina-morillo-1181734.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerSolution3_Step3 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/solutionStep3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+.bg-bannerTitleSolutionStep4 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/pexels-anna-shvets-4226140.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 350px;
+}
+
+.bg-bannerTitleDetailFlag {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bannerTitleDetailflag2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+}
+
+.topBannerTitle {
+    margin-top: 168px;
+}
+
+.boxBannerTitle {
+    position: relative;
+    height: 350px;
+}
+
+.titleBanner-center {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.titleBanner-center .breadcrumb .breadcrumb-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.titleBanner-center .breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: 0.5rem;
+    color: #fff;
+    content: var(--bs-breadcrumb-divider, "/");
+}
+
+.titleBanner-center .breadcrumb-item.active {
+    color: #8ec63f;
+}
+
+.titleBanner-left {
+    padding-top: 3rem;
+    color: #fff;
+}
+
+.titleBanner-left .breadcrumb .breadcrumb-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.titleBanner-left .breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: 0.5rem;
+    color: #fff;
+    content: var(--bs-breadcrumb-divider, "/");
+}
+
+.titleBanner-left .breadcrumb-item.active {
+    color: #8ec63f;
+}
+
+/*-----------------------------------------
+    PILL TAB STYLE
+-------------------------------------------*/
+#pills-tabAbout.nav-pills .nav-item {
+    margin-right: 10px;
+}
+
+#pills-tabAbout.nav-pills .nav-item:last-child {
+    margin-right: 0;
+}
+
+#pills-tabAbout.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #585857;
+    border: 1px solid #585857;
+}
+
+#pills-tabAbout.nav-pills .nav-link {
+    background: #fff;
+    border: 1px solid #585857;
+    border-radius: 8px;
+    color: #000;
+    padding: .75rem 1rem;
+}
+
+#pills-tabContact {
+    border-bottom: 5px solid #8ec63f;
+}
+
+#pills-tabContact.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+#pills-tabContact.nav-pills .nav-link {
+    background: #fff;
+    border-radius: 0px;
+    color: #8ec63f;
+    padding: .75rem 2rem;
+}
+
+/*-----------------------------------------
+    PROGRESS BAR STYLE
+-------------------------------------------*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+    padding-left: 0;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+    width: calc(100% / 6);
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    background: #6c757e;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+    z-index: 1;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 83%;
+    height: 1px;
+    background: #6c757e;
+    position: absolute;
+    left: -42%;
+    top: 15px;
+    z-index: 0;
+}
+
+#progressbar li:first-child:after {
+    content: none;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #8ec63f;
+    color: white;
+}
+
+/*-----------------------------------------
+    CARD STYLE
+-------------------------------------------*/
+.card-logoStore img {
+    height: 75px;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.card-contact {
+    border-radius: 10px;
+}
+
+.card-contact i {
+    font-size: 24px;
+}
+
+.card-contact .flex-shrink-0 {
+    width: 30px;
+    text-align: center;
+}
+
+/*-----------------------------------------
+    FORM STYLE
+-------------------------------------------*/
+input.form-contact,
+select.form-contact,
+textarea.form-contact {
+    border-radius: 0rem;
+    padding: 1rem 0.75rem;
+    border-color: #fff;
+}
+
+/*-----------------------------------------
+    carousel
+-------------------------------------------*/
+
+#bannerHomeCorperate button.owl-prev,
+#bannerHomeCorperate button.owl-next {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    font-size: 40px;
+    background-color: #eee;
+}
+
+#bannerHomeCorperate button.owl-next {
+    right: 0;
+}
+
+#bannerHomeCorperate button.owl-prev {
+    left: 0;
+}
+
+#bannerHomeCorperate .owl-dots {
+    margin-top: 5.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+#ecomBrand .owl-dots {
+    display: none;
+}
+
+#ecomBrand {
+    height: 90px;
+}
+
+/*-----------------------------------------
+    index
+-------------------------------------------*/
+
+#bannerHomeCorperate .item img.bannerImageSlide {
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+}
+
+#ecomBrand .item img.bannerImageSlide {
+    width: 90%;
+}
+
+.enterprise {
+    position: relative;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 70%);
+}
+
+.enterprise:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+
+.enterprise img {
+    position: relative;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+.enterprise h4 {
+    position: absolute;
+    bottom: 45px;
+    left: 30px;
+}
+
+#solution span .bg-solution1 {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e1e1e1;
+    background-image: url(../images/solution1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#solution span .bg-solution2 {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e1e1e1;
+    background-image: url(../images/solution2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#solution span .bg-solution3 {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e1e1e1;
+    background-image: url(../images/solution3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box-news-item .box-news-text {
+    position: relative;
+    top: -10px;
+}
+
+#box-news-item .box-news-text h5 {
+    text-transform: uppercase;
+}
+
+#box-news-item .box-news-text p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/*-----------------------------------------
+    ABOUT
+-------------------------------------------*/
+
+.dash li {
+    list-style: none;
+}
+
+.dash li:before {
+    content: "–";
+    /* en dash */
+    position: absolute;
+    margin-left: -1.1em;
+}
+
+/*-----------------------------------------
+    SOLUTION
+-------------------------------------------*/
+
+#card-solution p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text-solution {
+    height: 380px;
+    overflow: auto;
+}
+
+#preProduct1 .owl-dots {
+    display: none;
+}
+
+#preProduct1 .owl-nav {
+    font-size: 40px;
+}
+
+#preProduct2 .owl-dots {
+    display: none;
+}
+
+#preProduct2 .owl-nav {
+    font-size: 40px;
+}
+
+#preProduct3 .owl-dots {
+    display: none;
+}
+
+#preProduct3 .owl-nav {
+    font-size: 40px;
+}
+
+/*-----------------------------------------
+    NEWS
+-------------------------------------------*/
+
+.card-news-text h5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text-news {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#news .progress {
+    height: 0.25rem;
+}
+
+#news .cateNews li {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0.5rem 0;
+}
+
+#news .cateNews li a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 0.5rem;
+}
+
+#news .cateNews li a:hover {
+    color: #ddd;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #8ec63f;
+    border-color: #8ec63f;
+    color: #fff;
+}
+
+.pagination .page-item .page-link {
+    color: #000;
+}
+
+.promotion a {
+    text-decoration: none;
+    color: #000;
+}
+
+.videoProducts {
+    position: relative;
+}
+
+.videoProducts img {
+    display: block;
+    margin: auto;
+}
+
+.videoProducts a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: rgb(243, 243, 243);
+}
+
+/*-----------------------------------------
+    Products
+-------------------------------------------*/
+
+.card-input-element {
+    display: none;
+}
+
+.card-input {
+    margin: 10px;
+    padding: 0px;
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+.selectColor .card-input-element:checked+.card-input {
+    border: 2px solid #ddd;
+}
+
+.bottomFoot {
+    margin-top: 168px;
+}
+
+.galleriesProduct .demo {
+    width: 100%;
+}
+
+
+.bg-tabBanner1 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/banner/categoryBannerProducts1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+}
+
+.bg-tabBanner2 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/banner/categoryBannerProducts2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+}
+
+.bg-tabBanner3 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/banner/categoryBannerProducts3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+}
+
+.bg-tabBanner4 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/banner/categoryBannerProducts4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+}
+
+.bg-tabBanner5 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/banner/categoryBannerProducts5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 550px;
+}
+
+.boxBannerText {
+    position: relative;
+    color: #fff;
+    height: 550px;
+}
+
+.text-tab a {
+    position: absolute;
+    bottom: 30px;
+}
+
+#Category .item {
+    cursor: pointer;
+}
+
+#Category .item:hover a {
+    display: block;
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+#Category .item a {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#Category .item:hover h6 {
+    color: #8ec63f;
+}
+
+#Category .owl-prev,
+#Category .owl-next {
+    top: 0;
+}
+
+#Category .owl-prev {
+    right: 30px;
+    left: unset;
+}
+
+#Category .owl-next {
+    right: 0;
+}
+
+#Category button.owl-next,
+#Category button.owl-prev {
+    font-size: 28px;
+    color: #fff;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+}
+
+#Category.owl-theme .owl-dots {
+    display: none;
+}
+
+
+#Category2 .owl-prev,
+#Category2 .owl-next {
+    top: 0;
+}
+
+#Category2 .owl-prev {
+    right: 30px;
+    left: unset;
+}
+
+#Category2 .owl-next {
+    right: 0;
+}
+
+#Category2 button.owl-next,
+#Category2 button.owl-prev {
+    font-size: 28px;
+    color: #fff;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+}
+
+#Category2.owl-theme .owl-dots {
+    display: none;
+}
+
+#Category2 .item a {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#Category2 .item {
+    cursor: pointer;
+}
+
+#Category2 .item:hover h6 {
+    color: #8ec63f;
+}
+
+#Category2 .item:hover a {
+    display: block;
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+#Category3 .owl-prev,
+#Category3 .owl-next {
+    top: 0;
+}
+
+#Category3 .owl-prev {
+    right: 30px;
+    left: unset;
+}
+
+#Category3 .owl-next {
+    right: 0;
+}
+
+#Category3 button.owl-next,
+#Category3 button.owl-prev {
+    font-size: 28px;
+    color: #fff;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+}
+
+#Category3.owl-theme .owl-dots {
+    display: none;
+}
+
+#Category3 .item a {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#Category3 .item {
+    cursor: pointer;
+}
+
+#Category3 .item:hover h6 {
+    color: #8ec63f;
+}
+
+#Category3 .item:hover a {
+    display: block;
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+
+#Category4 .owl-prev,
+#Category4 .owl-next {
+    top: 0;
+}
+
+#Category4 .owl-prev {
+    right: 30px;
+    left: unset;
+}
+
+#Category4 .owl-next {
+    right: 0;
+}
+
+#Category4 button.owl-next,
+#Category4 button.owl-prev {
+    font-size: 28px;
+    color: #fff;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+}
+
+#Category4.owl-theme .owl-dots {
+    display: none;
+}
+
+#Category4 .item a {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#Category4 .item {
+    cursor: pointer;
+}
+
+#Category4 .item:hover h6 {
+    color: #8ec63f;
+}
+
+#Category4 .item:hover a {
+    display: block;
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+
+#Category5 .owl-prev,
+#Category5 .owl-next {
+    top: 0;
+}
+
+#Category5 .owl-prev {
+    right: 30px;
+    left: unset;
+}
+
+#Category5 .owl-next {
+    right: 0;
+}
+
+#Category5 button.owl-next,
+#Category5 button.owl-prev {
+    font-size: 28px;
+    color: #fff;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+}
+
+#Category5.owl-theme .owl-dots {
+    display: none;
+}
+
+#Category5 .item a {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#Category5 .item {
+    cursor: pointer;
+}
+
+#Category5 .item:hover h6 {
+    color: #8ec63f;
+}
+
+#Category5 .item:hover a {
+    display: block;
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+#categoryProducts .owl-dots {
+    margin-top: 1%;
+}
+
+#bannerProducts.owl-theme .owl-dots {
+    margin-top: -30px;
+    z-index: 2;
+}
+
+#bannerProducts .owl-prev {
+    color: #fff;
+    left: 0;
+}
+
+#bannerProducts .owl-next {
+    color: #fff;
+    right: 0;
+}
+
+.figure {
+    position: relative;
+    width: 360px;
+    /* can be omitted for a regular non-lazy image */
+    max-width: 100%;
+}
+
+.figure img.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.figure:hover img.image-hover {
+    opacity: 1;
+}
+
+#sortBy .accordion {
+    background-color: #fff;
+    color: #444;
+    border-bottom: 1px solid #eee !important;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+#sortBy .active,
+#sortBy .accordion:hover {
+    background-color: #ccc;
+}
+
+#sortBy .accordion:after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f107';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+#sortBy .active:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f077";
+}
+
+#sortBy .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#productsCate .item a {
+    position: absolute;
+    font-size: 14px;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#productsCate .item {
+    cursor: pointer;
+    position: relative;
+}
+
+#productsCate .item:hover h6 {
+    color: #8ec63f;
+}
+
+#productsCate .item:hover a {
+    display: block;
+    color: #fff;
+    background-color: #8ec63f;
+}
+
+/*-----------------------------------------
+    RESPONSIVE
+-------------------------------------------*/
+@media screen and (min-width:320px) and (max-width:374px) {
+    .container-fluid.container-f60 {
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: end;
+    }
+
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 200px;
+    }
+
+    #bannerHomeCorperate button.owl-prev,
+    #bannerHomeCorperate button.owl-next {
+        background-color: unset;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .fs-18 {
+        font-size: 14px;
+    }
+
+    .bg-bannerWorkplace {
+        height: 805px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 160px;
+    }
+
+    .boxBannerTitle {
+        height: 160px;
+    }
+
+
+    #pills-tabAbout.nav-pills .nav-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .bottomFoot {
+        margin-top: 40px;
+    }
+
+    .bg-bannerSolution1,
+    .bg-bannerSolution2,
+    .bg-bannerSolution3,
+    .bg-bannerSolution1_Step2,
+    .bg-bannerSolution2_Step2,
+    .bg-bannerSolution3_Step2,
+    .bg-bannerSolution1_Step3,
+    .bg-bannerSolution2_Step3,
+    .bg-bannerSolution3_Step3 {
+        height: 320px;
+    }
+
+    .bg-bannerOurcomp {
+        height: 400px;
+    }
+
+    .bg-tabBanner1,
+    .bg-tabBanner2,
+    .bg-tabBanner3,
+    .bg-tabBanner4,
+    .bg-tabBanner5 {
+        height: 160px;
+    }
+
+    .boxBannerText {
+        height: 160px;
+    }
+
+    .text-tab a {
+        bottom: 15px;
+    }
+
+    #Category .owl-prev {
+        left: 0;
+    }
+
+    #Category .owl-next {
+        right: 0;
+    }
+
+    #Category .owl-prev,
+    #Category .owl-next {
+        top: 50%;
+    }
+
+    #Category2 .owl-prev {
+        left: 0;
+    }
+
+    #Category2 .owl-next {
+        right: 0;
+    }
+
+    #Category2 .owl-prev,
+    #Category2 .owl-next {
+        top: 50%;
+    }
+
+    #Category3 .owl-prev {
+        left: 0;
+    }
+
+    #Category3 .owl-next {
+        right: 0;
+    }
+
+    #Category3 .owl-prev,
+    #Category3 .owl-next {
+        top: 50%;
+    }
+
+    #Category4 .owl-prev {
+        left: 0;
+    }
+
+    #Category4 .owl-next {
+        right: 0;
+    }
+
+    #Category4 .owl-prev,
+    #Category4 .owl-next {
+        top: 50%;
+    }
+
+    #Category5 .owl-prev {
+        left: 0;
+    }
+
+    #Category5 .owl-next {
+        right: 0;
+    }
+
+    #Category5 .owl-prev,
+    #Category5 .owl-next {
+        top: 50%;
+    }
+
+    #ecomBrand {
+        height: 50px;
+    }
+
+}
+
+@media screen and (min-width:375px) and (max-width:413px) {
+    .container-fluid.container-f60 {
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: end;
+    }
+
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 200px;
+    }
+
+    #bannerHomeCorperate button.owl-prev,
+    #bannerHomeCorperate button.owl-next {
+        background-color: unset;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .fs-18 {
+        font-size: 14px;
+    }
+
+    .bg-bannerWorkplace {
+        height: 750px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 160px;
+    }
+
+    .boxBannerTitle {
+        height: 160px;
+    }
+
+
+    #pills-tabAbout.nav-pills .nav-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .bottomFoot {
+        margin-top: 40px;
+    }
+
+    .bg-bannerSolution1,
+    .bg-bannerSolution2,
+    .bg-bannerSolution3,
+    .bg-bannerSolution1_Step2,
+    .bg-bannerSolution2_Step2,
+    .bg-bannerSolution3_Step2,
+    .bg-bannerSolution1_Step3,
+    .bg-bannerSolution2_Step3,
+    .bg-bannerSolution3_Step3 {
+        height: 320px;
+    }
+
+    .bg-bannerOurcomp {
+        height: 350px;
+    }
+
+    .bg-tabBanner1,
+    .bg-tabBanner2,
+    .bg-tabBanner3,
+    .bg-tabBanner4,
+    .bg-tabBanner5 {
+        height: 160px;
+    }
+
+    .boxBannerText {
+        height: 160px;
+    }
+
+    .text-tab a {
+        bottom: 15px;
+    }
+
+    #Category .owl-prev {
+        left: 0;
+    }
+
+    #Category .owl-next {
+        right: 0;
+    }
+
+    #Category .owl-prev,
+    #Category .owl-next {
+        top: 50%;
+    }
+
+    #Category2 .owl-prev {
+        left: 0;
+    }
+
+    #Category2 .owl-next {
+        right: 0;
+    }
+
+    #Category2 .owl-prev,
+    #Category2 .owl-next {
+        top: 50%;
+    }
+
+    #Category3 .owl-prev {
+        left: 0;
+    }
+
+    #Category3 .owl-next {
+        right: 0;
+    }
+
+    #Category3 .owl-prev,
+    #Category3 .owl-next {
+        top: 50%;
+    }
+
+    #Category4 .owl-prev {
+        left: 0;
+    }
+
+    #Category4 .owl-next {
+        right: 0;
+    }
+
+    #Category4 .owl-prev,
+    #Category4 .owl-next {
+        top: 50%;
+    }
+
+    #Category5 .owl-prev {
+        left: 0;
+    }
+
+    #Category5 .owl-next {
+        right: 0;
+    }
+
+    #Category5 .owl-prev,
+    #Category5 .owl-next {
+        top: 50%;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #ecomBrand {
+        height: 90px;
+    }
+
+}
+
+@media screen and (min-width:414px) and (max-width:424px) {
+    .container-fluid.container-f60 {
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: end;
+    }
+
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 200px;
+    }
+
+    #bannerHomeCorperate button.owl-prev,
+    #bannerHomeCorperate button.owl-next {
+        background-color: unset;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .fs-18 {
+        font-size: 14px;
+    }
+
+    .bg-bannerWorkplace {
+        height: 720px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 160px;
+    }
+
+    .boxBannerTitle {
+        height: 160px;
+    }
+
+    #pills-tabAbout.nav-pills .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .bottomFoot {
+        margin-top: 40px;
+    }
+
+    .bg-bannerSolution1,
+    .bg-bannerSolution2,
+    .bg-bannerSolution3,
+    .bg-bannerSolution1_Step2,
+    .bg-bannerSolution2_Step2,
+    .bg-bannerSolution3_Step2,
+    .bg-bannerSolution1_Step3,
+    .bg-bannerSolution2_Step3,
+    .bg-bannerSolution3_Step3 {
+        height: 320px;
+    }
+
+    .bg-bannerOurcomp {
+        height: 350px;
+    }
+
+    .bg-tabBanner1,
+    .bg-tabBanner2,
+    .bg-tabBanner3,
+    .bg-tabBanner4,
+    .bg-tabBanner5 {
+        height: 160px;
+    }
+
+    .boxBannerText {
+        height: 160px;
+    }
+
+    .text-tab a {
+        bottom: 15px;
+    }
+
+    #Category .owl-prev {
+        left: 0;
+    }
+
+    #Category .owl-next {
+        right: 0;
+    }
+
+    #Category .owl-prev,
+    #Category .owl-next {
+        top: 50%;
+    }
+
+    #Category2 .owl-prev {
+        left: 0;
+    }
+
+    #Category2 .owl-next {
+        right: 0;
+    }
+
+    #Category2 .owl-prev,
+    #Category2 .owl-next {
+        top: 50%;
+    }
+
+    #Category3 .owl-prev {
+        left: 0;
+    }
+
+    #Category3 .owl-next {
+        right: 0;
+    }
+
+    #Category3 .owl-prev,
+    #Category3 .owl-next {
+        top: 50%;
+    }
+
+    #Category4 .owl-prev {
+        left: 0;
+    }
+
+    #Category4 .owl-next {
+        right: 0;
+    }
+
+    #Category4 .owl-prev,
+    #Category4 .owl-next {
+        top: 50%;
+    }
+
+    #Category5 .owl-prev {
+        left: 0;
+    }
+
+    #Category5 .owl-next {
+        right: 0;
+    }
+
+    #Category5 .owl-prev,
+    #Category5 .owl-next {
+        top: 50%;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #ecomBrand {
+        height: 90px;
+    }
+
+}
+
+@media screen and (min-width:425px) and (max-width:767px) {
+    .container-fluid.container-f60 {
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: end;
+    }
+
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 200px;
+    }
+
+    #bannerHomeCorperate button.owl-prev,
+    #bannerHomeCorperate button.owl-next {
+        background-color: unset;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .fs-18 {
+        font-size: 14px;
+    }
+
+    .bg-bannerWorkplace {
+        height: 715px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 160px;
+    }
+
+    .boxBannerTitle {
+        height: 160px;
+    }
+
+
+    #pills-tabAbout.nav-pills .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .bottomFoot {
+        margin-top: 40px;
+    }
+
+    .bg-bannerSolution1,
+    .bg-bannerSolution2,
+    .bg-bannerSolution3,
+    .bg-bannerSolution1_Step2,
+    .bg-bannerSolution2_Step2,
+    .bg-bannerSolution3_Step2,
+    .bg-bannerSolution1_Step3,
+    .bg-bannerSolution2_Step3,
+    .bg-bannerSolution3_Step3 {
+        height: 320px;
+    }
+
+    .enterprise h4 {
+        bottom: 10px;
+    }
+
+    .bg-bannerOurcomp {
+        height: 400px;
+    }
+
+    .bg-tabBanner1,
+    .bg-tabBanner2,
+    .bg-tabBanner3,
+    .bg-tabBanner4,
+    .bg-tabBanner5 {
+        height: 100%;
+    }
+
+    .boxBannerText {
+        height: 100%;
+    }
+
+    .text-tab a {
+        bottom: 35px;
+        right: 10px;
+    }
+
+    #Category .owl-prev {
+        left: 0;
+    }
+
+    #Category .owl-next {
+        right: 0;
+    }
+
+    #Category .owl-prev,
+    #Category .owl-next {
+        top: 50%;
+    }
+
+    #Category2 .owl-prev {
+        left: 0;
+    }
+
+    #Category2 .owl-next {
+        right: 0;
+    }
+
+    #Category2 .owl-prev,
+    #Category2 .owl-next {
+        top: 50%;
+    }
+
+    #Category3 .owl-prev {
+        left: 0;
+    }
+
+    #Category3 .owl-next {
+        right: 0;
+    }
+
+    #Category3 .owl-prev,
+    #Category3 .owl-next {
+        top: 50%;
+    }
+
+    #Category4 .owl-prev {
+        left: 0;
+    }
+
+    #Category4 .owl-next {
+        right: 0;
+    }
+
+    #Category4 .owl-prev,
+    #Category4 .owl-next {
+        top: 50%;
+    }
+
+    #Category5 .owl-prev {
+        left: 0;
+    }
+
+    #Category5 .owl-next {
+        right: 0;
+    }
+
+    #Category5 .owl-prev,
+    #Category5 .owl-next {
+        top: 50%;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #ecomBrand {
+        height: 90px;
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .container-fluid.container-f60 {
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: end;
+    }
+
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 300px;
+    }
+
+    #bannerHomeCorperate button.owl-prev,
+    #bannerHomeCorperate button.owl-next {
+        background-color: unset;
+    }
+
+    .owl-theme .owl-dots {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .fs-18 {
+        font-size: 14px;
+    }
+
+    .bg-bannerWorkplace {
+        height: 555px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 160px;
+    }
+
+    .boxBannerTitle {
+        height: 160px;
+    }
+
+    #pills-tabAbout.nav-pills .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .bottomFoot {
+        margin-top: 40px;
+    }
+
+    .bg-bannerSolution1,
+    .bg-bannerSolution2,
+    .bg-bannerSolution3,
+    .bg-bannerSolution1_Step2,
+    .bg-bannerSolution2_Step2,
+    .bg-bannerSolution3_Step2,
+    .bg-bannerSolution1_Step3,
+    .bg-bannerSolution2_Step3,
+    .bg-bannerSolution3_Step3 {
+        height: 320px;
+    }
+
+    .enterprise h4 {
+        bottom: 10px;
+    }
+
+    .bg-bannerOurcomp {
+        height: 340px;
+    }
+
+    .bg-tabBanner1,
+    .bg-tabBanner2,
+    .bg-tabBanner3,
+    .bg-tabBanner4,
+    .bg-tabBanner5 {
+        height: 100%;
+    }
+
+    .boxBannerText {
+        height: 100%;
+    }
+
+    .text-tab a {
+        bottom: 35px;
+        right: 10px;
+    }
+
+
+    #Category .owl-prev {
+        left: 0;
+    }
+
+    #Category .owl-next {
+        right: 0;
+    }
+
+    #Category .owl-prev,
+    #Category .owl-next {
+        top: 50%;
+    }
+
+    #Category2 .owl-prev {
+        left: 0;
+    }
+
+    #Category2 .owl-next {
+        right: 0;
+    }
+
+    #Category2 .owl-prev,
+    #Category2 .owl-next {
+        top: 50%;
+    }
+
+    #Category3 .owl-prev {
+        left: 0;
+    }
+
+    #Category3 .owl-next {
+        right: 0;
+    }
+
+    #Category3 .owl-prev,
+    #Category3 .owl-next {
+        top: 50%;
+    }
+
+    #Category4 .owl-prev {
+        left: 0;
+    }
+
+    #Category4 .owl-next {
+        right: 0;
+    }
+
+    #Category4 .owl-prev,
+    #Category4 .owl-next {
+        top: 50%;
+    }
+
+    #Category5 .owl-prev {
+        left: 0;
+    }
+
+    #Category5 .owl-next {
+        right: 0;
+    }
+
+    #Category5 .owl-prev,
+    #Category5 .owl-next {
+        top: 50%;
+    }
+
+}
+
+@media screen and (min-width:992px) and (max-width:1279px) {
+    .container-fluid.container-f60 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #linkMenuTop li a {
+        padding: 0.5rem 0.75rem;
+        font-size: 14px;
+    }
+
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 300px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 200px;
+    }
+
+    .boxBannerTitle {
+        height: 200px;
+    }
+
+    #ecomBrand {
+        height: 50px;
+    }
+}
+
+@media screen and (min-width:1280px) and (max-width:1359px) {
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 450px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 200px;
+    }
+
+    .boxBannerTitle {
+        height: 200px;
+    }
+
+    #ecomBrand {
+        height: 50px;
+    }
+}
+
+@media screen and (min-width:1360px) and (max-width:1439px) {
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 450px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 230px;
+    }
+
+    .boxBannerTitle {
+        height: 230px;
+    }
+}
+
+@media screen and (min-width:1440px) and (max-width:1599px) {
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 450px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 230px;
+    }
+
+    .boxBannerTitle {
+        height: 230px;
+    }
+}
+
+@media screen and (min-width:1600px) and (max-width:1919px) {
+    #bannerHomeCorperate .item img.bannerImageSlide {
+        height: 450px;
+    }
+
+    .bg-bannerTitleAbout,
+    .bg-bannerTitleDetailFlag,
+    .bg-bannerTitleSolution,
+    .bg-bannerTitleSolutionStep2,
+    .bg-bannerTitleSolutionStep3,
+    .bg-bannerTitleSolutionStep4,
+    .bg-bannerTitleNews,
+    .bg-bannerTitleNewsDetail,
+    .bg-bannerTitleInnovation,
+    .bg-bannerTitleContact,
+    .bg-bannerTitleProducts,
+    .bg-bannerTitleProductsSearch {
+        height: 250px;
+    }
+
+    .boxBannerTitle {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width:1920px) and (max-width:2559px) {}
+
+@media screen and (min-width:2560px) {}
