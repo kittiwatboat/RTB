@@ -14,10 +14,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto" id="linkMenuTop">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">หน้าแรก</a>
+            <a class="nav-link" href="">หน้าแรก</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">เกี่ยวกับเรา</a>
+            <a class="nav-link" href="{{ session::get('lang') }}/about">เกี่ยวกับเรา</a>
           </li>
           <li class="nav-item dropdown dropdown-mega position-static">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">สินค้า</a>
@@ -27,7 +27,7 @@
                   <div class="row">
                     <div class="col-12 col-sm-6 col-md-4 py-4">
                       <div class="tab">
-                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="products01.php">Jabra</a>
+                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="products01">Jabra</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu2')" href="#">Jabra Wireless Music</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu3')" href="#">B & O</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu4')" href="#">Master & Dynamic</a>
@@ -92,16 +92,16 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="solution.php">Solutions</a>
+            <a class="nav-link" href="solution">Solutions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="news.php">ข่าวสารและบทความ</a>
+            <a class="nav-link" href="news">ข่าวสารและบทความ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="innovation.php">Innovation</a>
+            <a class="nav-link" href="innovation">Innovation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">ติดต่อเรา</a>
+            <a class="nav-link" href="contact">ติดต่อเรา</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto align-items-center">
