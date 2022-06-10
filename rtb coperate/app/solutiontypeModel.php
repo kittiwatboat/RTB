@@ -14,10 +14,10 @@ class solutiontypeModel extends Model
 
 {
 
-    protected $table = 'solution_type';
-    protected $primaryKey = 'solution_type_id';
+    protected $table = 'solutiontype';
+    protected $primaryKey = 'solutiontype_id';
 
-    protected $fillable = ['solution_type_id','img','title_th','title_en','des_th','des_en','detail_th','detail_en','created','updated'];
+    protected $fillable = ['solutiontype_id','solutiontype_img','nameth','nameen','desth','desen','detailth','detailen','created','updated'];
 
     const CREATED_AT = 'created';
 

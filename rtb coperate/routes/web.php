@@ -132,3 +132,14 @@ Route::post('/backoffice/solution/addsub','SolutionController@addsub');
 Route::get('/backoffice/solution/edit/{id}','SolutionController@edit');
 Route::post('/backoffice/solution/editsub','SolutionController@editsub');
 Route::get('/backoffice/solution/delete/{id}','SolutionController@delete');
+
+
+// Solution
+// Type
+Route::get('/backoffice/solutiontype','SolutiontypeController@solutiontype');
+Route::get('/backoffice/solutiontype/add','SolutiontypeController@add');
+Route::post('/backoffice/solutiontype/addsub','SolutiontypeController@addsub');
+Route::get('/backoffice/solutiontype/edit/{id}','SolutiontypeController@edit');
+Route::post('/backoffice/solutiontype/editsub','SolutiontypeController@editsub');
+Route::get('/backoffice/solutiontype/delete/{id}','SolutiontypeController@delete');
+

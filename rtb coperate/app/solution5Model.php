@@ -17,7 +17,7 @@ class solution5Model extends Model
     protected $table = 'solution5';
     protected $primaryKey = 'solution5_id';
 
-    protected $fillable = ['solution5_id','img','title_th','title_en','des_th','des_en','detail_th','detail_en','created','updated'];
+    protected $fillable = ['solution5_id','solution5_img','nameth','nameen','desth','desen','detailth','detailen','created','updated'];
 
     const CREATED_AT = 'created';
 
