@@ -14,20 +14,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto" id="linkMenuTop">
           <li class="nav-item">
-            <a class="nav-link" href="">หน้าแรก</a>
+            <a class="nav-link" href="">@lang('lang.home')</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ session::get('lang') }}/about">เกี่ยวกับเรา</a>
+            <a class="nav-link" href="{{ session::get('lang') }}/about">@lang('lang.about')</a>
           </li>
           <li class="nav-item dropdown dropdown-mega position-static">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">สินค้า</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">@lang('lang.product')</a>
             <div class="dropdown-menu container shadow">
               <div class="mega-content px-lg-4 px-0">
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-12 col-sm-6 col-md-4 py-4">
                       <div class="tab">
-                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="products01">Jabra</a>
+                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/products01">Jabra</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu2')" href="#">Jabra Wireless Music</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu3')" href="#">B & O</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu4')" href="#">Master & Dynamic</a>
@@ -92,16 +92,16 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="solution">Solutions</a>
+            <a class="nav-link" href="{{ session::get('lang') }}/solution">Solutions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="news">ข่าวสารและบทความ</a>
+            <a class="nav-link" href="{{ session::get('lang') }}/news">@lang('lang.news')</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="innovation">Innovation</a>
+            <a class="nav-link" href="{{ session::get('lang') }}/innovation">Innovation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact">ติดต่อเรา</a>
+            <a class="nav-link" href="{{ session::get('lang') }}/contact">@lang('lang.contact')</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto align-items-center">
@@ -111,11 +111,11 @@
           <li class="nav-item"><span>|</span></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              TH
+              @lang('lang.th')
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">EN</a></li>
-              <li><a class="dropdown-item" href="#">TH</a></li>
+              <li><a class="dropdown-item" href="{{url('en').session()->get('prefix')}}">EN</a></li>
+              <li><a class="dropdown-item" href="{{url('th').session()->get('prefix')}}">TH</a></li>
             </ul>
           </li>
           <li class="nav-item">
