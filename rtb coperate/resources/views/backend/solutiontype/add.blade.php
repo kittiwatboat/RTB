@@ -50,7 +50,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Description TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desth" id="" style="width: 100px;"></textarea>
+                                                    <textarea name="desth" id="" ></textarea>
                                                 </div>
                                             </div>
 
@@ -58,7 +58,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                             Description EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desen" id="" style="width: 100px;"></textarea>
+                                                    <textarea name="desen" id="" ></textarea>
                                                 </div>
                                             </div>
 
