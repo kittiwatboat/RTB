@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index(){
         $ban=bannerModel::get();
         $icon=iconbanModel::get();
-        $cata=catagoryMmodel::get();
+        $cata=catagoryModel::get();
         return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata);
     }
     public function about(){
