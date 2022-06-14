@@ -53,8 +53,8 @@
                 <div class="owl-carousel owl-theme" id="preProduct1">
 
 
-                @foreach($itemp as $itemps)
                 <?php  $itemp=DB::table('solution5')->where('solution4_id',$solutions->solution4_id)->get();  ?>
+                @foreach($itemp as $itemps)
                     <div class="item">
                         <div class="row bg-white">
                             <div class="col-sm-6 px-0">
