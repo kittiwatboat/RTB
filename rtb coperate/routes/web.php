@@ -61,6 +61,9 @@ Route::get('/solutionStep3','HomeController@solutionStep3');
 Route::get('/solutionStep4','HomeController@solutionStep4');
 
 Route::get('/contact','HomeController@contact');
+
+Route::get('/product/{id}','HomeController@product');
+
 });
 }
 });
