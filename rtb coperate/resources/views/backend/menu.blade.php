@@ -72,15 +72,19 @@
 
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSolution"
+            aria-expanded="true" aria-controls="collapseSolution">
             <i class="fas fa-fw fa-folder"></i>
             <span>Solution</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseSolution" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Catagory</h6>
                 <a class="collapse-item" href="/backoffice/solutiontype">Solution Type</a>
+                <a class="collapse-item" href="/backoffice/solution2">Solution 2</a>
+                <a class="collapse-item" href="/backoffice/solution3">Solution 3</a>
+                <a class="collapse-item" href="/backoffice/solution4">Solution 4</a>
+                <a class="collapse-item" href="/backoffice/solution5">Solution 5</a>
             </div>
         </div>
     </li>
