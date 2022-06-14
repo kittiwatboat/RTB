@@ -46,7 +46,7 @@ class HomeController extends Controller
         ]);
     }
     public function solutionStep2($id){
-        $solutiontype=solutiontypeModel::find($id);
+        $solutiontype=solutiontypeModel::find($id)->first();
         $solution=solution2Model::where('solutiontype_id',$id)->get();
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
