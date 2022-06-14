@@ -20,7 +20,8 @@ class HomeController extends Controller
         $ban=bannerModel::get();
         $icon=iconbanModel::get();
         $cata=catagoryModel::get();
-        return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata);
+        $sub=subcatagoryModel::get();
+        return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata)->with('sub',$sub);
     }
     public function about(){
         return view('fontend.about');

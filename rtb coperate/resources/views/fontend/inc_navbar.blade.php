@@ -51,10 +51,14 @@
                       </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 py-4 py-4" id="menuMega">
-                      @foreach ($collection as $item)
-                          
-                      @endforeach
-                      <div id="menu1" class="tabcontent" style="display: block;">
+                      
+                      @foreach ($cata as $key => $ca)
+                      <?php  $key=$key+1;  ?>
+                      
+                      <div id="menu{{ $key }}" class="tabcontent" style="display: block;">
+                        
+                        @foreach ($sub as $item)
+                        @if ($ca->cat_id $item->cat_id)
                         <h6>Jabra Mobiles</h6>
                         <ul class="dash">
                           <li><a href="#">Jabra True wireless</a></li>
@@ -63,7 +67,9 @@
                           <li><a href="#">Music & Sport Headsets</a></li>
                           <li><a href="#">Corded Stereos</a></li>
                         </ul>
-                        <h6 class="mt-4">Jabra Call Center & Office Headsets</a></h6>
+                        @endif
+                        @endforeach
+                        {{-- <h6 class="mt-4">Jabra Call Center & Office Headsets</a></h6>
                         <ul class="dash">
                           <li><a href="#">Cards and USB Adapters</a></li>
                           <li><a href="#">Amplifiers</a></li>
@@ -72,8 +78,9 @@
                           <li><a href="#">Unified Communications Headsets</a></li>
                           <li><a href="#">Wireless Headsets</a></li>
                           <li><a href="#">Conference Speakers</a></li>
-                        </ul>
+                        </ul> --}}
                       </div>
+                      @endforeach
 
                       <div id="menu2" class="tabcontent"></div>
                       <div id="menu3" class="tabcontent"></div>
