@@ -58,6 +58,8 @@ class Solution5Controller extends Controller
         }
         
 
+        $solution5->catth=$request->catth;
+        $solution5->caten=$request->caten;
 
         $solution5->nameth=$request->nameth;
         $solution5->nameen=$request->nameen;
@@ -102,6 +104,9 @@ class Solution5Controller extends Controller
         }
         
 
+        $solution5->catth=$request->catth;
+        $solution5->caten=$request->caten;
+        
         $solution5->nameth=$request->nameth;
         $solution5->nameen=$request->nameen;
         $solution5->desth=$request->desth;

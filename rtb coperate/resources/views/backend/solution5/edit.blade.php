@@ -63,6 +63,22 @@
 
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                Category TH </label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="catth" class="form-control" value="{{ $solutio54->catth }}">
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                            Category EN </label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="caten" class="form-control" value="{{ $solutio54->caten}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Description TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
                                                     <textarea name="desth" id="" style="height:100px">{{ $solutio54->desth }}</textarea>
