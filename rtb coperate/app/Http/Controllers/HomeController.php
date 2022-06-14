@@ -47,6 +47,9 @@ class HomeController extends Controller
     }
     public function solutionStep2($id){
         $solutiontype=solutiontypeModel::where('solutiontype_id',$id)->first();
+        if($solutiontype==null){
+            $solutiontype->solutiontype_img=null;
+        }
         $solution=solution2Model::where('solutiontype_id',$id)->get();
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
@@ -61,6 +64,9 @@ class HomeController extends Controller
     }
     public function solutionStep3($id){
         $solutiontype=solution2Model::where('solution2_id',$id)->first();
+        if($solutiontype==null){
+            $solutiontype->solution2_img=null;
+        }
         $solution=solution3Model::where('solution2_id',$id)->get();
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
@@ -75,6 +81,9 @@ class HomeController extends Controller
     }
     public function solutionStep4($id){
         $solutiontype=solution3Model::where('solution3_id',$id)->first();
+        if($solutiontype==null){
+            $solutiontype->solution3_img=null;
+        }
         $solution=solution4Model::where('solution3_id',$id)->get();
         return view('fontend.solutionStep4',[
             'solution'=>$solution,
