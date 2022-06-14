@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\bannerModel;
 use App\iconbanModel;
+
+use App\solutiontypeModel;
+use App\solution2Model;
+use App\solution3Model;
+use App\solution4Model;
+use App\solution5Model;
 class HomeController extends Controller
 {   
     public function index(){
@@ -22,16 +28,28 @@ class HomeController extends Controller
         return view('fontend.products-detail');
     }
     public function solution(){
-        return view('fontend.solution');
+        $solution=solutiontypeModel::get();
+        return view('fontend.solution',[
+            'solution'=>$solution,
+        ]);
     }
     public function solution_meeting(){
-        return view('fontend.solutionStep2');
+        $solution=solution2Model::get();
+        return view('fontend.solutionStep2',[
+            'solution'=>$solution,
+        ]);
     }
     public function solution_videoconference(){
-        return view('fontend.solutionStep3');
+        $solution=solution3Model::get();
+        return view('fontend.solutionStep3',[
+            'solution'=>$solution,
+        ]);
     }
     public function solution_personcal(){
-        return view('fontend.solutionStep4');
+        $solution=solution4Model::get();
+        return view('fontend.solutionStep4',[
+            'solution'=>$solution,
+        ]);
     }
     public function news(){
         return view('fontend.news');

@@ -32,6 +32,7 @@
                     of the organization by bringing technology together for maximum efficiency</p>
             </div>
         </div>
+
         <div class="bg-bannerSolution1">
             <div class="container container-small">
                 <div class="row" id="card-solution">
@@ -46,7 +47,8 @@
                 </div>
             </div>
         </div>
-        <div class="bg-bannerSolution2">
+
+        <div class="bg-bannerSolution4">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6 my-5">
@@ -61,7 +63,8 @@
                 </div>
             </div>
         </div>
-        <div class="bg-bannerSolution3">
+
+        <!-- <div class="bg-bannerSolution3">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6">
@@ -75,7 +78,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
     </div>
     @include('fontend.inc_footer')
     <script>
