@@ -13,7 +13,7 @@ use App\solution4Model;
 use App\solution5Model;
 use App\catagoryModel;
 use App\subcatagoryModel;
-
+use App\productModel;
 class HomeController extends Controller
 {   
     public function index(){
@@ -21,7 +21,10 @@ class HomeController extends Controller
         $icon=iconbanModel::get();
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
-        return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata)->with('sub',$sub);
+        $pro=productModel::get();
+        return view('fontend.index',[
+            'pro'=>$pro,
+        ])->with('ban',$ban)->with('icon',$icon)->with('cata',$cata)->with('sub',$sub);
     }
     public function about(){
         $cata=catagoryModel::get();
