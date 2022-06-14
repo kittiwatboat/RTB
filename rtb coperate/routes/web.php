@@ -56,9 +56,9 @@ Route::get('/newsDetails','HomeController@newsdetail');
 Route::get('/innovation','HomeController@innovation');
 Route::get('/InnovationDetail','HomeController@innovationdetail');
 
-Route::get('/solutionStep2','HomeController@solutionStep2');
-Route::get('/solutionStep3','HomeController@solutionStep3');
-Route::get('/solutionStep4','HomeController@solutionStep4');
+Route::get('/solutionStep2/{id}','HomeController@solutionStep2');
+Route::get('/solutionStep3/{id}','HomeController@solutionStep3');
+Route::get('/solutionStep4/{id}','HomeController@solutionStep4');
 
 Route::get('/contact','HomeController@contact');
 

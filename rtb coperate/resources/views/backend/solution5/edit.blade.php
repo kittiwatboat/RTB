@@ -24,11 +24,11 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Catagory</strong></div>
-                                <form class="form-horizontal" action="backoffice/solution4/edi5sub" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="backoffice/solution5/editsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
                                         
-                                        <input type="hidden" name="solution5_id" value="{{ $solutio54->solution5_id }}">
+                                        <input type="hidden" name="solution5_id" value="{{ $solution5->solution5_id }}">
 
 
 
@@ -37,7 +37,7 @@
                                            <label for="aaa">Type</label>
                                             <select name="solution4_id" id="aaa" class="form-control">
                                             @foreach($for as $fors)
-                                            <option <?php if(isset($solution5)){ if($solutio54->solution4_id == $fors->solution4_id){echo 'selected';} } ?>
+                                            <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution4_id){echo 'selected';} } ?>
                                              value="{{$fors->solution4_id}}">{{$fors->nameth}}</option>
                                             @endforeach
                                                            
@@ -49,7 +49,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Name TH </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nameth" class="form-control" value="{{ $solutio54->nameth }}">
+                                                <input type="text" name="nameth" class="form-control" value="{{ $solution5->nameth }}">
                                             </div>
                                         </div>
                                        
@@ -57,7 +57,23 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Name EN </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nameen" class="form-control" value="{{ $solutio54->nameen}}">
+                                                <input type="text" name="nameen" class="form-control" value="{{ $solution5->nameen}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                Category TH </label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="catth" class="form-control" value="{{ $solution5->catth }}">
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                            Category EN </label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="caten" class="form-control" value="{{ $solution5->caten}}">
                                             </div>
                                         </div>
 
@@ -65,7 +81,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Description TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desth" id="" style="height:100px">{{ $solutio54->desth }}</textarea>
+                                                    <textarea name="desth" id="" style="height:100px">{{ $solution5->desth }}</textarea>
                                                 </div>
                                             </div>
 
@@ -73,7 +89,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                             Description EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desen" id="" style="height:100px">{{ $solutio54->desen }}</textarea>
+                                                    <textarea name="desen" id="" style="height:100px">{{ $solution5->desen }}</textarea>
                                                 </div>
                                             </div>
 
@@ -81,7 +97,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailth" id="summernote">{!! $solutio54->detailth !!}</textarea>
+                                                    <textarea name="detailth" id="summernote">{!! $solution5->detailth !!}</textarea>
                                                 </div>
                                             </div>
                                             <script>
@@ -98,7 +114,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailen" id="summernote1">{!! $solutio54->detailen !!}</textarea>
+                                                    <textarea name="detailen" id="summernote1">{!! $solution5->detailen !!}</textarea>
                                                 </div>
                                             </div>
                                             <script>
@@ -114,8 +130,8 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $solutio54->solution45img }}" width='50%' alt=""><br>
-                                                <input id="file-multiple-input" type="file" name="solution45img"
+                                                <img src="{{ $solution5->solution5_img }}" width='50%' alt=""><br>
+                                                <input id="file-multiple-input" type="file" name="solution5_img"
                                                     multiple="">
                                             </div>
                                         </div>
@@ -123,7 +139,7 @@
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
-                                            <a href="/backoffice/soluti5n4" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/solution5" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
                                 </form>
