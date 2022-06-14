@@ -11,7 +11,15 @@
     <div class="topBannerTitle">
         <div class="container-fluid px-0">
             <div class="owl-carousel owl-theme" id="bannerHomeCorperate">
-                <div class="item">
+               @foreach ($ban as $item)
+               <div class="item">
+                <a href="">
+                    <img src="{{$item->img}}" class="bannerImageSlide">
+                </a>
+                </div>  
+               @endforeach
+              
+                {{-- <div class="item">
                     <a href="">
                         <img src="images/team-working-by-group-video-call-share-ideas-brainstorming-negotiating-use-video-conference.jpg" class="bannerImageSlide">
                     </a>
@@ -20,12 +28,7 @@
                     <a href="">
                         <img src="images/team-working-by-group-video-call-share-ideas-brainstorming-negotiating-use-video-conference.jpg" class="bannerImageSlide">
                     </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="images/team-working-by-group-video-call-share-ideas-brainstorming-negotiating-use-video-conference.jpg" class="bannerImageSlide">
-                    </a>
-                </div>
+                </div> --}}
             </div>
             <div class="bg-grayL">
                 <div class="container py-3">
