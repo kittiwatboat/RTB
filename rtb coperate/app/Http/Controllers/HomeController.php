@@ -23,8 +23,10 @@ class HomeController extends Controller
     public function about(){
         return view('fontend.about');
     }
-    public function product(){
-        return view('fontend.products01');
+    public function product($id){
+        $cata=catagoryMmodel::get();
+        $cat=catagoryModel::find($id);
+        return view('fontend.products01')->with('cat',$cat)->with('cata',$cata);
     }
     public function product_detail(){
         return view('fontend.products-detail');
