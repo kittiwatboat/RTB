@@ -21,102 +21,82 @@ class HomeController extends Controller
         return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata);
     }
     public function about(){
-        $cata=catagoryModel::get();
-
-        return view('fontend.about')->with('cata',$cata);
+        return view('fontend.about');
     }
     public function product($id){
         $cata=catagoryMmodel::get();
         $cat=catagoryModel::find($id);
-        return view('fontend.products01')->with('cat',$cat)->with('cata',$cata)->with('cata',$cata);
+        return view('fontend.products01')->with('cat',$cat)->with('cata',$cata);
     }
     public function product_detail(){
-        return view('fontend.products-detail')->with('cata',$cata);
+        return view('fontend.products-detail');
     }
 
 
     public function solution(){
-        $cata=catagoryModel::get();
-
         $solution=solutiontypeModel::get();
         return view('fontend.solution',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+        ]);
     }
     public function solution_meeting(){
         $solution=solution2Model::get();
-        $cata=catagoryModel::get();
-
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+        ]);
     }
     public function solutionStep2($id){
-        $cata=catagoryModel::get();
-
+        $solutiontype=solutiontypeModel::where('solutiontype_id',$id)->first();
         $solution=solution2Model::where('solutiontype_id',$id)->get();
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+            'solutiontype'=>$solutiontype,
+        ]);
     }
     public function solution_videoconference(){
-        $cata=catagoryModel::get();
-
         $solution=solution3Model::get();
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+        ]);
     }
     public function solutionStep3($id){
-        $cata=catagoryModel::get();
-
+        $solutiontype=solution2Model::where('solution2_id',$id)->first();
         $solution=solution3Model::where('solution2_id',$id)->get();
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+            'solutiontype'=>$solutiontype,
+        ]);
     }
     public function solution_personcal(){
         $solution=solution4Model::get();
-        $cata=catagoryModel::get();
-
         return view('fontend.solutionStep4',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+        ]);
     }
     public function solutionStep4($id){
-        $cata=catagoryModel::get();
-
+        $solutiontype=solution3Model::where('solution3_id',$id)->first();
         $solution=solution4Model::where('solution3_id',$id)->get();
         return view('fontend.solutionStep4',[
             'solution'=>$solution,
-        ])->with('cata',$cata);
+            'solutiontype'=>$solutiontype,
+        ]);
     }
 
 
     public function news(){
-        $cata=catagoryModel::get();
-
-        return view('fontend.news')->with('cata',$cata);
+        return view('fontend.news');
     }
     public function newsdetail(){
-        $cata=catagoryModel::get();
-
-        return view('fontend.newsDetail')->with('cata',$cata);
+        return view('fontend.newsDetail');
     }
     public function innovation(){
-        $cata=catagoryModel::get();
-
-        return view('fontend.innovation')->with('cata',$cata);
+        return view('fontend.innovation');
     }
     public function innovationdetail(){
-        $cata=catagoryModel::get();
-
-        return view('fontend.innovationDetail')->with('cata',$cata);
+        return view('fontend.innovationDetail');
     }
     public function contact(){
-        $cata=catagoryModel::get();
-
-        return view('fontend.contact')->with('cata',$cata);
+        return view('fontend.contact');
     }
     
 }
