@@ -61,11 +61,18 @@
                         @if ($ca->cat_id == $item->cat_id)
                         <h6>{{ $item['subname'.session::get('lang')] }}</h6>
                         <ul class="dash">
-                          <li><a href="#">Jabra True wireless</a></li>
+                          @foreach ($protype as $pt)
+                          @if ($pt->scat_id == $item->scat_id)
+                          <li><a href="#">{{ $pt['typename'.session::get('lang')] }}</a></li>
+
+                          @endif
+                              
+                          @endforeach
+                          {{-- <li><a href="#">Jabra True wireless</a></li>
                           <li><a href="#">Bluetooth Headsets</a></li>
                           <li><a href="#">In-Car Speakerphones</a></li>
                           <li><a href="#">Music & Sport Headsets</a></li>
-                          <li><a href="#">Corded Stereos</a></li>
+                          <li><a href="#">Corded Stereos</a></li> --}}
                         </ul>
                         @endif
                         @endforeach
