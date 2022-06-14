@@ -60,25 +60,47 @@
                             <div class="col-sm-6 px-0">
                                 <img src="">
                             </div>
+                            @if(session::get('lang')=='th')
                             <div class="col-sm-6 px-0">
                                 <div class="bg-gray2 px-lg-4 px-3 py-lg-4 py-3">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3>{{$itemps['name'.session::get('lang')]}}</h3>
-                                            <p class="text-gray">category : {{$itemps['cat'.session::get('lang')]}}</p>
+                                            <h3>{{$itemps->nameth}}</h3>
+                                            <p class="text-gray">category : {{$itemps->catth}}</p>
                                         </div>
                                         <div>
                                             <a class="btn btn-gray">Other Product</a>
                                         </div>
                                     </div>
                                     <div class="text-solution">
-                                    {{$itemps['des'.session::get('lang')]}}
+                                    {{$itemps->desth}}
                                     </div>
                                     <div class="text-center mt-4">
                                         <a class="btn bg-gray3 text-white" href="">More deatil</a>
                                     </div>
                                 </div>
                             </div>
+                            @else
+                            <div class="col-sm-6 px-0">
+                                <div class="bg-gray2 px-lg-4 px-3 py-lg-4 py-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h3>{{$itemps->nameen}}</h3>
+                                            <p class="text-gray">category : {{$itemps->caten}}</p>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-gray">Other Product</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-solution">
+                                    {{$itemps->desen}}
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <a class="btn bg-gray3 text-white" href="">More deatil</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
