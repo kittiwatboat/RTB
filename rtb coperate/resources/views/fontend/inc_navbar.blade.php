@@ -27,7 +27,7 @@
                   <div class="row">
                     <div class="col-12 col-sm-6 col-md-4 py-4">
                       <div class="tab">
-                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/products01">Jabra</a>
+                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/product/{{$cata->cat_id}}">Jabra</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu2')" href="#">Jabra Wireless Music</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu3')" href="#">B & O</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu4')" href="#">Master & Dynamic</a>
