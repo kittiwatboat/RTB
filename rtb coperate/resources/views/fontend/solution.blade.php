@@ -4,6 +4,32 @@
 <head>
     <title>RTB - Solution</title>
     @include('fontend.inc_header')
+
+<style>
+
+ @foreach($solution as $key=>$solutions)   
+<?php  $key=$key+1; ?>
+ @if($key%2==0)
+    .bg-bannerSolution{{$key}} {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/pexels-christina-morillo-1181357.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+@else
+.bg-bannerSolution{{$key}} {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('../images/pexels-julia-m-cameron-4144923.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+@endif
+@endforeach
+
+</style>
 </head>
 
 <body>
@@ -33,7 +59,12 @@
             </div>
         </div>
 
-        <div class="bg-bannerSolution1">
+        @foreach($solution as $key=>$solutions)   
+
+
+        <?php  $key=$key+1;  ?>
+        @if($key%2==0)
+        <div class="bg-bannerSolution{{$key}}">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6"></div>
@@ -48,7 +79,8 @@
             </div>
         </div>
         
-        <div class="bg-bannerSolution2">
+        @else
+        <div class="bg-bannerSolution{{$key}}">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6 my-5">
@@ -63,7 +95,11 @@
                 </div>
             </div>
         </div>
-        <div class="bg-bannerSolution3">
+
+        @endif
+        @endforeach
+
+        /* <div class="bg-bannerSolution3">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6">
@@ -77,7 +113,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */
+
     </div>
     @include('fontend.inc_footer')
     <script>
