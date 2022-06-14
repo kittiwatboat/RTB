@@ -12,6 +12,8 @@ use App\solution3Model;
 use App\solution4Model;
 use App\solution5Model;
 use App\catagoryModel;
+use App\subcatagoryModel;
+
 class HomeController extends Controller
 {   
     public function index(){
