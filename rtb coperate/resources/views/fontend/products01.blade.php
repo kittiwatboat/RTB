@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-sm-8 py-3 px-lg-5 px-2">
                         <div class="text-head-product">
-                            <h2 class="text-green">Jabra</h2>
+                            <h2 class="text-green">{{$cat['name'.session::get('lang')]}}</h2>
                             <img src="images/LOGO_Color/logo web_Coler-01.jpg">
                         </div>
                         <p class="mt-2 mb-2 mb-lg-5">Bluetooth Jabra ทุกรุ่น มีการรับประกันสินค้าหลังการขาย 1 ปี หูฟังบลูทูธ

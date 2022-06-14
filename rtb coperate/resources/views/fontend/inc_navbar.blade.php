@@ -27,7 +27,12 @@
                   <div class="row">
                     <div class="col-12 col-sm-6 col-md-4 py-4">
                       <div class="tab">
-                        <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/products01">Jabra</a>
+                        @foreach ($cata as $key => $ca)
+                        <?php  $key=$key+1;  ?>
+                        <a class="dropdown-item tablinks @if($loop->first) active @else @endif" onmouseover="openDropdownMenu(event, 'menu{{$key}}')" href="{{ session::get('lang') }}/product/{{$ca->cat_id}}">{{$ca['name'.session::get('lang')]}}</a>
+ 
+                        @endforeach
+                        {{-- <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/product/{{$cata->cat_id}}">Jabra</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu2')" href="#">Jabra Wireless Music</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu3')" href="#">B & O</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu4')" href="#">Master & Dynamic</a>
@@ -42,7 +47,7 @@
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu13')" href="#">Uniq</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu14')" href="#">Vimtag</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu15')" href="#">ResMed</a>
-                        <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu16')" href="#">Motorola</a>
+                        <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu16')" href="#">Motorola</a> --}}
                       </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 py-4 py-4" id="menuMega">
