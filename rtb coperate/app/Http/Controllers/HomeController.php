@@ -29,7 +29,9 @@ class HomeController extends Controller
     public function product($id){
         $cata=catagoryModel::get();
         $cat=catagoryModel::find($id);
-        return view('fontend.products01')->with('cat',$cat)->with('cata',$cata);
+        $sub=subcatagoryModel::get();
+
+        return view('fontend.products01')->with('cat',$cat)->with('cata',$cata)->with('sub',$sub);
     }
     public function product_detail(){
         $cata=catagoryModel::get();
