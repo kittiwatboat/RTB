@@ -27,6 +27,8 @@ class HomeController extends Controller
     public function product_detail(){
         return view('fontend.products-detail');
     }
+
+
     public function solution(){
         $solution=solutiontypeModel::get();
         return view('fontend.solution',[
@@ -39,7 +41,19 @@ class HomeController extends Controller
             'solution'=>$solution,
         ]);
     }
+    public function solutionStep2(){
+        $solution=solution2Model::get();
+        return view('fontend.solutionStep2',[
+            'solution'=>$solution,
+        ]);
+    }
     public function solution_videoconference(){
+        $solution=solution3Model::get();
+        return view('fontend.solutionStep3',[
+            'solution'=>$solution,
+        ]);
+    }
+    public function solutionStep3(){
         $solution=solution3Model::get();
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
@@ -51,6 +65,14 @@ class HomeController extends Controller
             'solution'=>$solution,
         ]);
     }
+    public function solutionStep4(){
+        $solution=solution4Model::get();
+        return view('fontend.solutionStep4',[
+            'solution'=>$solution,
+        ]);
+    }
+
+
     public function news(){
         return view('fontend.news');
     }
