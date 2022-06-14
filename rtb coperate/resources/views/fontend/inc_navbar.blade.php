@@ -58,7 +58,7 @@
                       <div id="menu{{ $key }}" class="tabcontent" style="display: block;">
                         
                         @foreach ($sub as $item)
-                        @if ($ca->cat_id $item->cat_id)
+                        @if ($ca->cat_id == $item->cat_id)
                         <h6>Jabra Mobiles</h6>
                         <ul class="dash">
                           <li><a href="#">Jabra True wireless</a></li>
