@@ -60,9 +60,11 @@ class HomeController extends Controller
         ]);
     }
     public function solutionStep3($id){
+        $solutiontype=solution2Model::find($id);
         $solution=solution3Model::where('solution2_id',$id)->get();
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
+            'solutiontype'=>$solutiontype,
         ]);
     }
     public function solution_personcal(){
@@ -72,9 +74,11 @@ class HomeController extends Controller
         ]);
     }
     public function solutionStep4($id){
+        $solutiontype=solution3Model::find($id);
         $solution=solution4Model::where('solution3_id',$id)->get();
         return view('fontend.solutionStep4',[
             'solution'=>$solution,
+            'solutiontype'=>$solutiontype,
         ]);
     }
 
