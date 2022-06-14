@@ -29,7 +29,7 @@
                       <div class="tab">
                         @foreach ($cata as $key => $ca)
                         <?php  $key=$key+1;  ?>
-                        <a class="dropdown-item tablinks @if($loop->first) active @else @endif" onmouseover="openDropdownMenu(event, 'menu{{$key}}')" href="{{ session::get('lang') }}/product/{{$ca->cat_id}}">Jabra</a>
+                        <a class="dropdown-item tablinks @if($loop->first) active @else @endif" onmouseover="openDropdownMenu(event, 'menu{{$key}}')" href="{{ session::get('lang') }}/product/{{$ca->cat_id}}">{{$ca['name'.session::get('lang')]}}</a>
  
                         @endforeach
                         {{-- <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/product/{{$cata->cat_id}}">Jabra</a>
