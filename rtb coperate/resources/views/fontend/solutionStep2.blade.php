@@ -4,6 +4,44 @@
 <head>
     <title>RTB - Solution</title>
     @include('fontend.inc_header')
+
+    <style>
+
+
+@foreach($solution as $key=>$solutions)   
+<?php  $key=$key+1; ?>
+ @if($key%2!=0)
+        .bg-bannerSolution1_Step2 {
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('{!!$solutions->solution2_img!!}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+
+@else
+.bg-bannerSolution2_Step2 {
+    background-image: linear-gradient(to left top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('{!!$solutions->solution2_img!!}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    height: 470px;
+}
+@endif
+@endforeach
+
+
+
+.bg-bannerTitleSolutionStep2 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('{!!$solutiontype->solutiontype_img!!}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    height: 350px;
+}
+
+    </style>
+
 </head>
 
 <body>
@@ -26,33 +64,36 @@
     </div>
     <div class="bg-white">
         <div class="container container-small py-xl-5 py-4">
-            <div>
-                <p class="mt-lg-5 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc non blandit massa enim nec dui nunc mattis enim. Eget gravida cum sociis natoque penatibus et magnis dis parturient. Vel facilisis volutpat est velit egestas dui id. Orci eu lobortis elementum nibh. Convallis posuere morbi leo urna molestie at elementum eu. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Habitasse platea dictumst vestibulum rhoncus est. Donec adipiscing tristique risus nec feugiat in fermentum posuere. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. Elementum curabitur vitae nunc sed velit dignissim sodales. Nulla malesuada pellentesque elit eget. Ipsum suspendisse ultrices gravida dictum fusce ut. Viverra orci sagittis eu volutpat odio facilisis mauris. Fermentum iaculis eu non diam phasellus vestibulum. Turpis egestas maecenas pharetra convallis posuere morbi leo. Mattis vulputate enim nulla aliquet porttitor lacus.</p>
-                <p class="mt-lg-5 mt-3">Consectetur libero id faucibus nisl tincidunt eget nullam. Quam vulputate dignissim suspendisse in est ante. Quis commodo odio aenean sed adipiscing diam donec. Lectus magna fringilla urna porttitor rhoncus dolor purus non. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Habitant morbi tristique senectus et. Orci phasellus egestas tellus rutrum tellus. Amet nisl purus in mollis nunc sed. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Sapien faucibus et molestie ac. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.</p>
+            <div>{!!$solutiontype['detail'.session::get('lang')]!!}
             </div>
         </div>
+
+        @foreach($solution as $key=>$solutions)   
+<?php  $key=$key+1; ?>
+ @if($key%2!=0)
         <div class="bg-bannerSolution1_Step2">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6"></div>
                     <div class="col-sm-6 my-5">
                         <div class="bg-white w-75 ms-auto px-lg-4 px-2 py-lg-5 py-3">
-                            <h3>Video Conferencing</h3>
-                            <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Elit eget gravida cum sociis natoque penatibus et. Nunc faucibus a pellentesque sit amet porttitor eget.</p>
-                            <a class="btn fw-medium mt-lg-5 mt-3" href="{{session::get('lang')}}/solutionStep3">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
+                            <h3>{{$solutions['name'.session::get('lang')]}}</h3>
+                            <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">{{$solutions['des'.session::get('lang')]}}</p>
+                            <a class="btn fw-medium mt-lg-5 mt-3" href="{{session::get('lang')}}/solutionStep3/{{$solutions->solution2_id}}">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @else
         <div class="bg-bannerSolution2_Step2">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6 my-5">
                         <div class="bg-white w-75 me-auto px-lg-4 px-2 py-lg-5 py-3">
-                            <h3>AV Integration</h3>
-                            <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Elit eget gravida cum sociis natoque penatibus et. Nunc faucibus a pellentesque sit amet porttitor eget.</p>
-                            <a class="btn fw-medium mt-lg-5 mt-3" href="#">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
+                            <h3>{{$solutions['name'.session::get('lang')]}}</h3>
+                            <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">{{$solutions['des'.session::get('lang')]}}</p>
+                            <a class="btn fw-medium mt-lg-5 mt-3" href="{{session::get('lang')}}/solutionStep3/{{$solutions->solution2_id}}">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -60,21 +101,9 @@
                 </div>
             </div>
         </div>
-        <div class="bg-bannerSolution3_Step2">
-            <div class="container container-small">
-                <div class="row" id="card-solution">
-                    <div class="col-sm-6">
-                    </div>
-                    <div class="col-sm-6 my-5">
-                        <div class="bg-white w-75 ms-auto px-lg-4 px-2 py-lg-5 py-3">
-                            <h3>Management</h3>
-                            <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Elit eget gravida cum sociis natoque penatibus et. Nunc faucibus a pellentesque sit amet porttitor eget.</p>
-                            <a class="btn fw-medium mt-lg-5 mt-3" href="#">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endif
+        @endforeach
+
     </div>
 
     @include('fontend.inc_footer')

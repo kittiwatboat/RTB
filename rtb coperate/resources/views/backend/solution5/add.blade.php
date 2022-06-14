@@ -124,14 +124,14 @@
                                                 });
                                             </script>
 
-                                         <div class="form-group row">
+                                         <!-- <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
                                                 <input id="file-multiple-input" type="file" name="solution5_img"
                                                     multiple="">
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
