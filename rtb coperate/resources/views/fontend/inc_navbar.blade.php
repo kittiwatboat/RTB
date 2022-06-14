@@ -59,7 +59,7 @@
                         
                         @foreach ($sub as $item)
                         @if ($ca->cat_id == $item->cat_id)
-                        <h6>Jabra Mobiles</h6>
+                        <h6>{{ $item['subname'.session::get('lang')] }}</h6>
                         <ul class="dash">
                           <li><a href="#">Jabra True wireless</a></li>
                           <li><a href="#">Bluetooth Headsets</a></li>
