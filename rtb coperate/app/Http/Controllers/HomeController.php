@@ -52,21 +52,12 @@ class HomeController extends Controller
         ])->with('cata',$cata);
     }
     public function solutionStep2($id){
-<<<<<<< HEAD
         $cata=catagoryModel::get();
 
         $solution=solution2Model::where('solutiontype_id',$id)->get();
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
         ])->with('cata',$cata);
-=======
-        $solutiontype=solutiontypeModel::find($id);
-        $solution=solution2Model::where('solutiontype_id',$id)->get();
-        return view('fontend.solutionStep2',[
-            'solution'=>$solution,
-            'solutiontype'=>$solutiontype,
-        ]);
->>>>>>> 22193c950fac4c2fb893775d28f3335a52b3d506
     }
     public function solution_videoconference(){
         $cata=catagoryModel::get();
@@ -77,21 +68,12 @@ class HomeController extends Controller
         ])->with('cata',$cata);
     }
     public function solutionStep3($id){
-<<<<<<< HEAD
         $cata=catagoryModel::get();
 
         $solution=solution3Model::where('solution2_id',$id)->get();
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
         ])->with('cata',$cata);
-=======
-        $solutiontype=solution2Model::find($id);
-        $solution=solution3Model::where('solution2_id',$id)->get();
-        return view('fontend.solutionStep3',[
-            'solution'=>$solution,
-            'solutiontype'=>$solutiontype,
-        ]);
->>>>>>> 22193c950fac4c2fb893775d28f3335a52b3d506
     }
     public function solution_personcal(){
         $solution=solution4Model::get();
@@ -102,21 +84,12 @@ class HomeController extends Controller
         ])->with('cata',$cata);
     }
     public function solutionStep4($id){
-<<<<<<< HEAD
         $cata=catagoryModel::get();
 
         $solution=solution4Model::where('solution3_id',$id)->get();
         return view('fontend.solutionStep4',[
             'solution'=>$solution,
         ])->with('cata',$cata);
-=======
-        $solutiontype=solution3Model::find($id);
-        $solution=solution4Model::where('solution3_id',$id)->get();
-        return view('fontend.solutionStep4',[
-            'solution'=>$solution,
-            'solutiontype'=>$solutiontype,
-        ]);
->>>>>>> 22193c950fac4c2fb893775d28f3335a52b3d506
     }
 
 
