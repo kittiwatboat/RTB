@@ -64,7 +64,8 @@
                                 <div class="bg-gray2 px-lg-4 px-3 py-lg-4 py-3">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h3>{{$itemps['name'.session::get('lang')]}}</h3>
+                                            <!-- <h3>{{$itemps['name'.session::get('lang')]}}</h3> -->
+                                            <h3>{{$itemps->nameth}}</h3>
                                             <p class="text-gray">category : {{$itemps['cat'.session::get('lang')]}}</p>
                                         </div>
                                         <div>
