@@ -65,7 +65,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Description TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desth" id="" style="width: 100px;">{{ $solution3->desth }}</textarea>
+                                                    <textarea name="desth" id="" style="height:100px">{{ $solution3->desth }}</textarea>
                                                 </div>
                                             </div>
 
@@ -73,7 +73,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                             Description EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desen" id="" style="width: 100px;">{{ $solution3->desen }}</textarea>
+                                                    <textarea name="desen" id="" style="height:100px">{{ $solution3->desen }}</textarea>
                                                 </div>
                                             </div>
 
