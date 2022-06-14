@@ -63,7 +63,7 @@
 
 
         <?php  $key=$key+1;  ?>
-        @if($key%2==0)
+        @if($key%2!=0)
         <div class="bg-bannerSolution{{$key}}">
             <div class="container container-small">
                 <div class="row" id="card-solution">
@@ -98,22 +98,6 @@
 
         @endif
         @endforeach
-
-        /* <div class="bg-bannerSolution3">
-            <div class="container container-small">
-                <div class="row" id="card-solution">
-                    <div class="col-sm-6">
-                    </div>
-                    <div class="col-sm-6 my-5">
-                        <div class="bg-white w-75 ms-auto px-lg-4 px-2 py-lg-5 py-3">
-                            <h3>Solution</h3>
-                            <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Elit eget gravida cum sociis natoque penatibus et. Nunc faucibus a pellentesque sit amet porttitor eget.</p>
-                            <a class="btn fw-medium mt-lg-5 mt-3" href="#">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> */
 
     </div>
     @include('fontend.inc_footer')
