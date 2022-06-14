@@ -29,6 +29,16 @@
 }
 @endif
 
+
+
+.bg-bannerTitleSolutionStep2 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('{!!$solutiontype->solutiontype_img!!}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    height: 350px;
+}
+
     </style>
 
 </head>
