@@ -24,7 +24,7 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Catagory</strong></div>
-                                <form class="form-horizontal" action="backoffice/solution4/edi5sub" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="backoffice/solution5/editsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
                                         
@@ -130,8 +130,8 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $solution5->solution45img }}" width='50%' alt=""><br>
-                                                <input id="file-multiple-input" type="file" name="solution45img"
+                                                <img src="{{ $solution5->solution5_img }}" width='50%' alt=""><br>
+                                                <input id="file-multiple-input" type="file" name="solution5_img"
                                                     multiple="">
                                             </div>
                                         </div>
@@ -139,7 +139,7 @@
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
-                                            <a href="/backoffice/soluti5n4" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/solution5" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
                                 </form>
