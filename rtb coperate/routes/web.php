@@ -56,6 +56,10 @@ Route::get('/newsDetails','HomeController@newsdetail');
 Route::get('/innovation','HomeController@innovation');
 Route::get('/InnovationDetail','HomeController@innovationdetail');
 
+Route::get('/solutionStep2','HomeController@solutionStep2');
+Route::get('/solutionStep3','HomeController@solutionStep3');
+Route::get('/solutionStep4','HomeController@solutionStep4');
+
 Route::get('/contact','HomeController@contact');
 });
 }
@@ -142,4 +146,32 @@ Route::post('/backoffice/solutiontype/addsub','SolutiontypeController@addsub');
 Route::get('/backoffice/solutiontype/edit/{id}','SolutiontypeController@edit');
 Route::post('/backoffice/solutiontype/editsub','SolutiontypeController@editsub');
 Route::get('/backoffice/solutiontype/delete/{id}','SolutiontypeController@delete');
+// 2
+Route::get('/backoffice/solution2','Solution2Controller@solution2');
+Route::get('/backoffice/solution2/add','Solution2Controller@add');
+Route::post('/backoffice/solution2/addsub','Solution2Controller@addsub');
+Route::get('/backoffice/solution2/edit/{id}','Solution2Controller@edit');
+Route::post('/backoffice/solution2/editsub','Solution2Controller@editsub');
+Route::get('/backoffice/solution2/delete/{id}','Solution2Controller@delete');
+// 3
+Route::get('/backoffice/solution3','Solution3Controller@solution3');
+Route::get('/backoffice/solution3/add','Solution3Controller@add');
+Route::post('/backoffice/solution3/addsub','Solution3Controller@addsub');
+Route::get('/backoffice/solution3/edit/{id}','Solution3Controller@edit');
+Route::post('/backoffice/solution3/editsub','Solution3Controller@editsub');
+Route::get('/backoffice/solution3/delete/{id}','Solution3Controller@delete');
+// 4
+Route::get('/backoffice/solution4','Solution4Controller@solution4');
+Route::get('/backoffice/solution4/add','Solution4Controller@add');
+Route::post('/backoffice/solution4/addsub','Solution4Controller@addsub');
+Route::get('/backoffice/solution4/edit/{id}','Solution4Controller@edit');
+Route::post('/backoffice/solution4/editsub','Solution4Controller@editsub');
+Route::get('/backoffice/solution4/delete/{id}','Solution4Controller@delete');
+// 5
+Route::get('/backoffice/solution5','Solution5Controller@solution5');
+Route::get('/backoffice/solution5/add','Solution5Controller@add');
+Route::post('/backoffice/solution5/addsub','Solution5Controller@addsub');
+Route::get('/backoffice/solution5/edit/{id}','Solution5Controller@edit');
+Route::post('/backoffice/solution5/editsub','Solution5Controller@editsub');
+Route::get('/backoffice/solution5/delete/{id}','Solution5Controller@delete');
 

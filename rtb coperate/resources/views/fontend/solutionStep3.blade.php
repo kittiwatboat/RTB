@@ -40,7 +40,7 @@
                         <div class="bg-white w-75 ms-auto px-lg-4 px-2 py-lg-5 py-3">
                             <h3>Personcal Conference</h3>
                             <p class="text-gray mt-lg-5 mt-3 mb-lg-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Elit eget gravida cum sociis natoque penatibus et. Nunc faucibus a pellentesque sit amet porttitor eget.</p>
-                            <a class="btn fw-medium mt-lg-5 mt-3" href="solutionStep4.php">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
+                            <a class="btn fw-medium mt-lg-5 mt-3" href="{{url('solutionStep4')}}">READ MORE <i class="fas fa-arrow-right text-green"></i></a>
                         </div>
                     </div>
                 </div>

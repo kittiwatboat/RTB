@@ -107,7 +107,7 @@
                 <h2>SOLUTIONS</h2>
                 <div class="row my-4">
                     <div class="col-sm-4 mb-3 mb-lg-0 px-3">
-                        <a href="solutionStep2.php">
+                        <a href="{{url('solutionStep2')}}">
                             <div class="enterprise">
                                 <img src="images/banner/homepage1.png" class="w-100">
                                 <h4 class="text-white">Meeting Room</h4>
@@ -115,7 +115,7 @@
                         </a>
                     </div>
                     <div class="col-sm-4 mb-3 mb-lg-0 px-3">
-                        <a href="solutionStep2.php">
+                        <a href="{{url('solutionStep2')}}">
                             <div class="enterprise">
                                 <img src="images/banner/homepage2.png" class="w-100">
                                 <h4 class="text-white">IP Voice Network</h4>
@@ -123,7 +123,7 @@
                         </a>
                     </div>
                     <div class="col-sm-4 mb-3 mb-lg-0 px-3">
-                        <a href="solutionStep2.php">
+                        <a href="{{url('solutionStep2')}}">
                             <div class="enterprise">
                                 <img src="images/banner/homepage3.png" class="w-100">
                                 <h4 class="text-white">Solution...</h4>
