@@ -6,18 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\bannerModel;
 use App\iconbanModel;
-
 use App\solutiontypeModel;
 use App\solution2Model;
 use App\solution3Model;
 use App\solution4Model;
 use App\solution5Model;
+use App\catagoryModel;
 class HomeController extends Controller
 {   
     public function index(){
         $ban=bannerModel::get();
         $icon=iconbanModel::get();
-        return view('fontend.index')->with('ban',$ban)->with('icon',$icon);
+        $cata=catagoryMmodel::get();
+        return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata);
     }
     public function about(){
         return view('fontend.about');
