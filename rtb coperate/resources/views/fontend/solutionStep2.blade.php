@@ -11,7 +11,7 @@
 @foreach($solution as $key=>$solutions)   
 <?php  $key=$key+1; ?>
  @if($key%2!=0)
-        .bg-bannerSolution1_Step2 {
+        .bg-bannerSolution{{$key}}_Step2 {
     background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('{!!$solutions->solution2_img!!}');
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@
 }
 
 @else
-.bg-bannerSolution2_Step2 {
+.bg-bannerSolution{{$key}}_Step2 {
     background-image: linear-gradient(to left top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 95%), url('{!!$solutions->solution2_img!!}');
     background-size: cover;
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@
         @foreach($solution as $key=>$solutions)   
 <?php  $key=$key+1; ?>
  @if($key%2!=0)
-        <div class="bg-bannerSolution1_Step2">
+        <div class="bg-bannerSolution{{$key}}_Step2">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6"></div>
@@ -86,7 +86,7 @@
             </div>
         </div>
         @else
-        <div class="bg-bannerSolution2_Step2">
+        <div class="bg-bannerSolution{{$key}}_Step2">
             <div class="container container-small">
                 <div class="row" id="card-solution">
                     <div class="col-sm-6 my-5">
