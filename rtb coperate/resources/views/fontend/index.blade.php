@@ -33,10 +33,13 @@
             <div class="bg-grayL">
                 <div class="container py-3">
                     <div class="owl-carousel owl-theme" id="ecomBrand">
+                        @foreach ($icon as $ic)
                         <div class="item">
-                            <img src="images/LOGO_Color/logo web_Coler-01.jpg" class="bannerImageSlide">
+                            <img src="{{$ic->icon}}" class="bannerImageSlide">
                         </div>
-                        <div class="item">
+                        @endforeach
+                        
+                        {{-- <div class="item">
                             <img src="images/LOGO_Color/logo web_Coler-14.jpg" class="bannerImageSlide">
                         </div>
                         <div class="item">
@@ -98,7 +101,7 @@
                         </div>
                         <div class="item">
                             <img src="images/LOGO_Color/logo web_Coler-22.jpg" class="bannerImageSlide">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

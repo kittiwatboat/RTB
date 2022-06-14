@@ -16,7 +16,8 @@ class HomeController extends Controller
 {   
     public function index(){
         $ban=bannerModel::get();
-        return view('fontend.index')->with('ban',$ban);
+        $icon=iconbanModel::get();
+        return view('fontend.index')->with('ban',$ban)->with('icon',$icon);
     }
     public function about(){
         return view('fontend.about');
