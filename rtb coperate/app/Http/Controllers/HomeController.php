@@ -22,9 +22,7 @@ class HomeController extends Controller
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
-        return view('fontend.index',[
-            'protype'=>$protype,
-        ])->with('ban',$ban)->with('icon',$icon)->with('cata',$cata)->with('sub',$sub);
+        return view('fontend.index')->with('ban',$ban)->with('icon',$icon)->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
     }
     public function about(){
         $cata=catagoryModel::get();
