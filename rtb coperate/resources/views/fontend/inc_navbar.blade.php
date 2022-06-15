@@ -29,7 +29,7 @@
                       <div class="tab">
                         @foreach ($cata as $key => $ca)
                         <?php  $key=$key+1;  ?>
-                        <a class="dropdown-item tablinks @if($loop->first) active @else @endif" onmouseover="openDropdownMenu(event, 'menu{{$key}}')" href="{{ session::get('lang') }}/product/{{$ca->cat_id}}">{{$ca['name'.session::get('lang')]}}</a>
+                        <a class="dropdown-item tablinks @if($loop->first) active @else @endif" onmouseover="openDropdownMenu(event, 'menu{{$ca->cat_id}}')" href="{{ session::get('lang') }}/product/{{$ca->cat_id}}">{{$ca['name'.session::get('lang')]}}</a>
  
                         @endforeach
                         {{-- <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/product/{{$cata->cat_id}}">Jabra</a>
@@ -52,22 +52,30 @@
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 py-4 py-4" id="menuMega">
                       
-                      @foreach ($cata as $key => $ca)
-                      <?php  $key=$key+1;  ?>
-                      
-                      <div id="menu{{ $key }}" class="tabcontent" style="display: block;">
-                        
+                      @foreach ($cata as $key => $caa)
+
+                      <div id="menu{{ $caa->cat_id }}" class="tabcontent" style="display: block;">
+             
                         @foreach ($sub as $item)
-                        @if ($ca->cat_id == $item->cat_id)
-                        <h6>{{ $item['subname'.session::get('lang')] }}</h6>
-                        <ul class="dash">
-                          <li><a href="#">Jabra True wireless</a></li>
-                          <li><a href="#">Bluetooth Headsets</a></li>
-                          <li><a href="#">In-Car Speakerphones</a></li>
-                          <li><a href="#">Music & Sport Headsets</a></li>
-                          <li><a href="#">Corded Stereos</a></li>
-                        </ul>
-                        @endif
+                          @if ($item->cat_id == $caa->cat_id )
+                          <h6>{{ $item['subname'.session::get('lang')] }}</h6>
+                          <ul class="dash">
+                            @foreach ($protype as $pt)
+
+                              @if ($item->scat_id == $pt->scat_id)
+
+                              <li><a href="#"></a></li>
+                                  
+                              @else
+                                  
+                              @endif
+
+                            @endforeach
+
+                          </ul>
+                          @else
+                          
+                          @endif
                         @endforeach
                         {{-- <h6 class="mt-4">Jabra Call Center & Office Headsets</a></h6>
                         <ul class="dash">
@@ -80,6 +88,7 @@
                           <li><a href="#">Conference Speakers</a></li>
                         </ul> --}}
                       </div>
+                      
                       @endforeach
 
                       <div id="menu2" class="tabcontent"></div>
