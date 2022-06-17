@@ -26,7 +26,7 @@
                                 <div class="card-header">จัดการ <strong>About Partner </strong> </div>
                                 <div class="card-body">
                                     <div class="text-right">
-                                        <a href="/backoffice/partner/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
+                                        <!-- <a href="/backoffice/partner/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br> -->
                                     </div>
                                     <table class="table table-responsive-sm text-center">
                                         <thead>
@@ -43,7 +43,7 @@
                                                     <td><img src="{{ $item->partner_img }}" width="20%" alt=""></td>
                                                     <td>
                                                         <a href="/backoffice/partner/edit/{{ $item->partner_id }}" class="btn btn-warning">แก้ไข</a>
-                                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$item->partner_id}}')">ลบ</button>
+                                                        <!-- <button type="button" class="btn btn-danger" onclick="batbal('{{$item->partner_id}}')">ลบ</button> -->
     
                                                     </td>
                                                 </tr>

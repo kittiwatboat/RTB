@@ -24,18 +24,18 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Catagory</strong></div>
-                                <form class="form-horizontal" action="backoffice/meat_body/editsub" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="backoffice/meet_body/editsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
                                         
-                                        <input type="hidden" name="meat_body_id" value="{{ $meat_body->meat_body_id }}">
+                                        <input type="hidden" name="meet_body_id" value="{{ $meet_body->meet_body_id }}">
 
                                        
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Name TH </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nameth" class="form-control" value="{{ $meat_body->nameth }}">
+                                                <input type="text" name="nameth" class="form-control" value="{{ $meet_body->nameth }}">
                                             </div>
                                         </div>
                                        
@@ -43,7 +43,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Name EN </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nameen" class="form-control" value="{{ $meat_body->nameen}}">
+                                                <input type="text" name="nameen" class="form-control" value="{{ $meet_body->nameen}}">
                                             </div>
                                         </div>
 
@@ -51,7 +51,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Description TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desth" id="" style="height:100px">{{ $meat_body->desth }}</textarea>
+                                                    <textarea name="desth" id="" style="height:100px">{{ $meet_body->desth }}</textarea>
                                                 </div>
                                             </div>
 
@@ -59,49 +59,36 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                             Description EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desen" id="" style="height:100px">{{ $meat_body->desen }}</textarea>
+                                                    <textarea name="desen" id="" style="height:100px">{{ $meet_body->desen }}</textarea>
                                                 </div>
                                             </div>
 
-                                        <div class="form-group row">
+                                            <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailth" id="summernote">{!! $meat_body->detailth !!}</textarea>
+                                                    <textarea name="detailth" id="" style="height:100px">{{ $meet_body->detailth }}</textarea>
                                                 </div>
                                             </div>
-                                            <script>
-                                                $('#summernote').summernote({
-                                                 
-                                                  tabsize: 2,
-                                                  height: 200,
-                                        
-                                                  
-                                                });
-                                            </script>
-                                       
-                                        <div class="form-group row">
+
+                                            <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Detail EN <div style="font-size: 12px;"></div></label>
+                                            Detail EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailen" id="summernote1">{!! $meat_body->detailen !!}</textarea>
+                                                    <textarea name="detailen" id="" style="height:100px">{{ $meet_body->detailen }}</textarea>
                                                 </div>
                                             </div>
-                                            <script>
-                                                $('#summernote1').summernote({
-                                                 
-                                                  tabsize: 2,
-                                                  height: 200,
-                                             
-                                                });
-                                            </script>
+
+                                       
+                                       
+                                      
 
                                          <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $meat_body->meat_body_img }}" width='50%' alt=""><br>
-                                                <input id="file-multiple-input" type="file" name="meat_body_img"
+                                                <img src="{{ $meet_body->meet_body_img }}" width='50%' alt=""><br>
+                                                <input id="file-multiple-input" type="file" name="meet_body_img"
                                                     multiple="">
                                             </div>
                                         </div>
@@ -109,7 +96,7 @@
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
-                                            <a href="/backoffice/meat_body" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/meet_body" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
                                 </form>

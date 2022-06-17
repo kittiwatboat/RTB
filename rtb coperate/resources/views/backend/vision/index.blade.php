@@ -26,7 +26,7 @@
                                 <div class="card-header">จัดการ <strong>Vision </strong> </div>
                                 <div class="card-body">
                                     <div class="text-right">
-                                        <a href="/backoffice/vision/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
+                                        <!-- <a href="/backoffice/vision/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br> -->
                                     </div>
                                     <table class="table table-responsive-sm text-center">
                                         <thead>
@@ -41,7 +41,7 @@
                                                     <td>Vision</td>
                                                     <td>
                                                         <a href="/backoffice/vision/edit/{{ $item->vision_id }}" class="btn btn-warning">แก้ไข</a>
-                                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$item->vision_id}}')">ลบ</button>
+                                                        <!-- <button type="button" class="btn btn-danger" onclick="batbal('{{$item->vision_id}}')">ลบ</button> -->
     
                                                     </td>
                                                 </tr>

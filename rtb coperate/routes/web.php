@@ -198,16 +198,16 @@ Route::get('/backoffice/vision/edit/{id}','VisionController@edit');
 Route::post('/backoffice/vision/editsub','VisionController@editsub');
 Route::get('/backoffice/vision/delete/{id}','VisionController@delete');
 // meet_head
-Route::get('/backoffice/meet_head','Meet_headController@meet_head');
-Route::get('/backoffice/meet_head/add','Meet_headController@add');
-Route::post('/backoffice/meet_head/addsub','Meet_headController@addsub');
-Route::get('/backoffice/meet_head/edit/{id}','Meet_headController@edit');
-Route::post('/backoffice/meet_head/editsub','Meet_headController@editsub');
-Route::get('/backoffice/meet_head/delete/{id}','Meet_headController@delete');
+Route::get('/backoffice/meet_head','MeetheadController@meet_head');
+Route::get('/backoffice/meet_head/add','MeetheadController@add');
+Route::post('/backoffice/meet_head/addsub','MeetheadController@addsub');
+Route::get('/backoffice/meet_head/edit/{id}','MeetheadController@edit');
+Route::post('/backoffice/meet_head/editsub','MeetheadController@editsub');
+Route::get('/backoffice/meet_head/delete/{id}','MeetheadController@delete');
 // meet_body
-Route::get('/backoffice/meet_body','Meet_bodyController@meet_body');
-Route::get('/backoffice/meet_body/add','Meet_bodyController@add');
-Route::post('/backoffice/meet_body/addsub','Meet_bodyController@addsub');
-Route::get('/backoffice/meet_body/edit/{id}','Meet_bodyController@edit');
-Route::post('/backoffice/meet_body/editsub','Meet_bodyController@editsub');
-Route::get('/backoffice/meet_body/delete/{id}','Meet_bodyController@delete');
+Route::get('/backoffice/meet_body','MeetbodyController@meet_body');
+Route::get('/backoffice/meet_body/add','MeetbodyController@add');
+Route::post('/backoffice/meet_body/addsub','MeetbodyController@addsub');
+Route::get('/backoffice/meet_body/edit/{id}','MeetbodyController@edit');
+Route::post('/backoffice/meet_body/editsub','MeetbodyController@editsub');
+Route::get('/backoffice/meet_body/delete/{id}','MeetbodyController@delete');

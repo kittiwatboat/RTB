@@ -62,38 +62,21 @@
                                                 </div>
                                             </div>
 
-                                        <div class="form-group row">
+                                            <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailth" id="summernote"></textarea>
+                                                    <textarea name="detailth" id="" style="height:100px"></textarea>
                                                 </div>
                                             </div>
-                                            <script>
-                                                $('#summernote').summernote({
-                                                 
-                                                  tabsize: 2,
-                                                  height: 200,
-                                        
-                                                  
-                                                });
-                                            </script>
-                                       
-                                        <div class="form-group row">
+
+                                            <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Detail EN <div style="font-size: 12px;"></div></label>
+                                            Detail EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailen" id="summernote1"></textarea>
+                                                    <textarea name="detailen" id="" style="height:100px"></textarea>
                                                 </div>
                                             </div>
-                                            <script>
-                                                $('#summernote1').summernote({
-                                                 
-                                                  tabsize: 2,
-                                                  height: 200,
-                                             
-                                                });
-                                            </script>
 
                                          <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
