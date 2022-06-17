@@ -116,7 +116,7 @@
                                     <p>We design our product portfolio that lead to more productivity, mobility, freedom to work and enjoy life anywhere and any time. For example, our PMG Quadpad allow users to get connect from anywhere, even in a distant resort, in order to work, enjoy MP3 music, or chat over the Internet any time and any where. Our Jabra's bluetooth headsets enable people to talk on cell phones while driving more safely, communicate business messages, or listening to music wirelessly.</p>
                                     <p>While function is an important element of our products, form is where our products excel. We understand our customers that gadgets are not only tools that help them accomplish their tasks. Gadgets are also their fashion statement, an indication of who they are, what they are like, and how they perceive the world. Therefore, all our products have trendy and attractive designs. In fact, most of our products receive many design awards from international institutions.</p> -->
 
-                                    {{$meet_head['detail'.session::get('lang')]}}
+                                    {!!$meet_head['detail'.session::get('lang')]!!}
                                 </div>
                                 <div class="col-sm-3">
                                     <img src="{{$meet_head->meet_head_img}}" class="w-100">
