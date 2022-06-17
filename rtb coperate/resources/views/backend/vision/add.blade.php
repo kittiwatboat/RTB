@@ -144,7 +144,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image 1 <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $vision->vision_img }}" width='50%' alt=""><br>
+                                                <img src="" width='50%' alt=""><br>
                                                 <input id="file-multiple-input" type="file" name="vision_img"
                                                     multiple="">
                                             </div>
@@ -189,7 +189,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image 2 <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $vision->vision_img }}" width='50%' alt=""><br>
+                                                <img src="" width='50%' alt=""><br>
                                                 <input id="file-multiple-input" type="file" name="vision2_img"
                                                     multiple="">
                                             </div>
@@ -236,7 +236,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image 3 <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $vision->vision_img }}" width='50%' alt=""><br>
+                                                <img src="" width='50%' alt=""><br>
                                                 <input id="file-multiple-input" type="file" name="vision3_img"
                                                     multiple="">
                                             </div>
