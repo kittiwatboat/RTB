@@ -14,6 +14,12 @@ use App\solution5Model;
 use App\catagoryModel;
 use App\subcatagoryModel;
 use App\producttypeModel;
+
+use App\partnerModel;
+use App\meet_headModel;
+use App\meet_bodyModel;
+use App\visionModel;
+
 class HomeController extends Controller
 {   
     public function index(){
@@ -30,7 +36,15 @@ class HomeController extends Controller
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
 
-        return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+
+
+        $vision=visionModel::first();
+        $partner=partnerModel::first();
+        $meet_head=meet_headModel::first();
+        $meet_body=meet_bodyModel::get();
+
+        return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body);
     }
     public function product($id){
         $cata=catagoryModel::get();
