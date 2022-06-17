@@ -92,9 +92,8 @@
                                 </div>
                             </div>
                         </div>
-                        {!!$vision['detail'.session::get('lang')]!!}
-                        <!-- <div class="container container-small py-xl-5 py-4">
-                            <h3 class="text-darkGray">Marketing</h3>
+                        <div class="container container-small py-xl-5 py-4">
+                            <!-- <h3 class="text-darkGray">Marketing</h3>
                             <p class="text-gray">We ensure innovative products go to market through innovative strategies. At RTB Technology, our job is to place the product at the right place, through the right people, with the right promotion, and at the pricing. We do not believe that products can be moved along intermediaries without careful planning, effective strategies, and attractive promotions. We utilize product roadshows, rebate coupons, database marketing, product reviews in multiple media channels to enhance the visibility of our supplier's products. Our goal is not only to deliver innovative products to end users but to do it in style and in the most effective ways.</p>
                             <h3 class="text-darkGray">Service</h3>
                             <p class="text-gray">After-sales service is the backbone of our operation. In fact, RTB Technology originally grew from an after market service (AMS) company called SCM Semitech. When purchasing our products, the customer can utilize our convenient drop-off locations, quick turn-around time repair, and reliable services. We have experienced in servicing hi-tech gadgets like smart phones, PDA's and notebook computers. We are equipped with hi-tech repair equipment and more than 30 technicians, providing repair services.</p>
@@ -103,8 +102,9 @@
                             <p class="text-gray">We realize that hi-tech products require hi-tech support. We have a team of dedicated engineers providing telephone and email supports to our dealers and customers. For dealers, we provide on-site training for their sales in order to know both the technical aspect and selling techniques of our products. Occasionally, we also offer free training program to end users.</p>
                             <h3 class="text-darkGray">Logistics</h3>
                             <p class="text-gray">RTB can deliver its products to all areas in Thailand and neighboring countries. We have a large fleet of delivery team that provides next-day delivery within Bangkok and vicinity area. Our computerized inventory system also accurate tracks the delivery and arriving time at the destination.</p>
-                            <img src="">
-                        </div> -->
+                            <img src=""> -->
+                            {!!$vision['detail'.session::get('lang')]!!}
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="pills-mot" role="tabpanel" aria-labelledby="pills-mot-tab">
                         <div class="container container-small">
@@ -116,7 +116,7 @@
                                     <p>We design our product portfolio that lead to more productivity, mobility, freedom to work and enjoy life anywhere and any time. For example, our PMG Quadpad allow users to get connect from anywhere, even in a distant resort, in order to work, enjoy MP3 music, or chat over the Internet any time and any where. Our Jabra's bluetooth headsets enable people to talk on cell phones while driving more safely, communicate business messages, or listening to music wirelessly.</p>
                                     <p>While function is an important element of our products, form is where our products excel. We understand our customers that gadgets are not only tools that help them accomplish their tasks. Gadgets are also their fashion statement, an indication of who they are, what they are like, and how they perceive the world. Therefore, all our products have trendy and attractive designs. In fact, most of our products receive many design awards from international institutions.</p> -->
 
-                                    {{$meet_head['name'.session::get('lang')]}}
+                                    {{$meet_head['detail'.session::get('lang')]}}
                                 </div>
                                 <div class="col-sm-3">
                                     <img src="{{$meet_head->meet_head_img}}" class="w-100">
