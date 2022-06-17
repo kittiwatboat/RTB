@@ -84,6 +84,25 @@
             </div>
         </div>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAbout"
+            aria-expanded="true" aria-controls="collapseAbout">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>About Us</span>
+        </a>
+        <div id="collapseAbout" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Catagory</h6>
+                <a class="collapse-item" href="/backoffice/vision">Vision</a>
+                <a class="collapse-item" href="/backoffice/meet_head">Meetteam Head</a>
+                <a class="collapse-item" href="/backoffice/meet_body">Meetteam</a>
+                <a class="collapse-item" href="/backoffice/partner">Partner</a>
+            </div>
+        </div>
+    </li>
+
+
     {{-- @endif --}}
     {{-- <div class="sidebar-heading">
        Report
