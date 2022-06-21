@@ -230,7 +230,7 @@
                                 <div class="figure">
                                     <img src="images/Product/listOrder5.png" class="w-100 img-main" srcset="images/Product/listOrder5.png">
                                     <img src="images/Product/listOrder6.png" class="w-100 image-hover" srcset="images/Product/listOrder6.png">
-                                    <a class="btn rounded-pill" href="products-detail.php">View Products</a>
+                                    <a class="btn rounded-pill" href="{{session::get('lang')}}/products-detail/">View Products</a>
                                     <div class="text-center my-3 px-3">
                                         <h6>Jabra Elite3</h6>
                                         <p class="text-gray fs-14">Jabra True wireless Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>

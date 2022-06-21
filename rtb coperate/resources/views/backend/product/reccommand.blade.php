@@ -23,30 +23,28 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
-                                <div class="card-header"><strong>Subcatagory</strong></div>
-                                <form class="form-horizontal" action="/backoffice/subcatagory/subcatagoryeditsub" method="POST" enctype="multipart/form-data">
+                                <div class="card-header"><strong>Reccommand</strong></div>
+                                <form class="form-horizontal" action="/backoffice/reccommand/submit" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
-                                        
-                                        <input type="hidden" name="scat_id" value="{{ $cat->scat_id }}">
-                                        <input type="hidden" name="cat_id" value="{{ $cat->cat_id }}">
+                                        <input type="hidden" name="scat_id" value="{{ $sub->scat_id }}">
+                                       
 
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Name TH <div style="font-size: 12px;"></div></label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="subnameth" class="form-control" value="{{ $cat->subnameth }}">
+                                                Product <div style="font-size: 12px;"></div></label>
+                                            <div class="col-md-3">
+                                                <select name="pt_id" class="form-control">
+                                                   @foreach ($pro as $item)
+                                                 
+                                                   <option value="{{ $item->pt_id }}">{{ $item->typenameth }}</option>
+                                                   
+                                                   @endforeach
+                                                </select>
                                             </div>
                                         </div>
-                                       
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Name EN <div style="font-size: 12px;"></div></label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="subnameen" class="form-control" value="{{ $cat->subnameen }}">
-                                            </div>
-                                        </div>
-                                       
+
+                                      
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
@@ -54,6 +52,37 @@
 
                                         </div>
                                 </form>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card col-10 mx-auto">
+                                <div class="card-header"><strong>Reccommand</strong></div>
+                                
+                                     <div class="card-body">
+                                        <table class="table table-responsive-sm text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>ชื่อสินค้า</th>
+                                                <th>manage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($rec as $item)
+                                            <tr>
+                                                <td>{{ $item->typenameth }}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" onclick="batbal('{{$item->rec_id}}')">ลบ</button>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+
+                                        </tbody>
+                                       </table>
+
+                                      
+                                    </div>
+                                       
                             </div>
                             
                         </div>
@@ -80,23 +109,20 @@
     <script src="javascript/jquery.min.js"></script>
     <script src="javascript/sweetalert2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="tinymce/tinymce.min.js"></script>
 
-    <script>
-        if ($('textarea.tiny').length > 0) {
-            tinymce.init({
-                selector: 'textarea.tiny',
-                menubar: false,
-                force_br_newlines: true,
-                force_p_newlines: false,
-                forced_root_block: '',
-                height: 300,
-                //width : 1100,
-                plugins: ["advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker","searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking","save table contextmenu directionality emoticons template paste textcolor colorpicker layer textpattern moxiemanager"],    
-                toolbar: ' table | styleselect fontsizeselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
-            });
+    <script> 
+    function batbal(rec_id){
+        
+        Swal.fire({
+        title:"ลบข้อมูล",text:"คุณต้องการลบข้อมูลใช่หรือไม่?",icon:"warning",showCancelButton:true,confirmButtonColor:"#DD6B55",showLoaderOnConfirm: true,
+        preConfirm: () => {
+            return fetch('/backoffice/reccommand/delete/'+rec_id)
+            .then(response => response.json())
+            .then(data => location.reload())
+            .catch(error => { Swal.showValidationMessage(`Request failed: ${error}`)})
         }
-
+    });
+    }
     </script>
 </body>
 @if (session('select'))

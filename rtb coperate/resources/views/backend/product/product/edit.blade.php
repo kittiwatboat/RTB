@@ -67,8 +67,9 @@
                                                 <input type="text" name="pro_nameen" class="form-control" value="{{ $pro->pro_nameen }}">
                                             </div>
                                         </div>
+<button id="more1" type="button" class="btn btn-sm btn-primary" onclick="$('.details1').slideToggle(function(){$('#more1').html($('.details1').is(':visible')?'ปิด':'Flagship');});">Flagship</button>
 
-                                        <div class="form-group row">
+                                        <div class="form-group row details1" style="display:none">
                                             <label class="col-md-3 col-form-label" >
                                                 Detail TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
@@ -85,7 +86,7 @@
                                                 });
                                             </script>
                                        
-                                        <div class="form-group row">
+                                        <div class="form-group row details1" style="display:none">
                                             <label class="col-md-3 col-form-label" >
                                                 Detail EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">

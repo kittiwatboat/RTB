@@ -29,7 +29,7 @@
                                         @csrf
                                         
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                            <label class="col-md-3 col-form-label" >
                                                 Type <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-3">
                                                 <select name="pt_id" class="form-control">
@@ -47,7 +47,7 @@
                                         </div>
 
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                            <label class="col-md-3 col-form-label" >
                                                 Name TH <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
                                                 <input type="text" name="pro_nameth" class="form-control">
@@ -55,15 +55,16 @@
                                         </div>
                                        
                                         <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                            <label class="col-md-3 col-form-label" >
                                                 Name EN <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
                                                 <input type="text" name="pro_nameen" class="form-control">
                                             </div>
                                         </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+<button id="more1" type="button" class="btn btn-sm btn-primary" onclick="$('.details1').slideToggle(function(){$('#more1').html($('.details1').is(':visible')?'ปิด':'Flagship');});">Flagship</button>
+                                        
+                                        <div class="form-group row details1" style="display:none">
+                                            <label class="col-md-3 col-form-label" >
                                                 Detail TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
                                                     <textarea name="descriptionth" id="summernote"></textarea>
@@ -79,8 +80,8 @@
                                                 });
                                             </script>
                                        
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                        <div class="form-group row details1" style="display:none">
+                                            <label class="col-md-3 col-form-label" >
                                                 Detail EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
                                                     <textarea name="descriptionen" id="summernote1"></textarea>
@@ -96,7 +97,7 @@
                                             </script>
 
                                             <div class="form-group row">
-                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                <label class="col-md-3 col-form-label" >
                                                     ราคา<div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-2">
                                                     <input type="text" name="price" class="form-control">
