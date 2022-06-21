@@ -47,8 +47,8 @@ class InnovationController extends Controller
         $inno->in_nameen=$request->in_nameen;
         $inno->in_detailth=$request->in_detailth;
         $inno->in_detailen=$request->in_detailen;
-        $inno->in_dexcriptionth=$request->in_dexcriptionth;
-        $inno->in_dexcriptionen=$request->in_dexcriptionen;
+        $inno->in_descriptionth=$request->in_descriptionth;
+        $inno->in_descriptionen=$request->in_descriptionen;
         $filename = 'in_img_' . date('dmY-His');
         $file = $request->in_img;
         if($file){ 
@@ -79,8 +79,8 @@ class InnovationController extends Controller
         $inno->in_nameen=$request->in_nameen;
         $inno->in_detailth=$request->in_detailth;
         $inno->in_detailen=$request->in_detailen;
-        $inno->in_dexcriptionth=$request->in_dexcriptionth;
-        $inno->in_dexcriptionen=$request->in_dexcriptionen;
+        $inno->in_descriptionth=$request->in_descriptionth;
+        $inno->in_descriptionen=$request->in_descriptionen;
         $filename = 'in_img_' . date('dmY-His');
         $file = $request->in_img;
         if($file){ 
