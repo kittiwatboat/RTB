@@ -211,3 +211,10 @@ Route::post('/backoffice/meet_body/addsub','MeetbodyController@addsub');
 Route::get('/backoffice/meet_body/edit/{id}','MeetbodyController@edit');
 Route::post('/backoffice/meet_body/editsub','MeetbodyController@editsub');
 Route::get('/backoffice/meet_body/delete/{id}','MeetbodyController@delete');
+
+Route::get('/backoffice/work','WorkController@work');
+Route::get('/backoffice/work/add','WorkController@add');
+Route::post('/backoffice/work/addsub','WorkController@addsub');
+Route::get('/backoffice/work/edit/{id}','WorkController@edit');
+Route::post('/backoffice/work/editsub','WorkController@editsub');
+Route::get('/backoffice/work/delete/{id}','WorkController@delete');

@@ -101,6 +101,20 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWork"
+            aria-expanded="true" aria-controls="collapseWork">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Work with us</span>
+        </a>
+        <div id="collapseWork" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">work</h6>
+                <a class="collapse-item" href="/backoffice/work">Work</a>
+
+            </div>
+        </div>
+    </li>
 
 
     {{-- @endif --}}
