@@ -175,7 +175,7 @@
                                         <div class="card-header">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-10 h6 fs-18">
-                                                    <span>{{$key}}.</span> {{$works['name'.session::get('lang')]}}
+                                                    <span>{{$key}}.</span> {{$works['job_name'.session::get('lang')]}}
                                                 </div>
                                                 <div class="col-lg-2 text-end">
                                                     <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
