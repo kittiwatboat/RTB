@@ -21,6 +21,7 @@ use App\meet_bodyModel;
 use App\visionModel;
 
 use App\workModel;
+use App\innovationModel;
 
 class HomeController extends Controller
 {   
@@ -174,14 +175,20 @@ class HomeController extends Controller
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
 
-        return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        $in=innovationModel::get();
+
+        return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('in',$in);
     }
-    public function innovationdetail(){
+    public function innovationDetail($id){
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
 
-        return view('fontend.innovationDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        $in=innovationModel::where('in_id',$id)->first();
+
+        return view('fontend.innovationDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('in',$in);
     }
     public function contact(){
         $cata=catagoryModel::get();

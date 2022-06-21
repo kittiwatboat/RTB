@@ -54,7 +54,7 @@ Route::get('/solution-meetingroom-Video Conferencing-Personcal Conference','Home
 Route::get('/news','HomeController@news');
 Route::get('/newsDetails','HomeController@newsdetail');
 Route::get('/innovation','HomeController@innovation');
-Route::get('/InnovationDetail','HomeController@innovationdetail');
+Route::get('/InnovationDetail/{id}','HomeController@innovationDetail');
 
 Route::get('/solutionStep2/{id}','HomeController@solutionStep2');
 Route::get('/solutionStep3/{id}','HomeController@solutionStep3');
