@@ -26,15 +26,16 @@
     <div class="container" id="news">
         <div class="row mt-5">
             <div class="col-sm-9">
+
+            @foreach($news as $key=>$newss)
                 <div class="mt-lg-5 mt-3 px-2 px-lg-0">
                     <div class="row border">
                         <div class="col-sm-5 px-0">
-                            <img src="images/Product/news1.png" class="w-100 h-100">
+                            <img src="{{$newss->news_img}}" class="w-100 h-100">
                         </div>
                         <div class="col-sm-7">
                             <div class="card-news-text px-lg-3 px-0 py-3 mx-lg-2 mx-0">
-                                <h5>Jabra Elite 2 and Jabra Elite 3 rock the market
-                                    with a new design. with state-of...</h5>
+                                <h5>{{$newss['name'.session::get('lang')]}}</h5>
                                 <div>
                                     <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> 08 September, 2021</span>
                                     <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i> News & Promotion</span>
@@ -43,36 +44,16 @@
                                     quality music continuously. delivering innovative head
                                     phones Jabra Elite 2 and Jabra Elite....</p>
                                 <div class="mt-4">
-                                    <a class="btn fw-medium" href="{{session::get('lang')}}/newsDetails"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
+                                    <a class="btn fw-medium" href="{{session::get('lang')}}/newsDetail/{{$newss->news_id}}"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-lg-5 mt-3 px-2 px-lg-0">
-                    <div class="row border">
-                        <div class="col-sm-5 px-0">
-                            <img src="images/Product/news1.png" class="w-100 h-100">
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="card-news-text px-lg-3 px-0 py-3 mx-lg-2 mx-0">
-                                <h5>Jabra Elite 2 and Jabra Elite 3 rock the market
-                                    with a new design. with state-of...</h5>
-                                <div>
-                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> 08 September, 2021</span>
-                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i> News & Promotion</span>
-                                </div>
-                                <p class="text-news text-gray my-3">RTB continues to open up a now experience of listening to
-                                    quality music continuously. delivering innovative head
-                                    phones Jabra Elite 2 and Jabra Elite....</p>
-                                <div class="mt-4">
-                                    <a class="btn fw-medium" href="newsDetail.php"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-lg-5 mt-3 px-2 px-lg-0">
+                @endforeach
+
+
+                <!-- <div class="mt-lg-5 mt-3 px-2 px-lg-0">
                     <div class="row border">
                         <div class="col-sm-5 px-0">
                             <img src="images/Product/news1.png" class="w-100 h-100">
@@ -94,63 +75,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-lg-5 mt-3 px-2 px-lg-0">
-                    <div class="row border">
-                        <div class="col-sm-5 px-0">
-                            <img src="images/Product/news1.png" class="w-100 h-100">
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="card-news-text px-lg-3 px-0 py-3 mx-lg-2 mx-0">
-                                <h5>Jabra Elite 2 and Jabra Elite 3 rock the market
-                                    with a new design. with state-of...</h5>
-                                <div>
-                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> 08 September, 2021</span>
-                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i> News & Promotion</span>
-                                </div>
-                                <p class="text-news text-gray my-3">RTB continues to open up a now experience of listening to
-                                    quality music continuously. delivering innovative head
-                                    phones Jabra Elite 2 and Jabra Elite....</p>
-                                <div class="mt-4">
-                                    <a class="btn fw-medium" href="newsDetail.php"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-lg-5 mt-3 px-2 px-lg-0">
-                    <div class="row border">
-                        <div class="col-sm-5 px-0">
-                            <img src="images/Product/news1.png" class="w-100 h-100">
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="card-news-text px-lg-3 px-0 py-3 mx-lg-2 mx-0">
-                                <h5>Jabra Elite 2 and Jabra Elite 3 rock the market
-                                    with a new design. with state-of...</h5>
-                                <div>
-                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> 08 September, 2021</span>
-                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i> News & Promotion</span>
-                                </div>
-                                <p class="text-news text-gray my-3">RTB continues to open up a now experience of listening to
-                                    quality music continuously. delivering innovative head
-                                    phones Jabra Elite 2 and Jabra Elite....</p>
-                                <div class="mt-4">
-                                    <a class="btn fw-medium" href="newsDetail.php"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
                 
 
                 <ul class="pagination justify-content-start mt-5">
-                    <li class="page-item"><a class="page-link" href="javascript:void(0);">
+                    <!-- <li class="page-item"><a class="page-link" href="javascript:void(0);">
                     <i class="fas fa-chevron-left"></i> </a>
                     </li>
                     <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
                     <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
                     <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a></li> -->
+                    {{$news->appends(Request::all())->links()}}
                 </ul>
 
             </div>

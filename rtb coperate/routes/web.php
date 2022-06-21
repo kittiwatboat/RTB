@@ -52,7 +52,7 @@ Route::get('/solution-meetingroom','HomeController@solution_meeting');
 Route::get('/solution-meetingroom-Video Conferencing','HomeController@solution_videoconference');
 Route::get('/solution-meetingroom-Video Conferencing-Personcal Conference','HomeController@solution_personcal');
 Route::get('/news','HomeController@news');
-Route::get('/newsDetails','HomeController@newsdetail');
+Route::get('/newsDetail/{id}','HomeController@newsDetail');
 Route::get('/innovation','HomeController@innovation');
 Route::get('/InnovationDetail/{id}','HomeController@innovationDetail');
 

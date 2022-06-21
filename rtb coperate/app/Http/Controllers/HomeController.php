@@ -22,6 +22,8 @@ use App\visionModel;
 
 use App\workModel;
 use App\innovationModel;
+use App\newsModel;
+
 
 class HomeController extends Controller
 {   
@@ -161,21 +163,27 @@ class HomeController extends Controller
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
 
-        return view('fontend.news')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        $news=newsModel::paginate(5);
+
+        return view('fontend.news')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('news',$news);
     }
-    public function newsdetail(){
+    public function newsDetail($id){
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
 
-        return view('fontend.newsDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        $news=newsModel::where('news_id',$id)->first();
+
+        return view('fontend.newsDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('news',$news);
     }
     public function innovation(){
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
         $protype=producttypeModel::get();
 
-        $in=innovationModel::get();
+        $in=innovationModel::paginate(3);
 
         return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
         ->with('in',$in);
@@ -187,7 +195,7 @@ class HomeController extends Controller
 
         $in=innovationModel::where('in_id',$id)->first();
 
-        return view('fontend.innovationDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        return view('fontend.InnovationDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
         ->with('in',$in);
     }
     public function contact(){

@@ -17,7 +17,7 @@
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="news.php">News & Articles</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Jabra Elite 2 and Jabra Elite 3...</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{$news['name'.session::get('lang')]}}</li>
                         </ol>
                     </nav>
                 </div>
@@ -28,7 +28,8 @@
         <div class="row">
             <div class="col-sm-9 mt-lg-5 mt-3">
                 <div class="px-lg-3 px-1 py-lg-3 py-1">
-                    <p>RTB ontinues to open up a new experience of listening to quality music continuously. deliveve headphones Jabra Elite 2 and Jabra Elite 3 shaking the market</p>
+                {!!$news['detail'.session::get('lang')]!!}
+                    <!-- <p>RTB ontinues to open up a new experience of listening to quality music continuously. deliveve headphones Jabra Elite 2 and Jabra Elite 3 shaking the market</p>
                     <br>
                     <p>Stand out with a new design. with state-of-the-art audio technology to increase the freedom to listen to music anytime, anywhere without limitations</p>
                     <br>
@@ -46,7 +47,7 @@
                     <img src="images/News/newsDetail4.png" class="w-100 my-lg-5 my-3">
                     <p>For lovers of quality music You can buy and experience clear music from the most innovative headphones from "Jabra" (Jabra) models <span class="fw-medium">Jabra Elite 2</span> and <span class="fw-medium">Jabra Elite 3</span> are available today at</p>
                     <br>
-                    <p>Studio7, iStudio by copperwired, iStudio by SPVi, Jaymart, Dotlife, Banana IT, Munkonggadget, Mercular, Powermall, Powerbuy or you can follow more details via Facebook. <span class="fw-medium">Jabra (TH)</span></p>
+                    <p>Studio7, iStudio by copperwired, iStudio by SPVi, Jaymart, Dotlife, Banana IT, Munkonggadget, Mercular, Powermall, Powerbuy or you can follow more details via Facebook. <span class="fw-medium">Jabra (TH)</span></p> -->
                 </div>
             </div>
             <div class="col-sm-3 mt-lg-5 mt-3 px-lg-4 px-2">

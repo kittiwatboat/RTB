@@ -18,8 +18,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Innovation</li>
                         </ol>
                     </nav>
-                    <h1 class="mt-4">Hybrid Work: A Guid for business leaders<br>
-                        Navigating the complexities of hybrid work together</h1>
+                    <h1 class="mt-4">{{$in['in_name'.session::get('lang')]}}</h1>
                     <p><i class="fas fa-calendar-alt"></i> 08 September, 2021</p>
                 </div>
             </div>
@@ -28,7 +27,7 @@
     </div>
     <div class="container">
         <div class="mt-lg-5 mt-3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet est placerat in egestas erat imperdiet sed euismod nisi. Pharetra massa massa ultricies mi. Tristique senectus et netus et malesuada. Egestas integer eget aliquet nibh praesent tristique magna sit. Porta lorem mollis aliquam ut porttitor. Nulla pharetra diam sit amet. Facilisis mauris sit amet massa vitae tortor condimentum. Tincidunt id aliquet risus feugiat in ante metus dictum. Habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat. Ultricies tristique nulla aliquet enim tortor at auctor urna.</p>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet est placerat in egestas erat imperdiet sed euismod nisi. Pharetra massa massa ultricies mi. Tristique senectus et netus et malesuada. Egestas integer eget aliquet nibh praesent tristique magna sit. Porta lorem mollis aliquam ut porttitor. Nulla pharetra diam sit amet. Facilisis mauris sit amet massa vitae tortor condimentum. Tincidunt id aliquet risus feugiat in ante metus dictum. Habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat. Ultricies tristique nulla aliquet enim tortor at auctor urna.</p>
             <p>Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Donec pretium vulputate sapien nec sagittis. Pulvinar neque laoreet suspendisse interdum consectetur. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Sed id semper risus in hendrerit. Leo urna molestie at elementum eu facilisis sed odio morbi. Nunc faucibus a pellentesque sit. In egestas erat imperdiet sed euismod nisi. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Massa tempor nec feugiat nisl.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean et tortor at risus viverra adipiscing at in. Id diam vel quam elementum pulvinar etiam non. Aliquet nibh praesent tristique magna sit. Consectetur adipiscing elit ut aliquam purus. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Ac felis donec et odio pellentesque. Augue mauris augue neque gravida in fermentum. Sed id semper risus in hendrerit gravida rutrum. Vestibulum morbi blandit cursus risus. Purus faucibus ornare suspendisse sed nisi lacus sed. Vestibulum lectus mauris ultrices eros in. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Volutpat consequat mauris nunc congue nisi vitae suscipit. Porta non pulvinar neque laoreet. Quisque id diam vel quam. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Nibh tellus molestie nunc non blandit massa enim nec dui.</p>
             <div class="videoProducts my-lg-5 my-3">
@@ -42,8 +41,10 @@
                 <li>Nulla sit amet erat et erat congue euismod.</li>
                 <li>Nunc posuere quam at massa pulvinar, sed suscipit risus faucibus.</li>
                 <li>Proin eu nisi efficitur, venenatis nisi a, dapibus nulla.</li>
-            </ul>
+            </ul> -->
+            {!!$in['in_detail'.session::get('lang')]!!}
         </div>
+
         <div class="bottomFoot"></div>
         <div class="mb-5" id="news">
             <h5>Latest Post</h5>
@@ -74,6 +75,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     @include('fontend.inc_footer')
     <script>

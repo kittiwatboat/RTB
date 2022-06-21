@@ -90,13 +90,14 @@
 
                 </div>
                 <ul class="pagination justify-content-start">
-                    <li class="page-item"><a class="page-link" href="javascript:void(0);">
+                    <!-- <li class="page-item"><a class="page-link" href="javascript:void(0);">
                             <i class="fas fa-chevron-left"></i> </a>
                     </li>
                     <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
                     <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
                     <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);"><i class="fas fa-chevron-right"></i></a></li> -->
+                    {{$in->appends(Request::all())->links()}}
                 </ul>
             </div>
 
