@@ -29,6 +29,21 @@ use App\buttonModel;
 use App\new_imageModel;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use App\iconbanModel;
+use App\solutiontypeModel;
+use App\solution2Model;
+use App\solution3Model;
+use App\solution4Model;
+use App\solution5Model;
+use App\catagoryModel;
+use App\subcatagoryModel;
+use App\producttypeModel;
+
+use App\partnerModel;
+use App\meet_headModel;
+use App\meet_bodyModel;
+use App\visionModel;
+
 class HomeController extends Controller
 {
    public function index(){
@@ -192,29 +207,15 @@ public function proshopsale(){
         $kyclv=kyclayoutvideoModel::paginate();
         $brcdown=brcdownloadModel::find(1);
 
-    return view('fontend.kyc_layout',["loo"=>$loo])->with('brcdown',$brcdown)->with('brcd',$brcd)->with('kycl',$kycl)->with('kycl',$kycl)->with('kycli',$kycli)->with('kyclv',$kyclv);
-    } 
-    public function kyclayoutid($id){
-        $brcd=brcdownloadModel::find(1);
-        $kycl=kyclayoutModel::find($id);
-        $loo=brclayoutModel::get();
-        $kycli=kyclayoutimageModel::paginate();
-        $kyclv=kyclayoutvideoModel::paginate();
-        $brcdown=brcdownloadModel::find(1);
 
-    return view('fontend.kyc_layout',["loo"=>$loo])->with('brcdown',$brcdown)->with('id',$id)->with('brcd',$brcd)->with('kycl',$kycl)->with('kycl',$kycl)->with('kycli',$kycli)->with('kyclv',$kyclv);
-    } 
-    // public function kyclayout2($id){
-    //     $brcd=brcdownloadModel::find(1);
-    //     $kycl=kyclayoutModel::find($id);
-    //     $loo=brclayoutModel::get();
-    //     $kycli=kyclayoutimageModel::paginate();
-    //     $kyclv=kyclayoutvideoModel::paginate();
-    // return view('fontend.kyc_layout',["loo"=>$loo])->with('brcd',$brcd)->with('kycl',$kycl)->with('kycl',$kycl)->with('kycli',$kycli)->with('kyclv',$kyclv);
-    // } 
-    public function kycfacilities(){
-        $faci1=brcfacilitiesModel::where('course_type','Khaoyai')->get();
-        return view('fontend.kyc_facilities')->with('faci1',$faci1); 
+
+        $vision=visionModel::first();
+        $partner=partnerModel::first();
+        $meet_head=meet_headModel::first();
+        $meet_body=meet_bodyModel::get();
+
+        return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body);
     }
     public function kycaccommodations(){
         $faci1=brcfacilitiesModel::where('course_type','accommodations')->get();

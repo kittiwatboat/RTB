@@ -178,3 +178,36 @@ Route::get('/backoffice/solution5/edit/{id}','Solution5Controller@edit');
 Route::post('/backoffice/solution5/editsub','Solution5Controller@editsub');
 Route::get('/backoffice/solution5/delete/{id}','Solution5Controller@delete');
 
+
+
+
+
+// About
+// Partner
+Route::get('/backoffice/partner','PartnerController@partner');
+Route::get('/backoffice/partner/add','PartnerController@add');
+Route::post('/backoffice/partner/addsub','PartnerController@addsub');
+Route::get('/backoffice/partner/edit/{id}','PartnerController@edit');
+Route::post('/backoffice/partner/editsub','PartnerController@editsub');
+Route::get('/backoffice/partner/delete/{id}','PartnerController@delete');
+// vision
+Route::get('/backoffice/vision','VisionController@vision');
+Route::get('/backoffice/vision/add','VisionController@add');
+Route::post('/backoffice/vision/addsub','VisionController@addsub');
+Route::get('/backoffice/vision/edit/{id}','VisionController@edit');
+Route::post('/backoffice/vision/editsub','VisionController@editsub');
+Route::get('/backoffice/vision/delete/{id}','VisionController@delete');
+// meet_head
+Route::get('/backoffice/meet_head','MeetheadController@meet_head');
+Route::get('/backoffice/meet_head/add','MeetheadController@add');
+Route::post('/backoffice/meet_head/addsub','MeetheadController@addsub');
+Route::get('/backoffice/meet_head/edit/{id}','MeetheadController@edit');
+Route::post('/backoffice/meet_head/editsub','MeetheadController@editsub');
+Route::get('/backoffice/meet_head/delete/{id}','MeetheadController@delete');
+// meet_body
+Route::get('/backoffice/meet_body','MeetbodyController@meet_body');
+Route::get('/backoffice/meet_body/add','MeetbodyController@add');
+Route::post('/backoffice/meet_body/addsub','MeetbodyController@addsub');
+Route::get('/backoffice/meet_body/edit/{id}','MeetbodyController@edit');
+Route::post('/backoffice/meet_body/editsub','MeetbodyController@editsub');
+Route::get('/backoffice/meet_body/delete/{id}','MeetbodyController@delete');
