@@ -178,7 +178,7 @@
                                                     <span>{{$key}}.</span> {{$works['job_name'.session::get('lang')]}}
                                                 </div>
                                                 <div class="col-lg-2 text-end">
-                                                    <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                                    <a href="{{session::get('lang')}}/applyForm_step1}}" class="btn btn-green rounded-pill px-4">Apply here</a>
                                                 </div>
                                             </div>
                                         </div>
