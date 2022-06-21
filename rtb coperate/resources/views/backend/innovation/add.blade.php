@@ -78,6 +78,40 @@
                                              
                                                 });
                                             </script>
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                    Description TH <div style="font-size: 12px;"></div></label>
+                                                    <div class="col-md-9">
+                                                        <textarea name="in_descriptionth" id="summernote2"></textarea>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#summernote2').summernote({
+                                                     
+                                                      tabsize: 2,
+                                                      height: 200,
+                                                      toolbar: []
+                                                        
+                                                      
+                                                    });
+                                                </script>
+                                           
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                    Description EN <div style="font-size: 12px;"></div></label>
+                                                    <div class="col-md-9">
+                                                        <textarea name="in_descriptionen" id="summernote3"></textarea>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#summernote3').summernote({
+                                                     
+                                                      tabsize: 2,
+                                                      height: 200,
+                                                      toolbar: []
+                                                 
+                                                    });
+                                                </script>
 
                                          <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
