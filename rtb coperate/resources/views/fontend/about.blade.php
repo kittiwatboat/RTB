@@ -210,7 +210,7 @@
                                                         <li>Able to work overtime</li>
                                                         <li>Able to attend the exhibition booth</li>
                                                         <li>At least 2 years working experience</li> -->
-                                                        {!!$works['applicantth'.session::get('lang')]!!}
+                                                        {!!$works['applicant'.session::get('lang')]!!}
                                                     </ul>
                                                 </div>
                                             </div>
