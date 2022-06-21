@@ -20,6 +20,8 @@ use App\meet_headModel;
 use App\meet_bodyModel;
 use App\visionModel;
 
+use App\WorkModel;
+
 class HomeController extends Controller
 {   
     public function index(){
