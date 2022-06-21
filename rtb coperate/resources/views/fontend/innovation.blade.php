@@ -35,7 +35,7 @@
                             <div class="card-news-text px-lg-3 px-1 py-3 mx-2">
                                 <span class="text-green fw-medium">Technology inside digital workplace</span>
                                 <h5>{{$ins['in_name'.session::get('lang')]}}</h5>
-                                <p class="text-news text-gray my-3">{{$ins['in_description'.session::get('lang')]}}</p>
+                                <p class="text-news text-gray my-3">{!! $ins['in_description'.session::get('lang')] !!}</p>
                                 <div>
                                     <a class="btn fw-medium" href="{{session::get('lang')}}/InnovationDetail/{{$ins->in_id}}"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
                                 </div>
