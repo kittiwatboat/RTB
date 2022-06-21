@@ -20,7 +20,7 @@ use App\meet_headModel;
 use App\meet_bodyModel;
 use App\visionModel;
 
-use App\WorkModel;
+use App\workModel;
 
 class HomeController extends Controller
 {   
@@ -45,7 +45,7 @@ class HomeController extends Controller
         $meet_head=meet_headModel::first();
         $meet_body=meet_bodyModel::get();
 
-        $work=WorkModel::get();
+        $work=workModel::get();
 
         return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
         ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body)
