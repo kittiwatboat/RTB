@@ -576,7 +576,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 text-center py-4">
-                                        <a href="applyForm_step3.php" type="button" class="btn btn-outline-secondary rounded-pill px-4 mb-2 mb-lg-0">ย้อนกลับ / Previous</a>
+                                        <a {{session::get('lang')}}/applyForm_step3 type="button" class="btn btn-outline-secondary rounded-pill px-4 mb-2 mb-lg-0">ย้อนกลับ / Previous</a>
                                         <button type="submit" class="btn btn-green rounded-pill px-4">ถัดไป / Next</button>
                                     </div>
                                 </div>

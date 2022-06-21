@@ -60,6 +60,13 @@ Route::get('/solutionStep2/{id}','HomeController@solutionStep2');
 Route::get('/solutionStep3/{id}','HomeController@solutionStep3');
 Route::get('/solutionStep4/{id}','HomeController@solutionStep4');
 
+Route::get('/applyForm_step1','HomeController@applyForm_step1');
+Route::get('/applyForm_step2','HomeController@applyForm_step2');
+Route::get('/applyForm_step3','HomeController@applyForm_step3');
+Route::get('/applyForm_step4','HomeController@applyForm_step4');
+Route::get('/applyForm_step5','HomeController@applyForm_step5');
+Route::get('/applyForm_step6','HomeController@applyForm_step6');
+
 Route::get('/contact','HomeController@contact');
 
 Route::get('/product/{id}','HomeController@product');

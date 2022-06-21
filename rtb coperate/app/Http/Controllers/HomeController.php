@@ -191,4 +191,48 @@ class HomeController extends Controller
         return view('fontend.contact')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
     }
     
+
+
+    public function applyForm_step1(){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        return view('fontend.applyForm_step1')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+    }
+    public function applyForm_step2(){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        return view('fontend.applyForm_step2')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+    }
+    public function applyForm_step3(){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        return view('fontend.applyForm_step3')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+    }
+    public function applyForm_step4(){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        return view('fontend.applyForm_step4')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+    }
+    public function applyForm_step5(){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        return view('fontend.applyForm_step5')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+    }
+    public function applyForm_step6(){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        return view('fontend.applyForm_step6')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+    }
 }
