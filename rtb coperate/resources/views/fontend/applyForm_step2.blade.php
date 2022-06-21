@@ -27,7 +27,7 @@
         <div class="container container-small py-xl-5 py-4">
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="applyForm_step3.php">
+                    <form action="applyForm_step3">
                         <div class="card p-3 border-0 rounded-0">
                             <h6 class="text-green">ร่วมงานกับเรา</h6>
                             <h3 class="text-darkGray">แบบฟอร์มสมัครงาน RTB Technology จำกัด</h3>
