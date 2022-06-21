@@ -42,6 +42,7 @@
                                                     <td>{{ $item->subnameth }}</td>
                                                     <td>{{ $item->nameth }}</td>
                                                     <td>
+                                                        <a href="/backoffice/reccommand/{{ $item->scat_id }}" class="btn btn-warning">สินค้าแนะนำ</a>
                                                         <a href="/backoffice/subcatagory/subcatagoryedit/{{ $item->scat_id }}" class="btn btn-warning">แก้ไข</a>
                                                         <button type="button" class="btn btn-danger" onclick="batbal('{{$item->scat_id}}')">ลบ</button>
     
