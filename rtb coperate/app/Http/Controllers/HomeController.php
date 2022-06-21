@@ -43,8 +43,11 @@ class HomeController extends Controller
         $meet_head=meet_headModel::first();
         $meet_body=meet_bodyModel::get();
 
+        $work=WorkModel::get();
+
         return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body);
+        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body)
+        ->with('work',$work);
     }
     public function product($id){
         $cata=catagoryModel::get();
