@@ -32,7 +32,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Image</th>
+                                                <!-- <th>Image</th> -->
                                                 <th>manage</th>
                                             </tr>
                                         </thead>
@@ -40,7 +40,7 @@
                                             @foreach ($solution4 as $item)
                                                 <tr>
                                                     <td>{{ $item->nameth }}</td>
-                                                    <td><img src="{{ $item->solution4_img }}" width="20%" alt=""></td>
+                                                    <!-- <td><img src="{{ $item->solution4_img }}" width="20%" alt=""></td> -->
                                                     <td>
                                                         <a href="/backoffice/solution4/edit/{{ $item->solution4_id }}" class="btn btn-warning">แก้ไข</a>
                                                         <button 2="button" class="btn btn-danger" onclick="batbal('{{$item->solution4_id}}')">ลบ</button>
