@@ -45,7 +45,7 @@
                                 <span>1.</span> ตำแหน่ง : พนักงานบัญชีเจ้าหนี้ ( ตั้งค่าและตัดรับชำระออนไลน์) จำนวน 1 อัตรา
                             </div>
                             <div class="col-lg-2 text-end">
-                                <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                <a {{session::get('lang')}}/applyForm_step1 class="btn btn-green rounded-pill px-4">Apply here</a>
                             </div>
                         </div>   
                       </div>
@@ -88,7 +88,7 @@
                                 <span>2.</span> ตำแหน่ง : พนักงานบัญชีเจ้าหนี้ ( ตั้งค่าและตัดรับชำระออนไลน์) จำนวน 1 อัตรา
                             </div>
                             <div class="col-lg-2 text-end">
-                                <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                <a {{session::get('lang')}}/applyForm_step1 class="btn btn-green rounded-pill px-4">Apply here</a>
                             </div>
                         </div>   
                       </div>
@@ -131,7 +131,7 @@
                                 <span>3.</span> ตำแหน่ง : พนักงานบัญชีเจ้าหนี้ ( ตั้งค่าและตัดรับชำระออนไลน์) จำนวน 1 อัตรา
                             </div>
                             <div class="col-lg-2 text-end">
-                                <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                <a {{session::get('lang')}}/applyForm_step1 class="btn btn-green rounded-pill px-4">Apply here</a>
                             </div>
                         </div>   
                       </div>
@@ -174,7 +174,7 @@
                                 <span>4.</span> ตำแหน่ง : พนักงานบัญชีเจ้าหนี้ ( ตั้งค่าและตัดรับชำระออนไลน์) จำนวน 1 อัตรา
                             </div>
                             <div class="col-lg-2 text-end">
-                                <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                <a {{session::get('lang')}}/applyForm_step1 class="btn btn-green rounded-pill px-4">Apply here</a>
                             </div>
                         </div>   
                       </div>
@@ -217,7 +217,7 @@
                                 <span>5.</span> ตำแหน่ง : พนักงานบัญชีเจ้าหนี้ ( ตั้งค่าและตัดรับชำระออนไลน์) จำนวน 1 อัตรา
                             </div>
                             <div class="col-lg-2 text-end">
-                                <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                <a {{session::get('lang')}}/applyForm_step1 class="btn btn-green rounded-pill px-4">Apply here</a>
                             </div>
                         </div>   
                       </div>

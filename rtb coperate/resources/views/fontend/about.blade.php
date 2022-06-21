@@ -167,14 +167,18 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 mb-lg-5 mb-3">
+
+
+                                @foreach($work as $key=>$works)
+                                <?php $key=$key+1;  ?>
                                     <div class="card mb-3">
                                         <div class="card-header">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-10 h6 fs-18">
-                                                    <span>1.</span> Accounts Payable Clerk (set up and cut off online payments) - 1 position
+                                                    <span>{{$key}}.</span> {{$works['job_name'.session::get('lang')]}}
                                                 </div>
                                                 <div class="col-lg-2 text-end">
-                                                    <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                                    <a href="{{session::get('lang')}}/applyForm_step1" class="btn btn-green rounded-pill px-4">Apply here</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,7 +187,8 @@
                                                 <div class="col-sm-6">
                                                     <h5 class="card-title fs-18">Job description</h5>
                                                     <ul class="dash">
-                                                        <li>Set up in the ERP system (Bplus program)</li>
+                                                    {!!$works['description'.session::get('lang')]!!}
+                                                        <!-- <li>Set up in the ERP system (Bplus program)</li>
                                                         <li>Cut off payments in the ERP system (online side)</li>
                                                         <li>Save setting expenses in the system, save interest expenses O/D, T/R.</li>
                                                         <li>Bank balances, bank deposits, outstanding account balances about continuous</li>
@@ -191,74 +196,36 @@
                                                         <li>Prepare withholding tax report</li>
                                                         <li>Prepare purchase-sales tax report</li>
                                                         <li>Coordinate with manufacturers</li>
-                                                        <li>Assigned tasks</li>
+                                                        <li>Assigned tasks</li> -->
                                                     </ul>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <h5 class="card-title fs-18">Applicant qualifications</h5>
                                                     <ul class="dash">
-                                                        <li>Male or Female aged 25 - 30 years</li>
+                                                        <!-- <li>Male or Female aged 25 - 30 years</li>
                                                         <li>Bachelor's degree in Accounting</li>
                                                         <li>Attention to detail and punctuality</li>
                                                         <li>Able to use computer programs Microsoft Office</li>
                                                         <li>Good human relations and service mind</li>
                                                         <li>Able to work overtime</li>
                                                         <li>Able to attend the exhibition booth</li>
-                                                        <li>At least 2 years working experience</li>
+                                                        <li>At least 2 years working experience</li> -->
+                                                        {!!$works['applicant'.session::get('lang')]!!}
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card mb-3">
-                                        <div class="card-header">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-10 h6 fs-18">
-                                                    <span>2.</span> Accounts Payable Clerk (cut off payments and make money) - 1 position
-                                                </div>
-                                                <div class="col-lg-2 text-end">
-                                                    <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <h5 class="card-title fs-18">Job description</h5>
-                                                    <ul class="dash">
-                                                        <li>Cut off payments and make money in the K Connect Plus system</li>
-                                                        <li>Record sub-expenses and calculate sub-loop</li>
-                                                        <li>Bank balances, bank deposits, outstanding account balances about continuous</li>
-                                                        <li>Prepare withholding tax report</li>
-                                                        <li>Prepare purchase-sales tax report</li>
-                                                        <li>Coordinate with manufacturers</li>
-                                                        <li>Assigned tasks</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <h5 class="card-title fs-18">Applicant qualifications</h5>
-                                                    <ul class="dash">
-                                                        <li>Male or female aged 22 years and over</li>
-                                                        <li>Bachelor's degree in Accounting</li>
-                                                        <li>Attention to detail and punctuality</li>
-                                                        <li>Able to use computer programs Microsoft Office</li>
-                                                        <li>Good human relations and service mind</li>
-                                                        <li>Able to work overtime</li>
-                                                        <li>Able to attend the exhibition booth</li>
-                                                        <li>Welcome new graduates</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card mb-3">
+                                    @endforeach
+
+                                    <!-- <div class="card mb-3">
                                         <div class="card-header">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-10 h6 fs-18">
                                                     <span>3.</span> Sales Support - 1 position
                                                 </div>
                                                 <div class="col-lg-2 text-end">
-                                                    <a href="applyForm_step1.php" class="btn btn-green rounded-pill px-4">Apply here</a>
+                                                    <a {{session::get('lang')}}/applyForm_step1 class="btn btn-green rounded-pill px-4">Apply here</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -288,7 +255,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
+
+
+
                                 </div>
                             </div>
                         </div>
