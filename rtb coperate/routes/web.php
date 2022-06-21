@@ -81,10 +81,14 @@ Route::get('/backoffice/banner/add','BannerController@add');
 Route::post('/backoffice/banner/addsub','BannerController@addsub');
 Route::get('/backoffice/banner/delete/{id}','BannerController@delete');
 
+Route::get('/backoffice/banner/edit/{id}','BannerController@edit');
+
 Route::get('/backoffice/iconban','IconbanController@index');
 Route::get('/backoffice/iconban/add','IconbanController@add');
 Route::post('/backoffice/iconban/addsub','IconbanController@addsub');
 Route::get('/backoffice/iconban/delete/{id}','IconbanController@delete');
+
+Route::get('/backoffice/iconban/edit/{id}','IconbanController@edit');
 
 Route::get('/backoffice/catagory','CatagoryController@catagory');
 Route::get('/backoffice/catagory/add','CatagoryController@catagoryadd');
