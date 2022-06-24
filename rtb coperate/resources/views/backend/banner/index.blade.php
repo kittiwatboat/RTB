@@ -50,8 +50,11 @@
                                     @foreach ($ban as $ba)
                                     <div class="col-sm-3">
                                     <div class="card">
+                                        <button class="close btn-close btn-close-white" onclick="batbal('{{$ba->ban_id}}')" style="position: absolute;z-index: 1;right: 0; " aria-label="Close">
+                                            <span style="color: red;">&times;</span>
+                                         </button>
                                         <img src="{{ $ba->img }}" alt="">
-                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button>
+                                        {{-- <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button> --}}
                                     </div>
                                     </div>
                                     @endforeach
