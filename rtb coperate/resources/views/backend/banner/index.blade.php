@@ -47,21 +47,31 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-body">
-                                    <div class="row">
-                                    @foreach ($ban as $ba)
+                                    <table class="table table-responsive-sm text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>ลำดับ</th>
+                                                <th>ภาพ</th>
+                                                <th>วันที่อัพโหลด</th>
+                                                <th>manage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($ban as $key=> $ba)
+                                            <tr>
+                                                <td>{{ $key+1 }}</td>
+                                                <td><img src="{{ $ba->img }}" width="200" alt=""></td>
+                                                <td>{{ $ba->created->format('d M Y') }}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button>
+                                                </td>
+                                            </tr>
+                                            @endforeach
 
-                                    <div class="col-sm-4">
-                                    <div class="card ">
-                                        <button class="close btn-close btn-close-white" onclick="batbal('{{$ba->ban_id}}')" style="position: absolute;z-index: 1;right: 0; " aria-label="Close">
-                                            <span style="color: red;">&times;</span>
-                                         </button>
-                                        <img src="{{ $ba->img }}" alt="">
-                                        {{-- <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button> --}}
-                                    </div>
-                                    </div>
+                                        </tbody>
+                                        {{ $ban->links() }}
+                                    </table>
 
-                                    @endforeach
-                                </div>
                                 </div>
                             </div>
                         </div>
