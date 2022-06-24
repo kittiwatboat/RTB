@@ -13,44 +13,49 @@
         @include('backend.head')
     </head>
     <body id="page-top">
-    
+
         <div id="wrapper">
             @include('backend.menu')
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     @include('backend.topbar')
                     <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card col-10 mx-auto">
+                                    <div class="card-header"><strong>Banner</strong></div>
+                                    {{-- <form class="form-horizontal" action="/backoffice/banner/addsub" method="POST" enctype="multipart/form-data"> --}}
+                                         <div class="card-body">
+                                            {{-- @csrf --}}
+
+                                            <form method="post" action="{{ route('dropzone.store') }}" enctype="multipart/form-data"
+                                              class="dropzone" id="dropzone">
+                                            @csrf
+                                            <h2>Upload Image Here</h2><br/>
+                                            </form>
+
+                                        </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
-                                <div class="card-header">จัดการ <strong>Banner </strong> </div>
                                 <div class="card-body">
-                                    <div class="text-right">
-                                        <a href="/backoffice/banner/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
+                                    @foreach ($ban as $ba)
+                                    <div class="col-sm-3">
+                                    <div class="card">
+                                        <img src="{{ $ba->img }}" alt="">
+                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button>
                                     </div>
-                                    <table class="table table-responsive-sm text-center">
-                                        <thead>
-                                            <tr>
-                                                <th>Image</th>
-                                                <th>manage</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($ban as $ba)
-                                            <tr>
-                                                <td><img src="{{ $ba->img }}" width="200" alt=""></td>
-                                                <td>
-                                                    <a href="/backoffice/banner/edit/{{ $ba->ban_id }}" class="btn btn-warning">แก้ไข</a>
-                                                    <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button>
+                                    </div>
+                                    @endforeach
 
-                                                </td>
-                                            </tr> 
-                                            @endforeach
-      
-                                        </tbody>
-                                        {{ $ban->links() }}
-                                    </table>
-                           
                                 </div>
                             </div>
                         </div>
@@ -71,9 +76,9 @@
     <script src="js/main.js"></script>
     <script src="javascript/sweetalert2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script> 
+    <script>
     function batbal(ban_id){
-        
+
         Swal.fire({
         title:"ลบข้อมูล",text:"คุณต้องการลบข้อมูลใช่หรือไม่?",icon:"warning",showCancelButton:true,confirmButtonColor:"#DD6B55",showLoaderOnConfirm: true,
         preConfirm: () => {

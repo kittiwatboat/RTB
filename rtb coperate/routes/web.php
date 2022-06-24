@@ -78,8 +78,9 @@ Route::get('/backoffice','AdminController@index');
 
 Route::get('/backoffice/banner','BannerController@index');
 Route::get('/backoffice/banner/add','BannerController@add');
-Route::post('/backoffice/banner/addsub','BannerController@addsub');
+Route::post('/backoffice/banner/addsub','BannerController@dropzone')->name('dropzone.store');
 Route::get('/backoffice/banner/delete/{id}','BannerController@delete');
+
 
 Route::get('/backoffice/iconban','IconbanController@index');
 Route::get('/backoffice/iconban/add','IconbanController@add');

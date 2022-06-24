@@ -45,12 +45,12 @@ class BannerController extends Controller
         $ban=new bannerModel();
         $filename = 'img_' . date('dmY-His');
         $file = $request->img;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 // if($arti->img != null){
                 //     Storage::disk('public')->delete($arti->img);
-                // }                
+                // }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -75,5 +75,16 @@ class BannerController extends Controller
         }else{
             return response()->json(false);
         }
+    }
+    public function dropzone(Request $request){
+        $img=$request->file('file');
+        $imgname='upload/banner/'.$img->getClientOriginalName();
+        $img->move(public_path('upload/banner/'),$imgname);
+
+        $imageUpload = new bannerModel();
+        $imageUpload->img = $imgname;
+        $imageUpload->save();
+        return response()->json(['success'=>$img]);
+
     }
 }

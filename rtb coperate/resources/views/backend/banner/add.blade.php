@@ -13,7 +13,7 @@
         @include('backend.head')
     </head>
     <body id="page-top">
-    
+
         <div id="wrapper">
             @include('backend.menu')
             <div id="content-wrapper" class="d-flex flex-column">
@@ -24,40 +24,33 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Banner</strong></div>
-                                <form class="form-horizontal" action="/backoffice/banner/addsub" method="POST" enctype="multipart/form-data">
+                                {{-- <form class="form-horizontal" action="/backoffice/banner/addsub" method="POST" enctype="multipart/form-data"> --}}
                                      <div class="card-body">
+                                        {{-- @csrf --}}
+                                        <h2>Laravel 6 multiple image upload using dropzone  - nicesnippets.com</h2><br/>
+                                        <form method="post" action="{{ route('dropzone.store') }}" enctype="multipart/form-data"
+                                          class="dropzone" id="dropzone">
                                         @csrf
-                                        
-                                
+                                        </form>
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Image <div style="font-size: 12px;"></div></label>
-                                            <div class="col-md-9">
-                                                <input id="file-multiple-input" type="file" name="img"
-                                                    multiple="">
-                                            </div>
-                                        </div>
-                                       
-                                       
                                     </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
+                                            {{-- <button class="btn btn-sm btn-primary" type="submit">บันทึก</button> --}}
                                             <a href="/backoffice/banner" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
-                                </form>
+
                             </div>
-                            
+
                         </div>
-                    
+
                     </div>
                 </div>
                 </div>
-        
-       
-                            
-        
+
+
+
+
         @include('backend.footer')
     </div>
         </div>
@@ -85,7 +78,7 @@
                 forced_root_block: '',
                 height: 300,
                 //width : 1100,
-                plugins: ["advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker","searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking","save table contextmenu directionality emoticons template paste textcolor colorpicker layer textpattern moxiemanager"],    
+                plugins: ["advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker","searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking","save table contextmenu directionality emoticons template paste textcolor colorpicker layer textpattern moxiemanager"],
                 toolbar: ' table | styleselect fontsizeselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
             });
         }
@@ -94,7 +87,7 @@
 </body>
 @if (session('select'))
 <script>
- 
+
  Swal.fire({
   icon: 'error',
   title: 'Oops...',
@@ -105,7 +98,7 @@
 @endif
 @if (session('mobile'))
 <script>
- 
+
  Swal.fire({
   icon: 'error',
   title: 'Oops...',
@@ -116,7 +109,7 @@
 @endif
 @if (session('mobile2'))
 <script>
- 
+
  Swal.fire({
   icon: 'error',
   title: 'Oops...',
@@ -127,13 +120,33 @@
 @endif
 @if (session('size'))
 <script>
- 
+
  Swal.fire({
   icon: 'error',
   title: 'Oops...',
   text: 'วิดีโอเกินขนาดที่กำหนด',
 //   footer: '<a href="">Why do I have this issue?</a>'
 })
+</script>
+<script type="text/javascript">
+    Dropzone.options.dropzone =
+    {
+        maxFilesize: 10,
+        renameFile: function (file) {
+            var dt = new Date();
+            var time = dt.getTime();
+            return time + file.name;
+        },
+        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+        addRemoveLinks: true,
+        timeout: 60000,
+        success: function (file, response) {
+            console.log(response);
+        },
+        error: function (file, response) {
+            return false;
+        }
+    };
 </script>
 @endif
 </html>
