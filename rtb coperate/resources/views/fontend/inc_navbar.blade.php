@@ -64,7 +64,7 @@
 
                               @if ($item->scat_id == $pt->scat_id)
 
-                              <li><a href="#"></a></li>
+                              <li><a href="#">{{ $pt['typename'.session::get('lang')] }}</a></li>
                                   
                               @else
                                   
