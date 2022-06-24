@@ -27,7 +27,7 @@
                                 {{-- <form class="form-horizontal" action="/backoffice/banner/addsub" method="POST" enctype="multipart/form-data"> --}}
                                      <div class="card-body">
                                         {{-- @csrf --}}
-                                        <h2>Laravel 6 multiple image upload using dropzone  - nicesnippets.com</h2><br/>
+                                        <h2>UPload Image Banner</h2><br/>
                                         <form method="post" action="{{ route('dropzone.store') }}" enctype="multipart/form-data"
                                           class="dropzone" id="dropzone">
                                         @csrf
@@ -36,7 +36,7 @@
                                     </div>
                                         <div class="card-footer">
                                             {{-- <button class="btn btn-sm btn-primary" type="submit">บันทึก</button> --}}
-                                            <a href="/backoffice/banner" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/banner" class="btn btn-sm btn-danger"><i class='fas fa-angle-double-left'></i></a>
 
                                         </div>
 

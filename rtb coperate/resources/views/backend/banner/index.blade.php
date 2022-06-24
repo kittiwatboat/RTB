@@ -19,34 +19,16 @@
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     @include('backend.topbar')
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card col-10 mx-auto">
-                                    <div class="card-header"><strong>Banner</strong></div>
-                                    {{-- <form class="form-horizontal" action="/backoffice/banner/addsub" method="POST" enctype="multipart/form-data"> --}}
-                                         <div class="card-body">
-                                            {{-- @csrf --}}
 
-                                            <form method="post" action="{{ route('dropzone.store') }}" enctype="multipart/form-data"
-                                              class="dropzone" id="dropzone">
-                                            @csrf
-                                            <h2>Upload Image Here</h2><br/>
-                                            </form>
-
-                                        </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
                     <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
+                                <div class="card-head"><strong>Banner</strong> </div>
                                 <div class="card-body">
+                                    <div class="text-right">
+                                        <a href="/backoffice/banner/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
+                                    </div>
                                     <table class="table table-responsive-sm text-center">
                                         <thead>
                                             <tr>
@@ -60,7 +42,7 @@
                                             @foreach ($ban as $key=> $ba)
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td><img src="{{ $ba->img }}" width="200" alt=""></td>
+                                                <td><img src="{{ $ba->img }}" width="200" height="100" alt=""></td>
                                                 <td>{{ $ba->created->format('d M Y') }}</td>
                                                 <td>
                                                     <button type="button" class="btn btn-danger" onclick="batbal('{{$ba->ban_id}}')">ลบ</button>
