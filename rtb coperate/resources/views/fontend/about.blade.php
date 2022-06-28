@@ -167,7 +167,9 @@
                             <h6 class="text-green">Partnership</h6>
                             <h3 class="text-darkGray">{{$partner['name'.session::get('lang')]}}</h3>
                             <p class="mt-3">{!!$partner['detail'.session::get('lang')]!!}</p>
-                            <img src="{{$partner->partner_img}}" class="w-100 my-5">
+                            @foreach($gal as $gals)
+                            <img src="{{$gals->partnergal_img}}" class="w-100 my-5">
+                            @endforeach
                             <div class="bottomFoot"></div>
                         </div>
                     </div>

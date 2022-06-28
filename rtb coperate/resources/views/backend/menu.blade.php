@@ -99,6 +99,7 @@
                 <a class="collapse-item" href="/backoffice/meet_head">Meetteam Head</a>
                 <a class="collapse-item" href="/backoffice/meet_body">Meetteam</a>
                 <a class="collapse-item" href="/backoffice/partner">Partner</a>
+                <a class="collapse-item" href="/backoffice/partnergal">Partner Picture</a>
             </div>
         </div>
     </li>

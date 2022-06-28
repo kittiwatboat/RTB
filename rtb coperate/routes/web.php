@@ -200,6 +200,13 @@ Route::post('/backoffice/partner/addsub','PartnerController@addsub');
 Route::get('/backoffice/partner/edit/{id}','PartnerController@edit');
 Route::post('/backoffice/partner/editsub','PartnerController@editsub');
 Route::get('/backoffice/partner/delete/{id}','PartnerController@delete');
+// Partner Gal
+Route::get('/backoffice/partnergal','PartnergalController@partnergal');
+Route::get('/backoffice/partnergal/add','PartnergalController@add');
+Route::post('/backoffice/partnergal/addsub','PartnergalController@addsub');
+Route::get('/backoffice/partnergal/edit/{id}','PartnergalController@edit');
+Route::post('/backoffice/partnergal/editsub','PartnergalController@editsub');
+Route::get('/backoffice/partnergal/delete/{id}','PartnergalController@delete');
 // vision
 Route::get('/backoffice/vision','VisionController@vision');
 Route::get('/backoffice/vision/add','VisionController@add');
