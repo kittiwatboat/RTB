@@ -105,7 +105,7 @@ class HomeController extends Controller
         if($solutiontype->step=='1'){
             $item=solution5Model::where('solution4_id',$id)->get();
         }else{
-            $item==null;
+            $item=null;
         }
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
@@ -136,7 +136,7 @@ class HomeController extends Controller
         if($solutiontype->step=='2'){
             $item=solution5Model::where('solution4_id',$id)->get();
         }else{
-            $item==null;
+            $item=null;
         }
 
         return view('fontend.solutionStep3',[
@@ -167,7 +167,7 @@ class HomeController extends Controller
         if($solutiontype->step=='3'){
             $item=solution5Model::where('solution4_id',$id)->get();
         }else{
-            $item==null;
+            $item=null;
         }
         
         return view('fontend.solutionStep4',[
