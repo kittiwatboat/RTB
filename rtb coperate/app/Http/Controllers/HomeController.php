@@ -101,10 +101,16 @@ class HomeController extends Controller
             $solutiontype->solutiontype_img=null;
         }
         $solution=solution2Model::where('solutiontype_id',$id)->get();
+
+        if($solutiontype->step=='1'){
+            $item=solution5Model::where('solution4_id',$id)->get();
+        }else{
+            $item==null;
+        }
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('item',$item);
     }
     public function solution_videoconference(){
         $cata=catagoryModel::get();
@@ -126,10 +132,17 @@ class HomeController extends Controller
             $solutiontype->solution2_img=null;
         }
         $solution=solution3Model::where('solution2_id',$id)->get();
+
+        if($solutiontype->step=='2'){
+            $item=solution5Model::where('solution4_id',$id)->get();
+        }else{
+            $item==null;
+        }
+
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('item',$item);
     }
     public function solution_personcal(){
         $cata=catagoryModel::get();
@@ -150,11 +163,17 @@ class HomeController extends Controller
         if($solutiontype==null){
             $solutiontype->solution3_img=null;
         }
-        $solution=solution4Model::where('solution3_id',$id)->get();
+        // $solution=solution4Model::where('solution3_id',$id)->get();
+        if($solutiontype->step=='3'){
+            $item=solution5Model::where('solution4_id',$id)->get();
+        }else{
+            $item==null;
+        }
+        
         return view('fontend.solutionStep4',[
-            'solution'=>$solution,
+            // 'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('item',$item);
     }
 
 
