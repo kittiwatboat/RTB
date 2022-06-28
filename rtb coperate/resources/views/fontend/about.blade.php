@@ -131,16 +131,27 @@
                             </div>
                             <div class="row mt-4">
 
-                            <?php $meet_body=DB::table('meet_body')->where('type',$meet_type->meet_type_id)->get();  ?>
+                            <?php $meet_body=DB::table('meet_body')->where('type',$type->meet_type_id)->get();  ?>
                             @foreach($meet_body as $uo)
+                            @if(session::get('lang')=='th')
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="card card-body border-0 text-center">
                                         <img src="{{$uo->meet_body_img}}" class="mb-3">
-                                        <h6>{{$uo['name'.session::get('lang')]}}</h6>
-                                        <p>{{$uo['des'.session::get('lang')]}}</p>
-                                        <p class="mb-0 text-green">{{$uo['detail'.session::get('lang')]}}</p>
+                                        <h6>{{$uo->nameth}}</h6>
+                                        <p>{{$uo->desth}}</p>
+                                        <p class="mb-0 text-green">{{$uo->detailth}}</p>
                                     </div>
                                 </div>
+                                @else
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="card card-body border-0 text-center">
+                                        <img src="{{$uo->meet_body_img}}" class="mb-3">
+                                        <h6>{{$uo->nameen}}</h6>
+                                        <p>{{$uo->desen}}</p>
+                                        <p class="mb-0 text-green">{{$uo->detailen}}</p>
+                                    </div>
+                                </div>
+                                @endif
                                 @endforeach
 
                             </div>
