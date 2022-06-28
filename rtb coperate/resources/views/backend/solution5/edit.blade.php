@@ -60,7 +60,7 @@
                                             @if($solution5->step=='1')
                                             <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solutiontype_id){echo 'selected';} } ?>
                                              value="{{$fors->solutiontype_id}}">{{$fors->nameth}}</option>
-                                             @elseif()
+                                             @elseif($solution5->step=='2')
                                              <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution2_id){echo 'selected';} } ?>
                                              value="{{$fors->solution2_id}}">{{$fors->nameth}}</option>
                                              @else
