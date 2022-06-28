@@ -35,8 +35,8 @@
                                            <label for="aaa">Type</label>
                                             <select name="type" id="solu" class="form-control">
                                             @foreach($for as $fors)
-                                            <option <?php if(isset($meet_body)){ if($meet_body->type == $fors->id){echo 'selected';} } ?>
-                                             value="{{$fors->id}}">{{$fors->nameen}}</option>
+                                            <option <?php if(isset($meet_body)){ if($meet_body->type == $fors->meet_type_id){echo 'selected';} } ?>
+                                             value="{{$fors->meet_type_id}}">{{$fors->nameen}}</option>
                                             @endforeach
                                                            
                                              </select>
