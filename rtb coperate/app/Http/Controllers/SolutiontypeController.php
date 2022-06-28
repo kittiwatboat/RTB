@@ -45,6 +45,7 @@ class SolutiontypeController extends Controller
     }
     public function addsub(Request $request){
         $solutiontype=new solutiontypeModel;
+
         $solutiontype->nameth=$request->nameth;
         $solutiontype->nameen=$request->nameen;
         $solutiontype->desth=$request->desth;
@@ -69,6 +70,9 @@ class SolutiontypeController extends Controller
             }
         }
         $solutiontype->save();
+
+        $solutiontype->id=$solutiontype->solutiontype_id;
+        $solutiontype->save();
         return redirect('/backoffice/solutiontype');
     }
     public function edit($id){
@@ -77,6 +81,7 @@ class SolutiontypeController extends Controller
     }
     public function editsub(Request $request){
         $solutiontype= solutiontypeModel::find($request->solutiontype_id);
+
         $solutiontype->nameth=$request->nameth;
         $solutiontype->nameen=$request->nameen;
         $solutiontype->desth=$request->desth;
