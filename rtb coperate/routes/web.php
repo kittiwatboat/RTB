@@ -221,6 +221,13 @@ Route::post('/backoffice/meet_body/addsub','MeetbodyController@addsub');
 Route::get('/backoffice/meet_body/edit/{id}','MeetbodyController@edit');
 Route::post('/backoffice/meet_body/editsub','MeetbodyController@editsub');
 Route::get('/backoffice/meet_body/delete/{id}','MeetbodyController@delete');
+// meet_type
+Route::get('/backoffice/meet_type','MeettypeController@meet_type');
+Route::get('/backoffice/meet_type/add','MeettypeController@add');
+Route::post('/backoffice/meet_type/addsub','MeettypeController@addsub');
+Route::get('/backoffice/meet_type/edit/{id}','MeettypeController@edit');
+Route::post('/backoffice/meet_type/editsub','MeettypeController@editsub');
+Route::get('/backoffice/meet_type/delete/{id}','MeettypeController@delete');
 
 Route::get('/backoffice/work','WorkController@work');
 Route::get('/backoffice/work/add','WorkController@add');

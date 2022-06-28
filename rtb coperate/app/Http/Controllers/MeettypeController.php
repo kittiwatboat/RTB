@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
-use App\meet_bodyModel;
+use App\meet_typeModel;
 
-class MeetbodyController extends Controller
+class MeettypeController extends Controller
 {
     //
     public function imageSize($find = null)
@@ -36,85 +36,85 @@ class MeetbodyController extends Controller
             }
         }
     }
-    public function meet_body(){
-        $meet_body=meet_bodyModel::paginate(10);
-        return view('backend.meet_body.index')->with('meet_body',$meet_body);
+    public function meet_type(){
+        $meet_type=meet_typeModel::paginate(10);
+        return view('backend.meet_type.index')->with('meet_type',$meet_type);
     }
     public function add(){
-        return view('backend.meet_body.add');
+        return view('backend.meet_type.add');
     }
     public function addsub(Request $request){
-        $meet_body=new meet_bodyModel;
+        $meet_type=new meet_typeModel;
 
-        $meet_body->type=$request->type;
+        $meet_type->type=$request->type;
 
-        $meet_body->nameth=$request->nameth;
-        $meet_body->nameen=$request->nameen;
-        $meet_body->desth=$request->desth;
-        $meet_body->desen=$request->desen;
-        $meet_body->detailth=$request->detailth;
-        $meet_body->detailen=$request->detailen;
-        $filename = 'meet_body_img_' . date('dmY-His');
-        $file = $request->meet_body_img;
+        $meet_type->nameth=$request->nameth;
+        $meet_type->nameen=$request->nameen;
+        $meet_type->desth=$request->desth;
+        $meet_type->desen=$request->desen;
+        $meet_type->detailth=$request->detailth;
+        $meet_type->detailen=$request->detailen;
+        $filename = 'meet_type_img_' . date('dmY-His');
+        $file = $request->meet_type_img;
         if($file){ 
             $ima = $file->getClientOriginalExtension();
             if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
-                // if($arti->meet_body_img != null){
-                //     Storage::disk('public')->delete($arti->meet_body_img);
+                // if($arti->meet_type_img != null){
+                //     Storage::disk('public')->delete($arti->meet_type_img);
                 // }                
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
             $lg->resize($size['cover']['lg']['x'], $size['cover']['lg']['y'])->stream();
-            $newLG = 'upload/meet_body/' . $filename . '.' . $ext;
+            $newLG = 'upload/meet_type/' . $filename . '.' . $ext;
             $store = Storage::disk('public')->put($newLG, $lg);
-            $meet_body->meet_body_img = $newLG;
+            $meet_type->meet_type_img = $newLG;
             }
         }
-        $meet_body->save();
-        return redirect('/backoffice/meet_body');
+        $meet_type->save();
+        return redirect('/backoffice/meet_type');
     }
     public function edit($id){
-        $meet_body=meet_bodyModel::find($id);
-        return view('backend.meet_body.edit')->with('meet_body', $meet_body);
+        $meet_type=meet_typeModel::find($id);
+        return view('backend.meet_type.edit')->with('meet_type', $meet_type);
     }
     public function editsub(Request $request){
-        $meet_body= meet_bodyModel::find($request->meet_body_id);
+        $meet_type= meet_typeModel::find($request->meet_type_id);
 
-        $meet_body->type=$request->type;
+        $meet_type->type=$request->type;
         
-        $meet_body->nameth=$request->nameth;
-        $meet_body->nameen=$request->nameen;
-        $meet_body->desth=$request->desth;
-        $meet_body->desen=$request->desen;
-        $meet_body->detailth=$request->detailth;
-        $meet_body->detailen=$request->detailen;
-        $filename = 'meet_body_img_' . date('dmY-His');
-        $file = $request->meet_body_img;
+        $meet_type->nameth=$request->nameth;
+        $meet_type->nameen=$request->nameen;
+        $meet_type->desth=$request->desth;
+        $meet_type->desen=$request->desen;
+        $meet_type->detailth=$request->detailth;
+        $meet_type->detailen=$request->detailen;
+        $filename = 'meet_type_img_' . date('dmY-His');
+        $file = $request->meet_type_img;
         if($file){ 
             $ima = $file->getClientOriginalExtension();
             if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
-                if($meet_body->meet_body_img != null){
-                    Storage::disk('public')->delete($meet_body->meet_body_img);
+                if($meet_type->meet_type_img != null){
+                    Storage::disk('public')->delete($meet_type->meet_type_img);
                 }                
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
             $lg->resize($size['cover']['lg']['x'], $size['cover']['lg']['y'])->stream();
-            $newLG = 'upload/meet_body/' . $filename . '.' . $ext;
+            $newLG = 'upload/meet_type/' . $filename . '.' . $ext;
             $store = Storage::disk('public')->put($newLG, $lg);
-            $meet_body->meet_body_img = $newLG;
+            $meet_type->meet_type_img = $newLG;
             }
         }
-        $meet_body->save();
+        $meet_type->save();
         return redirect()->back();
     }
     public function delete($id){
-        $meet_body=meet_bodyModel::find($id);
-        if($meet_body->meet_body_img != null){
-            Storage::disk('public')->delete($meet_body->meet_body_img);
+        $meet_type=meet_typeModel::find($id);
+        if($meet_type->meet_type_img != null){
+            Storage::disk('public')->delete($meet_type->meet_type_img);
         }
-        $a=meet_bodyModel::destroy($meet_body->meet_body_id);
+        $a=meet_typeModel::destroy($meet_type->meet_type_id);
         if($a){
             return response()->json(true);
         }else{

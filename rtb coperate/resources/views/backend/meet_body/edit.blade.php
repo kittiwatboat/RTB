@@ -24,18 +24,33 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Catagory</strong></div>
-                                <form class="form-horizontal" action="backoffice/meet_body/editsub" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="backoffice/meet_type/editsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
                                         
-                                        <input type="hidden" name="meet_body_id" value="{{ $meet_body->meet_body_id }}">
+                                        <input type="hidden" name="meet_type_id" value="{{ $meet_type->meet_type_id }}">
+
+
+
+                                        <?php $for=DB::table('meet_type')->get(); 
+                                          ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Type</label>
+                                            <select name="type" id="solu" class="form-control">
+                                            @foreach($for as $fors)
+                                            <option <?php if(isset($meet_type)){ if($meet_type->id == $fors->type){echo 'selected';} } ?>
+                                             value="{{$fors->id}}">{{$fors->nameen}}</option>
+                                            @endforeach
+                                                           
+                                             </select>
+                                             </div> 
 
                                        
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Name TH </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nameth" class="form-control" value="{{ $meet_body->nameth }}">
+                                                <input type="text" name="nameth" class="form-control" value="{{ $meet_type->nameth }}">
                                             </div>
                                         </div>
                                        
@@ -43,7 +58,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Name EN </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nameen" class="form-control" value="{{ $meet_body->nameen}}">
+                                                <input type="text" name="nameen" class="form-control" value="{{ $meet_type->nameen}}">
                                             </div>
                                         </div>
 
@@ -51,7 +66,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Description TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desth" id="" style="height:100px">{{ $meet_body->desth }}</textarea>
+                                                    <textarea name="desth" id="" style="height:100px">{{ $meet_type->desth }}</textarea>
                                                 </div>
                                             </div>
 
@@ -59,7 +74,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                             Description EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="desen" id="" style="height:100px">{{ $meet_body->desen }}</textarea>
+                                                    <textarea name="desen" id="" style="height:100px">{{ $meet_type->desen }}</textarea>
                                                 </div>
                                             </div>
 
@@ -67,7 +82,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail TH <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailth" id="" style="height:100px">{{ $meet_body->detailth }}</textarea>
+                                                    <textarea name="detailth" id="" style="height:100px">{{ $meet_type->detailth }}</textarea>
                                                 </div>
                                             </div>
 
@@ -75,7 +90,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                             Detail EN <div style="font-size: 12px;"></div></label>
                                                 <div class="col-md-9">
-                                                    <textarea name="detailen" id="" style="height:100px">{{ $meet_body->detailen }}</textarea>
+                                                    <textarea name="detailen" id="" style="height:100px">{{ $meet_type->detailen }}</textarea>
                                                 </div>
                                             </div>
 
@@ -87,8 +102,8 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <img src="{{ $meet_body->meet_body_img }}" width='50%' alt=""><br>
-                                                <input id="file-multiple-input" type="file" name="meet_body_img"
+                                                <img src="{{ $meet_type->meet_type_img }}" width='50%' alt=""><br>
+                                                <input id="file-multiple-input" type="file" name="meet_type_img"
                                                     multiple="">
                                             </div>
                                         </div>
@@ -96,7 +111,7 @@
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
-                                            <a href="/backoffice/meet_body" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/meet_type" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
                                 </form>

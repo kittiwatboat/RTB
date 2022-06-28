@@ -95,6 +95,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Catagory</h6>
                 <a class="collapse-item" href="/backoffice/vision">Vision</a>
+                <a class="collapse-item" href="/backoffice/meet_type">Meetteam type</a>
                 <a class="collapse-item" href="/backoffice/meet_head">Meetteam Head</a>
                 <a class="collapse-item" href="/backoffice/meet_body">Meetteam</a>
                 <a class="collapse-item" href="/backoffice/partner">Partner</a>
