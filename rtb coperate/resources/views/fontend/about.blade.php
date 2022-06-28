@@ -122,13 +122,16 @@
                                     <img src="{{$meet_head->meet_head_img}}" class="w-100">
                                 </div>
                             </div>
+
+                            @foreach($meet_type as $type)
                             <div class="row">
                                 <div class="col-sm-12 text-center mt-5">
-                                    <h3 class="text-darkGray">OUR EXECUTIVES</h3>
+                                    <h3 class="text-darkGray">{{$type['name'.session::get('lang')]}}</h3>
                                 </div>
                             </div>
                             <div class="row mt-4">
 
+                            <?php $meet_body=DB::table('meet_body')->where('type',$meet_type->meet_type_id)->get();  ?>
                             @foreach($meet_body as $uo)
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="card card-body border-0 text-center">
@@ -141,6 +144,10 @@
                                 @endforeach
 
                             </div>
+                            <br><br>
+                            @endforeach
+
+
                             <div class="bottomFoot"></div>
                         </div>
                     </div>

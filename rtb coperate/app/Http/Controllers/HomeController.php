@@ -18,6 +18,7 @@ use App\producttypeModel;
 use App\partnerModel;
 use App\meet_headModel;
 use App\meet_bodyModel;
+use App\meet_typeModel;
 use App\visionModel;
 
 use App\workModel;
@@ -46,13 +47,14 @@ class HomeController extends Controller
         $vision=visionModel::first();
         $partner=partnerModel::first();
         $meet_head=meet_headModel::first();
-        $meet_body=meet_bodyModel::get();
+        // $meet_body=meet_bodyModel::get();
+        $meet_type=meet_typeModel::get();
 
         $work=workModel::get();
 
         return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body)
-        ->with('work',$work);
+        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)
+        ->with('work',$work)->with('meet_type',$meet_type);
     }
     public function product($id){
         $cata=catagoryModel::get();
