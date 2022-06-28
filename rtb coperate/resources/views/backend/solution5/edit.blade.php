@@ -289,7 +289,6 @@ $("#step").on("change", function() {
         },
         success: function(data) {
             var op = '';
-            alert('ads');
             $.each(data.div, function(div, item) {
                 amphureObject.append(
                     $('<option></option>').val(item.id).html(item.nameen)

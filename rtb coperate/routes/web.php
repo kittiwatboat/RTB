@@ -186,7 +186,7 @@ Route::get('/backoffice/solution5/edit/{id}','Solution5Controller@edit');
 Route::post('/backoffice/solution5/editsub','Solution5Controller@editsub');
 Route::get('/backoffice/solution5/delete/{id}','Solution5Controller@delete');
 
-Route::get('/get_solution','Solution5Controller@get_solution');
+Route::post('/get_solution','Solution5Controller@get_solution');
 
 
 
