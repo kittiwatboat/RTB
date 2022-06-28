@@ -79,7 +79,7 @@
                 <a class="collapse-item" href="/backoffice/solutiontype">Solution Step 1</a>
                 <a class="collapse-item" href="/backoffice/solution2">Solution Step 2</a>
                 <a class="collapse-item" href="/backoffice/solution3">Solution Step 3</a>
-                <a class="collapse-item" href="/backoffice/solution4">Solution Step 4</a>
+                <!-- <a class="collapse-item" href="/backoffice/solution4">Solution Step 4</a> -->
                 <a class="collapse-item" href="/backoffice/solution5">Solution Step Product</a>
             </div>
         </div>
