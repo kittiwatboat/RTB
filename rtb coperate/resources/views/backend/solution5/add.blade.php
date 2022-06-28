@@ -39,8 +39,8 @@
                                              value="2">2</option>
                                              <option <?php if(isset($solution5)){ if($solution5->step == '3'){echo 'selected';} } ?>
                                              value="3">3</option>
-                                             <option <?php if(isset($solution5)){ if($solution5->step == '4'){echo 'selected';} } ?>
-                                             value="4">4</option>
+                                             <!-- <option <?php if(isset($solution5)){ if($solution5->step == '4'){echo 'selected';} } ?>
+                                             value="4">4</option> -->
                                                            
                                              </select>
                                              </div> 
