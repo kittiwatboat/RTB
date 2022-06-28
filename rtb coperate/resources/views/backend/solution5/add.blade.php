@@ -33,12 +33,14 @@
                                            <label for="aaa">Step ที่เลือกจะเชื่อม</label>
                                             <select name="step" id="step" class="form-control">
 
-                                            <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                            <option <?php if(isset($solution5)){ if($solution5->step == '1'){echo 'selected';} } ?>
                                              value="1">1</option>
-                                             <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '2'){echo 'selected';} } ?>
                                              value="2">2</option>
-                                             <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '3'){echo 'selected';} } ?>
                                              value="3">3</option>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '4'){echo 'selected';} } ?>
+                                             value="4">4</option>
                                                            
                                              </select>
                                              </div> 

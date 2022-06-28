@@ -151,8 +151,10 @@ class Solution5Controller extends Controller
             $div=solutiontypeModel::get();
          }elseif($step=='2'){
             $div=solution2Model::get();
-         }else{
+         }elseif($step=='3'){
             $div=solution3Model::get();
+         }else{
+            $div=solution4Model::get();
          }
 
         return response()->json(['div'=>$div,]);

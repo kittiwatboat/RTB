@@ -35,12 +35,14 @@
                                            <label for="aaa">Step ที่เลือกจะเชื่อม</label>
                                             <select name="step" id="step" class="form-control">
 
-                                            <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                            <option <?php if(isset($solution5)){ if($solution5->step == '1'){echo 'selected';} } ?>
                                              value="1">1</option>
-                                             <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '2'){echo 'selected';} } ?>
                                              value="2">2</option>
-                                             <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '3'){echo 'selected';} } ?>
                                              value="3">3</option>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '4'){echo 'selected';} } ?>
+                                             value="4">4</option>
                                                            
                                              </select>
                                              </div> 
@@ -49,9 +51,10 @@
 
 
                                         <?php 
-                                        if(isset($solution5)){ if($solution5->step =='1'){  $for=DB::table('solutiontype')->get();  }  }
+                                        if($solution5->step =='1'){  $for=DB::table('solutiontype')->get();  }
                                         elseif($solution5->step =='2'){  $for=DB::table('solution2')->get();  }
-                                        else{   $for=DB::table('solution3')->get();    }
+                                        elseif($solution5->step =='3'){  $for=DB::table('solution3')->get();  }
+                                        else{   $for=DB::table('solution4')->get();    }
                                           ?>
                                          <div class="form-group col-md-4">
                                            <label for="aaa">Solution</label>
@@ -63,9 +66,12 @@
                                              @elseif($solution5->step=='2')
                                              <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution2_id){echo 'selected';} } ?>
                                              value="{{$fors->solution2_id}}">{{$fors->nameth}}</option>
-                                             @else
+                                             @elseif($solution5->step=='3')
                                              <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution3_id){echo 'selected';} } ?>
                                              value="{{$fors->solution3_id}}">{{$fors->nameth}}</option>
+                                             @else
+                                             <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution4_id){echo 'selected';} } ?>
+                                             value="{{$fors->solution4_id}}">{{$fors->nameth}}</option>
                                              @endif
                                             @endforeach
                                                            
@@ -283,7 +289,7 @@ $("#step").on("change", function() {
         },
         success: function(data) {
             var op = '';
-            
+            alert('ads');
             $.each(data.div, function(div, item) {
                 amphureObject.append(
                     $('<option></option>').val(item.id).html(item.nameen)
