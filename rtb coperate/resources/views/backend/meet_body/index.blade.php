@@ -26,7 +26,7 @@
                                 <div class="card-header">จัดการ <strong>About Meetteam </strong> </div>
                                 <div class="card-body">
                                     <div class="text-right">
-                                        <a href="/backoffice/meet_body/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
+                                        <a href="/backoffice/meet_type/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
                                     </div>
                                     <table class="table table-responsive-sm text-center">
                                         <thead>
@@ -37,19 +37,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($meet_body as $item)
+                                            @foreach ($meet_type as $item)
                                                 <tr>
                                                     <td>{{ $item->nameth }}</td>
-                                                    <td><img src="{{ $item->meet_body_img }}" width="20%" alt=""></td>
+                                                    <td><img src="{{ $item->meet_type_img }}" width="20%" alt=""></td>
                                                     <td>
-                                                        <a href="/backoffice/meet_body/edit/{{ $item->meet_body_id }}" class="btn btn-warning">แก้ไข</a>
-                                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$item->meet_body_id}}')">ลบ</button>
+                                                        <a href="/backoffice/meet_type/edit/{{ $item->meet_type_id }}" class="btn btn-warning">แก้ไข</a>
+                                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$item->meet_type_id}}')">ลบ</button>
     
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
-                                        {{ $meet_body->links() }}
+                                        {{ $meet_type->links() }}
                                     </table>
                            
                                 </div>
