@@ -24,9 +24,10 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Catagory</strong></div>
-                                <form class="form-horizontal" action="/backoffice/meet_type/addsub" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="/backoffice/meet_body/addsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
+
 
                                         <?php $for=DB::table('meet_type')->get(); 
                                           ?>
@@ -34,7 +35,7 @@
                                            <label for="aaa">Type</label>
                                             <select name="type" id="solu" class="form-control">
                                             @foreach($for as $fors)
-                                            <option <?php if(isset($meet_type)){ if($meet_type->id == $fors->type){echo 'selected';} } ?>
+                                            <option <?php if(isset($meet_body)){ if($meet_body->type == $fors->id){echo 'selected';} } ?>
                                              value="{{$fors->id}}">{{$fors->nameen}}</option>
                                             @endforeach
                                                            
@@ -95,14 +96,14 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <input id="file-multiple-input" type="file" name="meet_type_img"
+                                                <input id="file-multiple-input" type="file" name="meet_body_img"
                                                     multiple="">
                                             </div>
                                         </div>
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
-                                            <a href="/backoffice/meet_type" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/meet_body" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
                                 </form>
