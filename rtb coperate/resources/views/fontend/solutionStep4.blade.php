@@ -39,7 +39,7 @@
         </div>
     </div>
    
-    @if($itemp!=null)
+  
         <div class="bg-white">
         <div class="container container-small py-xl-5 py-4">
             <div>{!!$solutiontype['detail'.session::get('lang')]!!}
@@ -48,6 +48,7 @@
                 <p class="mt-lg-5 mt-3">Consectetur libero id faucibus nisl tincidunt eget nullam. Quam vulputate dignissim suspendisse in est ante. Quis commodo odio aenean sed adipiscing diam donec. Lectus magna fringilla urna porttitor rhoncus dolor purus non. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Habitant morbi tristique senectus et. Orci phasellus egestas tellus rutrum tellus. Amet nisl purus in mollis nunc sed. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Sapien faucibus et molestie ac. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.</p> -->
             </div>
 
+            @if($itemp!=null)
             @foreach($itemp as $itemps)
             <div class="bg-gray4 px-lg-4 px-2 py-lg-4 py-2 mt-lg-5 mt-3">
                 <h3>{{$itemps['name'.session::get('lang')]}}</h3>
@@ -113,12 +114,12 @@
                 <div class="text-center mt-4"><a class="btn btn-green rounded-pill px-4">Enquiry for more information</a></div>
             </div>
             @endforeach
+            @endif
 
 
         </div>
 
     </div>
-    @endif
 
     @include('fontend.inc_footer')
     <script>
