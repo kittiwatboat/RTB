@@ -8,6 +8,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 use App\solution5Model;
 
 use App\solution4Model;
+use App\solution3Model;
+use App\solution2Model;
+use App\solutiontypeModel;
 
 class Solution5Controller extends Controller
 {
@@ -48,14 +51,9 @@ class Solution5Controller extends Controller
     public function addsub(Request $request){
         $solution5=new solution5Model;
 
-          $solution5->solution4_id=$request->solution4_id;
+        $solution5->step=$request->step;
 
-        $solution4=solution4Model::find($request->solution4_id);
-        if($solution4!=null){
-            $solution5->solutiontype_id=$solution4->solutiontype_id;
-            $solution5->solution2_id=$solution4->solution2_id;
-            $solution5->solution3_id=$solution4->solution3_id;
-        }
+        $solution5->solution4_id=$request->solution_id;
         
 
         $solution5->catth=$request->catth;

@@ -244,4 +244,36 @@
 })
 </script>
 @endif
+
+
+<script>
+$(document).ready(function(){
+$("#step").on("change", function() { 
+    var selectValue = $(this).val();
+    // alert(selectValue);
+
+    var amphureObject = $('#solu');
+    amphureObject.html('<option value="0">เลือก Solution</option>');
+
+    $.ajax({  
+        type: 'POST',
+        url: '{{url('/get_solution')}}',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            selectValue: selectValue,
+        },
+        success: function(data) {
+            var op = '';
+            $.each(data.div, function(div, item) {
+                amphureObject.append(
+                    $('<option></option>').val(item.id).html(item.nameen)
+                );
+            });
+        }
+    });
+});
+});
+</script>
+
+
 </html>
