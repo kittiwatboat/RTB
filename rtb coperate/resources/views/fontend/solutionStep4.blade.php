@@ -39,7 +39,7 @@
         </div>
     </div>
    
-    @if($item!=null)
+    @if($itemp!=null)
         <div class="bg-white">
         <div class="container container-small py-xl-5 py-4">
             <div>{!!$solutiontype['detail'.session::get('lang')]!!}

@@ -101,16 +101,12 @@ class HomeController extends Controller
             $solutiontype->solutiontype_img=null;
         }
         $solution=solution2Model::where('solutiontype_id',$id)->get();
+        $itemp=solution5Model::where('step','1')->where('solution4_id',$id)->get();
 
-        if($solutiontype->step=='1'){
-            $item=solution5Model::where('solution4_id',$id)->get();
-        }else{
-            $item=null;
-        }
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('item',$item);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('itemp',$itemp);
     }
     public function solution_videoconference(){
         $cata=catagoryModel::get();
@@ -132,17 +128,12 @@ class HomeController extends Controller
             $solutiontype->solution2_img=null;
         }
         $solution=solution3Model::where('solution2_id',$id)->get();
-
-        if($solutiontype->step=='2'){
-            $item=solution5Model::where('solution4_id',$id)->get();
-        }else{
-            $item=null;
-        }
+        $itemp=solution5Model::where('step','2')->where('solution4_id',$id)->get();
 
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('item',$item);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('itemp',$itemp);
     }
     public function solution_personcal(){
         $cata=catagoryModel::get();
@@ -164,16 +155,12 @@ class HomeController extends Controller
             $solutiontype->solution3_img=null;
         }
         // $solution=solution4Model::where('solution3_id',$id)->get();
-        if($solutiontype->step=='3'){
-            $item=solution5Model::where('solution4_id',$id)->get();
-        }else{
-            $item=null;
-        }
-        
+            $itemp=solution5Model::where('step','3')->where('solution4_id',$id)->get();
+
         return view('fontend.solutionStep4',[
             // 'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('item',$item);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('itemp',$itemp);
     }
 
 

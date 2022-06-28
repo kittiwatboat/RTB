@@ -106,14 +106,9 @@
 
     </div>
 
-    @if($item!=null)
+    @if($itemp!=null)
         <div class="bg-white">
         <div class="container container-small py-xl-5 py-4">
-            <div>{!!$solutiontype['detail'.session::get('lang')]!!}
-                <!-- <span class="fs-26"><span class="h3">About</span> Personal Conference</span>
-                <p class="mt-lg-4 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc non blandit massa enim nec dui nunc mattis enim. Eget gravida cum sociis natoque penatibus et magnis dis parturient. Vel facilisis volutpat est velit egestas dui id. Orci eu lobortis elementum nibh. Convallis posuere morbi leo urna molestie at elementum eu. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Habitasse platea dictumst vestibulum rhoncus est. Donec adipiscing tristique risus nec feugiat in fermentum posuere. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. Elementum curabitur vitae nunc sed velit dignissim sodales. Nulla malesuada pellentesque elit eget. Ipsum suspendisse ultrices gravida dictum fusce ut. Viverra orci sagittis eu volutpat odio facilisis mauris. Fermentum iaculis eu non diam phasellus vestibulum. Turpis egestas maecenas pharetra convallis posuere morbi leo. Mattis vulputate enim nulla aliquet porttitor lacus.</p>
-                <p class="mt-lg-5 mt-3">Consectetur libero id faucibus nisl tincidunt eget nullam. Quam vulputate dignissim suspendisse in est ante. Quis commodo odio aenean sed adipiscing diam donec. Lectus magna fringilla urna porttitor rhoncus dolor purus non. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Habitant morbi tristique senectus et. Orci phasellus egestas tellus rutrum tellus. Amet nisl purus in mollis nunc sed. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Sapien faucibus et molestie ac. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.</p> -->
-            </div>
 
             @foreach($itemp as $itemps)
             <div class="bg-gray4 px-lg-4 px-2 py-lg-4 py-2 mt-lg-5 mt-3">
@@ -187,7 +182,7 @@
     </div>
     @endif
 
-    
+
 
     @include('fontend.inc_footer')
     <script>
