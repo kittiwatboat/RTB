@@ -28,18 +28,32 @@
                                      <div class="card-body">
                                         @csrf
 
+                                       
+                                        <div class="form-group col-md-4">
+                                           <label for="aaa">Step ที่เลือกจะเชื่อม</label>
+                                            <select name="step" id="step" class="form-control">
 
-                                        <?php  $for=DB::table('solution4')->get();  ?>
-                                         <div class="form-group col-md-4">
-                                           <label for="aaa">Type</label>
-                                            <select name="solution4_id" id="aaa" class="form-control">
-                                            @foreach($for as $fors)
-                                            <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution4_id){echo 'selected';} } ?>
-                                             value="{{$fors->solution4_id}}">{{$fors->nameth}}</option>
-                                            @endforeach
+                                            <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             value="1">1</option>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             value="2">2</option>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == $fors->step){echo 'selected';} } ?>
+                                             value="3">3</option>
                                                            
                                              </select>
                                              </div> 
+                                             <br>
+
+
+
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Solution</label>
+                                            <select name="solution_id" id="solu" class="form-control">
+                                            <option value="0">เลือก Solution</option>    
+                                             </select>
+                                             </div> 
+
+                                             <br>
                                         
                                 
 

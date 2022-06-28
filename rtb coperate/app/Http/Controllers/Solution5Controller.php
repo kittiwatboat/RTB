@@ -94,14 +94,9 @@ class Solution5Controller extends Controller
     public function editsub(Request $request){
         $solution5= solution5Model::find($request->solution5_id);
 
-        $solution5->solution4_id=$request->solution4_id;
+        $solution5->step=$request->step;
 
-        $solution4=solution4Model::find($request->solution4_id);
-        if($solution4!=null){
-            $solution5->solutiontype_id=$solution4->solutiontype_id;
-            $solution5->solution2_id=$solution4->solution2_id;
-            $solution5->solution3_id=$solution4->solution3_id;
-        }
+        $solution5->solution4_id=$request->solution_id;
         
 
         $solution5->catth=$request->catth;
@@ -145,4 +140,24 @@ class Solution5Controller extends Controller
             return response()->json(false);
         }
     }
+
+
+
+    public function get_solution(Request $r)
+    {
+    if($r->ajax()){
+		 $step=$r->selectValue;
+         if($step=='1'){
+            $div=solutiontypeModel::get();
+         }elseif($step=='2'){
+            $div=solution2Model::get();
+         }else{
+            $div=solution3Model::get();
+         }
+
+        return response()->json(['div'=>$div,]);
+    }
+    }
+
+
 }
