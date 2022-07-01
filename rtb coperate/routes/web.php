@@ -134,12 +134,26 @@ Route::get('/backoffice/news/edit/{id}','NewsController@edit');
 Route::post('/backoffice/news/editsub','NewsController@editsub');
 Route::get('/backoffice/news/delete/{id}','NewsController@delete');
 
+Route::get('/backoffice/cat_news','Cat_newsController@cat_news');
+Route::get('/backoffice/cat_news/add','Cat_newsController@add');
+Route::post('/backoffice/cat_news/addsub','Cat_newsController@addsub');
+Route::get('/backoffice/cat_news/edit/{id}','Cat_newsController@edit');
+Route::post('/backoffice/cat_news/editsub','Cat_newsController@editsub');
+Route::get('/backoffice/cat_news/delete/{id}','Cat_newsController@delete');
+
 Route::get('/backoffice/innovation','InnovationController@index');
 Route::get('/backoffice/innovation/add','InnovationController@add');
 Route::post('/backoffice/innovation/addsub','InnovationController@addsub');
 Route::get('/backoffice/innovation/edit/{id}','InnovationController@edit');
 Route::post('/backoffice/innovation/editsub','InnovationController@editsub');
 Route::get('/backoffice/innovation/delete/{id}','InnovationController@delete');
+
+Route::get('/backoffice/cat_in','cat_inController@index');
+Route::get('/backoffice/cat_in/add','cat_inController@add');
+Route::post('/backoffice/cat_in/addsub','cat_inController@addsub');
+Route::get('/backoffice/cat_in/edit/{id}','cat_inController@edit');
+Route::post('/backoffice/cat_in/editsub','cat_inController@editsub');
+Route::get('/backoffice/cat_in/delete/{id}','cat_inController@delete');
 
 Route::get('/backoffice/solution','SolutionController@index');
 Route::get('/backoffice/solution/add','SolutionController@add');

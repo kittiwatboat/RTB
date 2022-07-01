@@ -37,12 +37,22 @@
             <span>Brand slide</span></a>
     </li>
     <li class="nav-item active">
+        <a class="nav-link" href="/backoffice/cat_news">
+            <i class="fa fa-image"></i>
+            <span>Catagory News</span></a>
+    </li>
+    <li class="nav-item active">
         <a class="nav-link" href="/backoffice/news">
             <i class="fa fa-image"></i>
             <span>News</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/backoffice/innovation">
+        <a class="nav-link" href="/backoffice/news">
+            <i class="fa fa-image"></i>
+            <span>Catagory Innovation</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/backoffice/cat_in">
             <i class="fa fa-image"></i>
             <span>Innovation</span></a>
     </li>
