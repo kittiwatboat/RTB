@@ -43,6 +43,42 @@ class InnovationController extends Controller
     }
     public function addsub(Request $request) {
         $inno=new innovationModel;
+
+        $inno->cat_id=$request->cat_id;
+
+        $dd = date('d', strtotime($request->date));
+        $ff = date('Y', strtotime($request->date));
+        $ii = date('m', strtotime($request->date));
+
+        if($ii==1){$ii="มกราคม"; $ei="January";
+        }
+        elseif($ii==2){$ii="กุมภาพันธ์"; $ei="February";
+        }  
+        elseif($ii==3){$ii="มีนาคม"; $ei="March";
+        }  
+        elseif($ii==4){$ii="เมษายน"; $ei="April";
+        }  
+        elseif($ii==5){$ii="พฤษภาคม"; $ei="May";
+        }
+        elseif($ii==6){$ii="มิถุนายน"; $ei="June";
+        }  
+        elseif($ii==7){$ii="กรกฎาคม"; $ei="July";
+        }  
+        elseif($ii==8){$ii="สิงหาคม"; $ei="August";
+        }  
+        elseif($ii==9){$ii="กันยายน"; $ei="September";
+        }  
+        elseif($ii==10){$ii="ตุลาคม"; $ei="October";
+        }  
+        elseif($ii==11){$ii="พฤศจิกายน"; $ei="November";
+        } 
+        else{$ii="ธันวาคม"; $ei="December";
+        }
+
+        $inno->date=$request->date;
+        $inno->dateth=$dd.' '.$ii.' '.$ff;
+        $inno->dateen=$dd.' '.$ei.' '.$ff;
+
         $inno->in_nameth=$request->in_nameth;
         $inno->in_nameen=$request->in_nameen;
         $inno->in_detailth=$request->in_detailth;
@@ -75,6 +111,43 @@ class InnovationController extends Controller
     }
     public function editsub(Request $request) {
         $inno= innovationModel::find($request->in_id);
+
+        $inno->cat_id=$request->cat_id;
+
+        $dd = date('d', strtotime($request->date));
+        $ff = date('Y', strtotime($request->date));
+        $ii = date('m', strtotime($request->date));
+
+        if($ii==1){$ii="มกราคม"; $ei="January";
+        }
+        elseif($ii==2){$ii="กุมภาพันธ์"; $ei="February";
+        }  
+        elseif($ii==3){$ii="มีนาคม"; $ei="March";
+        }  
+        elseif($ii==4){$ii="เมษายน"; $ei="April";
+        }  
+        elseif($ii==5){$ii="พฤษภาคม"; $ei="May";
+        }
+        elseif($ii==6){$ii="มิถุนายน"; $ei="June";
+        }  
+        elseif($ii==7){$ii="กรกฎาคม"; $ei="July";
+        }  
+        elseif($ii==8){$ii="สิงหาคม"; $ei="August";
+        }  
+        elseif($ii==9){$ii="กันยายน"; $ei="September";
+        }  
+        elseif($ii==10){$ii="ตุลาคม"; $ei="October";
+        }  
+        elseif($ii==11){$ii="พฤศจิกายน"; $ei="November";
+        } 
+        else{$ii="ธันวาคม"; $ei="December";
+        }
+
+        $inno->date=$request->date;
+        $inno->dateth=$dd.' '.$ii.' '.$ff;
+        $inno->dateen=$dd.' '.$ei.' '.$ff;
+
+        
         $inno->in_nameth=$request->in_nameth;
         $inno->in_nameen=$request->in_nameen;
         $inno->in_detailth=$request->in_detailth;

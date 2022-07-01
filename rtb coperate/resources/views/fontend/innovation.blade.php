@@ -33,7 +33,12 @@
                         <div class="border">
                             <img src="{{$ins->in_img}}" class="w-100">
                             <div class="card-news-text px-lg-3 px-1 py-3 mx-2">
-                                <span class="text-green fw-medium">Technology inside digital workplace</span>
+                            <?php  $ttt=DB::table('cat_in')->where('cat_in_id',$ins->cat_id)->first(); ?>
+                            @if(session::get('lang')=='th')
+                                <span class="text-green fw-medium">{{$ttt->nameth}}</span>
+                                @else
+                                <span class="text-green fw-medium">{{$ttt->nameen}}</span>
+                                @endif
                                 <h5>{{$ins['in_name'.session::get('lang')]}}</h5>
                                 <p class="text-news text-gray my-3">{!! $ins['in_description'.session::get('lang')] !!}</p>
                                 <div>
@@ -43,7 +48,7 @@
                             <div class="border-top py-2">
                                 <a class="btn text-gray fs-12" href=""><i class="fas fa-user"></i> Admin</a>
                                 <span class="text-gray">|</span>
-                                <a class="btn text-gray fs-12" href=""><i class="fas fa-calendar-alt"></i> 08 September, 2021</a>
+                                <a class="btn text-gray fs-12" href=""><i class="fas fa-calendar-alt"></i>{{$ins['date'.session::get('lang')]}}</a>
                             </div>
                         </div>
                     </div>
@@ -110,9 +115,12 @@
                     </div>
                     <div class="cateNews my-3">
                         <ul class="no-list-style px-lg-3 px-1">
-                            <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Technology inside digital workplace</a></li>
+                        @foreach($cat_in as $key=>$ss)
+                    <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="{{session::get('lang')}}/innovation/{{$ss->cat_in_id}}">{{$ss['name'.session::get('lang')]}}</a></li>
+                    @endforeach
+                            <!-- <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Technology inside digital workplace</a></li>
                             <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Zoom room solution</a></li>
-                            <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Integrate Microsoft teams voice solution</a></li>
+                            <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Integrate Microsoft teams voice solution</a></li> -->
                         </ul>
                     </div>
                 </div>

@@ -56,6 +56,9 @@ Route::get('/newsDetail/{id}','HomeController@newsDetail');
 Route::get('/innovation','HomeController@innovation');
 Route::get('/InnovationDetail/{id}','HomeController@innovationDetail');
 
+Route::get('/news/{id}','HomeController@news_cat');
+Route::get('/innovation/{id}','HomeController@innovation_cat');
+
 Route::get('/solutionStep2/{id}','HomeController@solutionStep2');
 Route::get('/solutionStep3/{id}','HomeController@solutionStep3');
 Route::get('/solutionStep4/{id}','HomeController@solutionStep4');
@@ -134,12 +137,26 @@ Route::get('/backoffice/news/edit/{id}','NewsController@edit');
 Route::post('/backoffice/news/editsub','NewsController@editsub');
 Route::get('/backoffice/news/delete/{id}','NewsController@delete');
 
+Route::get('/backoffice/cat_news','Cat_newsController@cat_news');
+Route::get('/backoffice/cat_news/add','Cat_newsController@add');
+Route::post('/backoffice/cat_news/addsub','Cat_newsController@addsub');
+Route::get('/backoffice/cat_news/edit/{id}','Cat_newsController@edit');
+Route::post('/backoffice/cat_news/editsub','Cat_newsController@editsub');
+Route::get('/backoffice/cat_news/delete/{id}','Cat_newsController@delete');
+
 Route::get('/backoffice/innovation','InnovationController@index');
 Route::get('/backoffice/innovation/add','InnovationController@add');
 Route::post('/backoffice/innovation/addsub','InnovationController@addsub');
 Route::get('/backoffice/innovation/edit/{id}','InnovationController@edit');
 Route::post('/backoffice/innovation/editsub','InnovationController@editsub');
 Route::get('/backoffice/innovation/delete/{id}','InnovationController@delete');
+
+Route::get('/backoffice/cat_in','Cat_inController@cat_in');
+Route::get('/backoffice/cat_in/add','Cat_inController@add');
+Route::post('/backoffice/cat_in/addsub','Cat_inController@addsub');
+Route::get('/backoffice/cat_in/edit/{id}','Cat_inController@edit');
+Route::post('/backoffice/cat_in/editsub','Cat_inController@editsub');
+Route::get('/backoffice/cat_in/delete/{id}','Cat_inController@delete');
 
 Route::get('/backoffice/solution','SolutionController@index');
 Route::get('/backoffice/solution/add','SolutionController@add');
@@ -186,6 +203,8 @@ Route::get('/backoffice/solution5/edit/{id}','Solution5Controller@edit');
 Route::post('/backoffice/solution5/editsub','Solution5Controller@editsub');
 Route::get('/backoffice/solution5/delete/{id}','Solution5Controller@delete');
 
+Route::post('/get_solution','Solution5Controller@get_solution');
+
 
 
 
@@ -198,6 +217,13 @@ Route::post('/backoffice/partner/addsub','PartnerController@addsub');
 Route::get('/backoffice/partner/edit/{id}','PartnerController@edit');
 Route::post('/backoffice/partner/editsub','PartnerController@editsub');
 Route::get('/backoffice/partner/delete/{id}','PartnerController@delete');
+// Partner Gal
+Route::get('/backoffice/partnergal','PartnergalController@partnergal');
+Route::get('/backoffice/partnergal/add','PartnergalController@add');
+Route::post('/backoffice/partnergal/addsub','PartnergalController@addsub');
+Route::get('/backoffice/partnergal/edit/{id}','PartnergalController@edit');
+Route::post('/backoffice/partnergal/editsub','PartnergalController@editsub');
+Route::get('/backoffice/partnergal/delete/{id}','PartnergalController@delete');
 // vision
 Route::get('/backoffice/vision','VisionController@vision');
 Route::get('/backoffice/vision/add','VisionController@add');
@@ -219,6 +245,13 @@ Route::post('/backoffice/meet_body/addsub','MeetbodyController@addsub');
 Route::get('/backoffice/meet_body/edit/{id}','MeetbodyController@edit');
 Route::post('/backoffice/meet_body/editsub','MeetbodyController@editsub');
 Route::get('/backoffice/meet_body/delete/{id}','MeetbodyController@delete');
+// meet_type
+Route::get('/backoffice/meet_type','MeettypeController@meet_type');
+Route::get('/backoffice/meet_type/add','MeettypeController@add');
+Route::post('/backoffice/meet_type/addsub','MeettypeController@addsub');
+Route::get('/backoffice/meet_type/edit/{id}','MeettypeController@edit');
+Route::post('/backoffice/meet_type/editsub','MeettypeController@editsub');
+Route::get('/backoffice/meet_type/delete/{id}','MeettypeController@delete');
 
 Route::get('/backoffice/work','WorkController@work');
 Route::get('/backoffice/work/add','WorkController@add');

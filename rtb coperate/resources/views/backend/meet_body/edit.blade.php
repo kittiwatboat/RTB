@@ -30,6 +30,19 @@
                                         
                                         <input type="hidden" name="meet_body_id" value="{{ $meet_body->meet_body_id }}">
 
+                                        <?php $for=DB::table('meet_type')->get(); 
+                                          ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Type</label>
+                                            <select name="type" id="solu" class="form-control">
+                                            @foreach($for as $fors)
+                                            <option <?php if(isset($meet_body)){ if($meet_body->type == $fors->meet_type_id){echo 'selected';} } ?>
+                                             value="{{$fors->meet_type_id}}">{{$fors->nameen}}</option>
+                                            @endforeach
+                                                           
+                                             </select>
+                                             </div> 
+
                                        
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">

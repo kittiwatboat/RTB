@@ -37,9 +37,19 @@
             <span>Brand slide</span></a>
     </li>
     <li class="nav-item active">
+        <a class="nav-link" href="/backoffice/cat_news">
+            <i class="fa fa-image"></i>
+            <span>Catagory News</span></a>
+    </li>
+    <li class="nav-item active">
         <a class="nav-link" href="/backoffice/news">
             <i class="fa fa-image"></i>
             <span>News</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/backoffice/cat_in">
+            <i class="fa fa-image"></i>
+            <span>Catagory Innovation</span></a>
     </li>
     <li class="nav-item active">
         <a class="nav-link" href="/backoffice/innovation">
@@ -76,11 +86,11 @@
         <div id="collapseSolution" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Catagory</h6>
-                <a class="collapse-item" href="/backoffice/solutiontype">Solution Type</a>
-                <a class="collapse-item" href="/backoffice/solution2">Solution 2</a>
-                <a class="collapse-item" href="/backoffice/solution3">Solution 3</a>
-                <a class="collapse-item" href="/backoffice/solution4">Solution 4</a>
-                <a class="collapse-item" href="/backoffice/solution5">Solution 5</a>
+                <a class="collapse-item" href="/backoffice/solutiontype">Solution Step 1</a>
+                <a class="collapse-item" href="/backoffice/solution2">Solution Step 2</a>
+                <a class="collapse-item" href="/backoffice/solution3">Solution Step 3</a>
+                <!-- <a class="collapse-item" href="/backoffice/solution4">Solution Step 4</a> -->
+                <a class="collapse-item" href="/backoffice/solution5">Solution Step Product</a>
             </div>
         </div>
     </li>
@@ -95,9 +105,11 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Catagory</h6>
                 <a class="collapse-item" href="/backoffice/vision">Vision</a>
+                <a class="collapse-item" href="/backoffice/meet_type">Meetteam type</a>
                 <a class="collapse-item" href="/backoffice/meet_head">Meetteam Head</a>
                 <a class="collapse-item" href="/backoffice/meet_body">Meetteam</a>
                 <a class="collapse-item" href="/backoffice/partner">Partner</a>
+                <a class="collapse-item" href="/backoffice/partnergal">Partner Picture</a>
             </div>
         </div>
     </li>

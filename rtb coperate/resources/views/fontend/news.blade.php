@@ -12,7 +12,11 @@
         <div class="container-fluid">
             <div class="boxBannerTitle">
                 <div class="titleBanner-center">
+                @if(isset($cat))
+                <h1>{{$cat['name'.session::get('lang')]}}</h1>
+                    @else
                     <h1>News & Articles</h1>
+                    @endif
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -37,12 +41,15 @@
                             <div class="card-news-text px-lg-3 px-0 py-3 mx-lg-2 mx-0">
                                 <h5>{{$newss['name'.session::get('lang')]}}</h5>
                                 <div>
-                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> 08 September, 2021</span>
-                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i> News & Promotion</span>
+                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> {{$newss['date'.session::get('lang')]}}</span>
+                                    <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$newss->cat_id)->first(); ?>
+                                    @if(session::get('lang')=='th')
+                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i>{{$ttt->nameth}}</span>
+                                    @else
+                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i>{{$ttt->nameen}}</span>
+                                    @endif
                                 </div>
-                                <p class="text-news text-gray my-3">RTB continues to open up a now experience of listening to
-                                    quality music continuously. delivering innovative head
-                                    phones Jabra Elite 2 and Jabra Elite....</p>
+                                <p class="text-news text-gray my-3">{!! $newss['des'.session::get('lang')] !!}</p>
                                 <div class="mt-4">
                                     <a class="btn fw-medium" href="{{session::get('lang')}}/newsDetail/{{$newss->news_id}}"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
                                 </div>
@@ -97,10 +104,13 @@
                 </div>
                 <div class="cateNews my-3">
                     <ul class="no-list-style px-lg-3 px-1">
-                        <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">News & Promotion</a></li>
+                    @foreach($cat_news as $key=>$ss)
+                    <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="{{session::get('lang')}}/news/{{$ss->cat_news_id}}">{{$ss['name'.session::get('lang')]}}</a></li>
+                    @endforeach
+                        <!-- <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">News & Promotion</a></li>
                         <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Contents</a></li>
                         <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Event</a></li>
-                        <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Distributor of RTB Technology product</a></li>
+                        <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Distributor of RTB Technology product</a></li> -->
                     </ul>
                 </div>
 

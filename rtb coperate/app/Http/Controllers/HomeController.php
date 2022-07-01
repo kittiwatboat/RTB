@@ -16,13 +16,18 @@ use App\subcatagoryModel;
 use App\producttypeModel;
 
 use App\partnerModel;
+use App\partnergalModel;
 use App\meet_headModel;
 use App\meet_bodyModel;
+use App\meet_typeModel;
 use App\visionModel;
 
 use App\workModel;
 use App\innovationModel;
 use App\newsModel;
+
+use App\cat_newsModel;
+use App\cat_inModel;
 
 
 class HomeController extends Controller
@@ -45,14 +50,16 @@ class HomeController extends Controller
 
         $vision=visionModel::first();
         $partner=partnerModel::first();
+        $gal=partnergalModel::get();
         $meet_head=meet_headModel::first();
-        $meet_body=meet_bodyModel::get();
+        // $meet_body=meet_bodyModel::get();
+        $meet_type=meet_typeModel::get();
 
         $work=workModel::get();
 
         return view('fontend.about')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)->with('meet_body',$meet_body)
-        ->with('work',$work);
+        ->with('vision',$vision)->with('partner',$partner)->with('meet_head',$meet_head)
+        ->with('work',$work)->with('meet_type',$meet_type)->with('gal',$gal);
     }
     public function product($id){
         $cata=catagoryModel::get();
@@ -101,10 +108,12 @@ class HomeController extends Controller
             $solutiontype->solutiontype_img=null;
         }
         $solution=solution2Model::where('solutiontype_id',$id)->get();
+        $itemp=solution5Model::where('step','1')->where('solution4_id',$id)->get();
+
         return view('fontend.solutionStep2',[
             'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('itemp',$itemp);
     }
     public function solution_videoconference(){
         $cata=catagoryModel::get();
@@ -126,10 +135,12 @@ class HomeController extends Controller
             $solutiontype->solution2_img=null;
         }
         $solution=solution3Model::where('solution2_id',$id)->get();
+        $itemp=solution5Model::where('step','2')->where('solution4_id',$id)->get();
+
         return view('fontend.solutionStep3',[
             'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('itemp',$itemp);
     }
     public function solution_personcal(){
         $cata=catagoryModel::get();
@@ -150,13 +161,30 @@ class HomeController extends Controller
         if($solutiontype==null){
             $solutiontype->solution3_img=null;
         }
-        $solution=solution4Model::where('solution3_id',$id)->get();
+        // $solution=solution4Model::where('solution3_id',$id)->get();
+            $itemp=solution5Model::where('step','3')->where('solution4_id',$id)->get();
+
         return view('fontend.solutionStep4',[
-            'solution'=>$solution,
+            // 'solution'=>$solution,
             'solutiontype'=>$solutiontype,
-        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype);
+        ])->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)->with('itemp',$itemp);
     }
 
+
+    
+    public function news_cat($id){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        $news=newsModel::where('cat_id',$id)->paginate(5);
+
+        $cat_news=cat_newsModel::get();
+        $cat=cat_newsModel::where('cat_news_id',$id)->first();
+
+        return view('fontend.news')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('news',$news)->with('cat_news',$cat_news)->with('cat',$cat);
+    }
 
     public function news(){
         $cata=catagoryModel::get();
@@ -165,8 +193,10 @@ class HomeController extends Controller
 
         $news=newsModel::paginate(5);
 
+        $cat_news=cat_newsModel::get();
+
         return view('fontend.news')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('news',$news);
+        ->with('news',$news)->with('cat_news',$cat_news);
     }
     public function newsDetail($id){
         $cata=catagoryModel::get();
@@ -175,9 +205,26 @@ class HomeController extends Controller
 
         $news=newsModel::where('news_id',$id)->first();
 
+        $cat_news=cat_newsModel::get();
+
         return view('fontend.newsDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('news',$news);
+        ->with('news',$news)->with('cat_news',$cat_news);
     }
+
+    public function innovation_cat($id){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        $in=innovationModel::where('cat_id',$id)->paginate(3);
+
+        $cat=cat_inModel::where('cat_in_id',$id)->first();
+        $cat_in=cat_inModel::get();
+
+        return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('in',$in)->with('cat_in',$cat_in)->with('cat',$cat);
+    }
+
     public function innovation(){
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
@@ -185,8 +232,10 @@ class HomeController extends Controller
 
         $in=innovationModel::paginate(3);
 
+        $cat_in=cat_inModel::get();
+
         return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('in',$in);
+        ->with('in',$in)->with('cat_in',$cat_in);
     }
     public function innovationDetail($id){
         $cata=catagoryModel::get();

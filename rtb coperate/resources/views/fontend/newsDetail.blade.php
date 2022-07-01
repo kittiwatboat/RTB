@@ -16,7 +16,12 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="news.php">News & Articles</a></li>
+                            <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$news->cat_id)->first(); ?>
+                            @if(session::get('lang')=='th')
+                            <li class="breadcrumb-item"><a href="{{session::get('lang')}}/news/{{$ttt->cat_news_id}}">{{$ttt->nameth}}</a></li>
+                            @else
+                            <li class="breadcrumb-item"><a href="{{session::get('lang')}}/news/{{$ttt->cat_news_id}}">{{$ttt->nameen}}</a></li>
+                            @endif
                             <li class="breadcrumb-item active" aria-current="page">{{$news['name'.session::get('lang')]}}</li>
                         </ol>
                     </nav>
@@ -57,10 +62,13 @@
                 </div>
                 <div class="cateNews my-3">
                     <ul class="no-list-style px-lg-3 px-1">
-                        <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">News & Promotion</a></li>
+                    @foreach($cat_news as $key=>$ss)
+                    <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="{{session::get('lang')}}/news/{{$ss->cat_news_id}}">{{$ss['name'.session::get('lang')]}}</a></li>
+                    @endforeach
+                        <!-- <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">News & Promotion</a></li>
                         <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Contents</a></li>
                         <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Event</a></li>
-                        <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Distributor of RTB Technology product</a></li>
+                        <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Distributor of RTB Technology product</a></li> -->
                     </ul>
                 </div>
             </div>

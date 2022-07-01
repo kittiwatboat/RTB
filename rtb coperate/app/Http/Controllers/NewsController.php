@@ -43,6 +43,45 @@ class NewsController extends Controller
     }
     public function addsub(Request $request){
         $news=new newsModel;
+
+        $news->cat_id=$request->cat_id;
+
+        $dd = date('d', strtotime($request->date));
+        $ff = date('Y', strtotime($request->date));
+        $ii = date('m', strtotime($request->date));
+
+        if($ii==1){$ii="มกราคม"; $ei="January";
+        }
+        elseif($ii==2){$ii="กุมภาพันธ์"; $ei="February";
+        }  
+        elseif($ii==3){$ii="มีนาคม"; $ei="March";
+        }  
+        elseif($ii==4){$ii="เมษายน"; $ei="April";
+        }  
+        elseif($ii==5){$ii="พฤษภาคม"; $ei="May";
+        }
+        elseif($ii==6){$ii="มิถุนายน"; $ei="June";
+        }  
+        elseif($ii==7){$ii="กรกฎาคม"; $ei="July";
+        }  
+        elseif($ii==8){$ii="สิงหาคม"; $ei="August";
+        }  
+        elseif($ii==9){$ii="กันยายน"; $ei="September";
+        }  
+        elseif($ii==10){$ii="ตุลาคม"; $ei="October";
+        }  
+        elseif($ii==11){$ii="พฤศจิกายน"; $ei="November";
+        } 
+        else{$ii="ธันวาคม"; $ei="December";
+        }
+
+        $news->date=$request->date;
+        $news->dateth=$dd.' '.$ii.' '.$ff;
+        $news->dateen=$dd.' '.$ei.' '.$ff;
+
+        $news->desth=$request->desth;
+        $news->desen=$request->desen;
+
         $news->nameth=$request->nameth;
         $news->nameen=$request->nameen;
         $news->detailth=$request->detailth;
@@ -73,6 +112,45 @@ class NewsController extends Controller
     }
     public function editsub(Request $request){
         $news= newsModel::find($request->news_id);
+
+        $news->cat_id=$request->cat_id;
+
+        $dd = date('d', strtotime($request->date));
+        $ff = date('Y', strtotime($request->date));
+        $ii = date('m', strtotime($request->date));
+
+        if($ii==1){$ii="มกราคม"; $ei="January";
+        }
+        elseif($ii==2){$ii="กุมภาพันธ์"; $ei="February";
+        }  
+        elseif($ii==3){$ii="มีนาคม"; $ei="March";
+        }  
+        elseif($ii==4){$ii="เมษายน"; $ei="April";
+        }  
+        elseif($ii==5){$ii="พฤษภาคม"; $ei="May";
+        }
+        elseif($ii==6){$ii="มิถุนายน"; $ei="June";
+        }  
+        elseif($ii==7){$ii="กรกฎาคม"; $ei="July";
+        }  
+        elseif($ii==8){$ii="สิงหาคม"; $ei="August";
+        }  
+        elseif($ii==9){$ii="กันยายน"; $ei="September";
+        }  
+        elseif($ii==10){$ii="ตุลาคม"; $ei="October";
+        }  
+        elseif($ii==11){$ii="พฤศจิกายน"; $ei="November";
+        } 
+        else{$ii="ธันวาคม"; $ei="December";
+        }
+
+        $news->date=$request->date;
+        $news->dateth=$dd.' '.$ii.' '.$ff;
+        $news->dateen=$dd.' '.$ei.' '.$ff;
+
+        $news->desth=$request->desth;
+        $news->desen=$request->desen;
+
         $news->nameth=$request->nameth;
         $news->nameen=$request->nameen;
         $news->detailth=$request->detailth;

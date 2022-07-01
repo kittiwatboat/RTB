@@ -27,6 +27,20 @@
                                 <form class="form-horizontal" action="/backoffice/meet_body/addsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
+
+
+                                        <?php $for=DB::table('meet_type')->get(); 
+                                          ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Type</label>
+                                            <select name="type" id="solu" class="form-control">
+                                            @foreach($for as $fors)
+                                            <option <?php if(isset($meet_body)){ if($meet_body->type == $fors->meet_type_id){echo 'selected';} } ?>
+                                             value="{{$fors->meet_type_id}}">{{$fors->nameen}}</option>
+                                            @endforeach
+                                                           
+                                             </select>
+                                             </div> 
                                         
                                 
 

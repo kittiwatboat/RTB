@@ -23,33 +23,31 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
-                                <div class="card-header">จัดการ <strong>About Partner </strong> </div>
+                                <div class="card-header">จัดการ <strong>About Partnergal </strong> </div>
                                 <div class="card-body">
                                     <div class="text-right">
-                                        <!-- <a href="/backoffice/partner/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br> -->
+                                        <a href="/backoffice/partnergal/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
                                     </div>
                                     <table class="table table-responsive-sm text-center">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <!-- <th>Image</th> -->
+                                                <th>Image</th>
                                                 <th>manage</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($partner as $item)
+                                            @foreach ($partnergal as $item)
                                                 <tr>
-                                                    <td>{{ $item->nameth }}</td>
-                                                    <!-- <td><img src="{{ $item->partner_img }}" width="20%" alt=""></td> -->
+                                                    <td><img src="{{ $item->partnergal_img }}" width="20%" alt=""></td>
                                                     <td>
-                                                        <a href="/backoffice/partner/edit/{{ $item->partner_id }}" class="btn btn-warning">แก้ไข</a>
-                                                        <!-- <button type="button" class="btn btn-danger" onclick="batbal('{{$item->partner_id}}')">ลบ</button> -->
+                                                        <a href="/backoffice/partnergal/edit/{{ $item->partnergal_id }}" class="btn btn-warning">แก้ไข</a>
+                                                        <button type="button" class="btn btn-danger" onclick="batbal('{{$item->partnergal_id}}')">ลบ</button>
     
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
-                                        {{ $partner->links() }}
+                                        {{ $partnergal->links() }}
                                     </table>
                            
                                 </div>
@@ -73,12 +71,12 @@
     <script src="javascript/sweetalert2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script> 
-    function batbal(partner_id){
+    function batbal(partnergal_id){
         
         Swal.fire({
         title:"ลบข้อมูล",text:"คุณต้องการลบข้อมูลใช่หรือไม่?",icon:"warning",showCancelButton:true,confirmButtonColor:"#DD6B55",showLoaderOnConfirm: true,
         preConfirm: () => {
-            return fetch('/backoffice/partner/delete/'+partner_id)
+            return fetch('/backoffice/partnergal/delete/'+partnergal_id)
             .then(response => response.json())
             .then(data => location.reload())
             .catch(error => { Swal.showValidationMessage(`Request failed: ${error}`)})

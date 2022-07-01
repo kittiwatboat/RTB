@@ -81,6 +81,9 @@ class Solution3Controller extends Controller
             }
         }
         $solution3->save();
+
+        $solution3->id=$solution3->solution3_id;
+        $solution3->save();
         return redirect('/backoffice/solution3');
     }
     public function edit($id){

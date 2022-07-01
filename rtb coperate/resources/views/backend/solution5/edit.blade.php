@@ -31,18 +31,54 @@
                                         <input type="hidden" name="solution5_id" value="{{ $solution5->solution5_id }}">
 
 
-
-                                        <?php  $for=DB::table('solution4')->get();  ?>
                                          <div class="form-group col-md-4">
-                                           <label for="aaa">Type</label>
-                                            <select name="solution4_id" id="aaa" class="form-control">
+                                           <label for="aaa">Step ที่เลือกจะเชื่อม</label>
+                                            <select name="step" id="step" class="form-control">
+
+                                            <option <?php if(isset($solution5)){ if($solution5->step == '1'){echo 'selected';} } ?>
+                                             value="1">1</option>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '2'){echo 'selected';} } ?>
+                                             value="2">2</option>
+                                             <option <?php if(isset($solution5)){ if($solution5->step == '3'){echo 'selected';} } ?>
+                                             value="3">3</option>
+                                             <!-- <option <?php if(isset($solution5)){ if($solution5->step == '4'){echo 'selected';} } ?>
+                                             value="4">4</option> -->
+                                                           
+                                             </select>
+                                             </div> 
+                                             <br>
+
+
+
+                                        <?php 
+                                        if($solution5->step =='1'){  $for=DB::table('solutiontype')->get();  }
+                                        elseif($solution5->step =='2'){  $for=DB::table('solution2')->get();  }
+                                        elseif($solution5->step =='3'){  $for=DB::table('solution3')->get();  }
+                                        else{   $for=DB::table('solution4')->get();    }
+                                          ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Solution</label>
+                                            <select name="solution_id" id="solu" class="form-control">
                                             @foreach($for as $fors)
-                                            <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution4_id){echo 'selected';} } ?>
+                                            @if($solution5->step=='1')
+                                            <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solutiontype_id){echo 'selected';} } ?>
+                                             value="{{$fors->solutiontype_id}}">{{$fors->nameth}}</option>
+                                             @elseif($solution5->step=='2')
+                                             <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution2_id){echo 'selected';} } ?>
+                                             value="{{$fors->solution2_id}}">{{$fors->nameth}}</option>
+                                             @elseif($solution5->step=='3')
+                                             <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution3_id){echo 'selected';} } ?>
+                                             value="{{$fors->solution3_id}}">{{$fors->nameth}}</option>
+                                             @else
+                                             <option <?php if(isset($solution5)){ if($solution5->solution4_id == $fors->solution4_id){echo 'selected';} } ?>
                                              value="{{$fors->solution4_id}}">{{$fors->nameth}}</option>
+                                             @endif
                                             @endforeach
                                                            
                                              </select>
                                              </div> 
+
+                                             <br>
 
                                        
                                         <div class="form-group row">
@@ -232,4 +268,39 @@
 })
 </script>
 @endif
+
+
+
+<script>
+$(document).ready(function(){
+$("#step").on("change", function() { 
+    var selectValue = $(this).val();
+    // alert(selectValue);
+
+    var amphureObject = $('#solu');
+    amphureObject.html('<option value="0">เลือก Solution</option>');
+
+    $.ajax({  
+        type: 'POST',
+        url: '{{url('/get_solution')}}',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            selectValue: selectValue,
+        },
+        success: function(data) {
+            var op = '';
+            $.each(data.div, function(div, item) {
+                amphureObject.append(
+                    $('<option></option>').val(item.id).html(item.nameen)
+                );
+            });
+        }
+    });
+});
+});
+</script>
+
+
+
+
 </html>

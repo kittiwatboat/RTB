@@ -73,6 +73,10 @@ class Solution2Controller extends Controller
             }
         }
         $solution2->save();
+
+        $solution2->id=$solution2->solution2_id;
+        $solution2->save();
+
         return redirect('/backoffice/solution2');
     }
     public function edit($id){
@@ -83,6 +87,7 @@ class Solution2Controller extends Controller
         $solution2= solution2Model::find($request->solution2_id);
 
         $solution2->solutiontype_id=$request->solutiontype_id;
+
 
         $solution2->nameth=$request->nameth;
         $solution2->nameen=$request->nameen;

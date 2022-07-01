@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
-use App\meet_bodyModel;
+use App\partnergalModel;
 
-class MeetbodyController extends Controller
+class PartnergalController extends Controller
 {
     //
     public function imageSize($find = null)
@@ -36,85 +36,67 @@ class MeetbodyController extends Controller
             }
         }
     }
-    public function meet_body(){
-        $meet_body=meet_bodyModel::paginate(10);
-        return view('backend.meet_body.index')->with('meet_body',$meet_body);
+    public function partnergal(){
+        $partnergal=partnergalModel::paginate(10);
+        return view('backend.partnergal.index')->with('partnergal',$partnergal);
     }
     public function add(){
-        return view('backend.meet_body.add');
+        return view('backend.partnergal.add');
     }
     public function addsub(Request $request){
-        $meet_body=new meet_bodyModel;
-
-        $meet_body->type=$request->type;
-
-        $meet_body->nameth=$request->nameth;
-        $meet_body->nameen=$request->nameen;
-        $meet_body->desth=$request->desth;
-        $meet_body->desen=$request->desen;
-        $meet_body->detailth=$request->detailth;
-        $meet_body->detailen=$request->detailen;
-        $filename = 'meet_body_img_' . date('dmY-His');
-        $file = $request->meet_body_img;
+        $partnergal=new partnergalModel;
+        $filename = 'partnergal_img_' . date('dmY-His');
+        $file = $request->partnergal_img;
         if($file){ 
             $ima = $file->getClientOriginalExtension();
             if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
-                // if($arti->meet_body_img != null){
-                //     Storage::disk('public')->delete($arti->meet_body_img);
+                // if($arti->partnergal_img != null){
+                //     Storage::disk('public')->delete($arti->partnergal_img);
                 // }                
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
             $lg->resize($size['cover']['lg']['x'], $size['cover']['lg']['y'])->stream();
-            $newLG = 'upload/meet_body/' . $filename . '.' . $ext;
+            $newLG = 'upload/partnergal/' . $filename . '.' . $ext;
             $store = Storage::disk('public')->put($newLG, $lg);
-            $meet_body->meet_body_img = $newLG;
+            $partnergal->partnergal_img = $newLG;
             }
         }
-        $meet_body->save();
-        return redirect('/backoffice/meet_body');
+        $partnergal->save();
+        return redirect('/backoffice/partnergal');
     }
     public function edit($id){
-        $meet_body=meet_bodyModel::find($id);
-        return view('backend.meet_body.edit')->with('meet_body', $meet_body);
+        $partnergal=partnergalModel::find($id);
+        return view('backend.partnergal.edit')->with('partnergal', $partnergal);
     }
     public function editsub(Request $request){
-        $meet_body= meet_bodyModel::find($request->meet_body_id);
-
-        $meet_body->type=$request->type;
-        
-        $meet_body->nameth=$request->nameth;
-        $meet_body->nameen=$request->nameen;
-        $meet_body->desth=$request->desth;
-        $meet_body->desen=$request->desen;
-        $meet_body->detailth=$request->detailth;
-        $meet_body->detailen=$request->detailen;
-        $filename = 'meet_body_img_' . date('dmY-His');
-        $file = $request->meet_body_img;
+        $partnergal= partnergalModel::find($request->partnergal_id);
+        $filename = 'partnergal_img_' . date('dmY-His');
+        $file = $request->partnergal_img;
         if($file){ 
             $ima = $file->getClientOriginalExtension();
             if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
-                if($meet_body->meet_body_img != null){
-                    Storage::disk('public')->delete($meet_body->meet_body_img);
+                if($partnergal->partnergal_img != null){
+                    Storage::disk('public')->delete($partnergal->partnergal_img);
                 }                
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
             $lg->resize($size['cover']['lg']['x'], $size['cover']['lg']['y'])->stream();
-            $newLG = 'upload/meet_body/' . $filename . '.' . $ext;
+            $newLG = 'upload/partnergal/' . $filename . '.' . $ext;
             $store = Storage::disk('public')->put($newLG, $lg);
-            $meet_body->meet_body_img = $newLG;
+            $partnergal->partnergal_img = $newLG;
             }
         }
-        $meet_body->save();
+        $partnergal->save();
         return redirect()->back();
     }
     public function delete($id){
-        $meet_body=meet_bodyModel::find($id);
-        if($meet_body->meet_body_img != null){
-            Storage::disk('public')->delete($meet_body->meet_body_img);
+        $partnergal=partnergalModel::find($id);
+        if($partnergal->partnergal_img != null){
+            Storage::disk('public')->delete($partnergal->partnergal_img);
         }
-        $a=meet_bodyModel::destroy($meet_body->meet_body_id);
+        $a=partnergalModel::destroy($partnergal->partnergal_id);
         if($a){
             return response()->json(true);
         }else{

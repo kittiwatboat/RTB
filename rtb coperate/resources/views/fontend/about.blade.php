@@ -122,25 +122,43 @@
                                     <img src="{{$meet_head->meet_head_img}}" class="w-100">
                                 </div>
                             </div>
+
+                            @foreach($meet_type as $type)
                             <div class="row">
                                 <div class="col-sm-12 text-center mt-5">
-                                    <h3 class="text-darkGray">OUR EXECUTIVES</h3>
+                                    <h3 class="text-darkGray">{{$type['name'.session::get('lang')]}}</h3>
                                 </div>
                             </div>
                             <div class="row mt-4">
 
+                            <?php $meet_body=DB::table('meet_body')->where('type',$type->meet_type_id)->get();  ?>
                             @foreach($meet_body as $uo)
+                            @if(session::get('lang')=='th')
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="card card-body border-0 text-center">
                                         <img src="{{$uo->meet_body_img}}" class="mb-3">
-                                        <h6>{{$uo['name'.session::get('lang')]}}</h6>
-                                        <p>{{$uo['des'.session::get('lang')]}}</p>
-                                        <p class="mb-0 text-green">{{$uo['detail'.session::get('lang')]}}</p>
+                                        <h6>{{$uo->nameth}}</h6>
+                                        <p>{{$uo->desth}}</p>
+                                        <p class="mb-0 text-green">{{$uo->detailth}}</p>
                                     </div>
                                 </div>
+                                @else
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="card card-body border-0 text-center">
+                                        <img src="{{$uo->meet_body_img}}" class="mb-3">
+                                        <h6>{{$uo->nameen}}</h6>
+                                        <p>{{$uo->desen}}</p>
+                                        <p class="mb-0 text-green">{{$uo->detailen}}</p>
+                                    </div>
+                                </div>
+                                @endif
                                 @endforeach
 
                             </div>
+                            <br><br>
+                            @endforeach
+
+
                             <div class="bottomFoot"></div>
                         </div>
                     </div>
@@ -149,7 +167,9 @@
                             <h6 class="text-green">Partnership</h6>
                             <h3 class="text-darkGray">{{$partner['name'.session::get('lang')]}}</h3>
                             <p class="mt-3">{!!$partner['detail'.session::get('lang')]!!}</p>
-                            <img src="{{$partner->partner_img}}" class="w-100 my-5">
+                            @foreach($gal as $gals)
+                            <img src="{{$gals->partnergal_img}}" class="w-100 my-5">
+                            @endforeach
                             <div class="bottomFoot"></div>
                         </div>
                     </div>

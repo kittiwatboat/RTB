@@ -30,6 +30,28 @@
                                         
                                         <input type="hidden" name="news_id" value="{{ $news->news_id }}">
 
+
+
+                                        <?php  $for=DB::table('cat_news')->get();  ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Catagory</label>
+                                            <select name="cat_id" id="aaa" class="form-control">
+                                            @foreach($for as $fors)
+                                            <option <?php if(isset($news)){ if($news->cat_id == $fors->cat_news_id){echo 'selected';} } ?>
+                                             value="{{$fors->cat_news_id}}">{{$fors->nameen}}</option>
+                                            @endforeach
+                                                           
+                                             </select>
+                                             </div> 
+
+                                             <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                Date </label>
+                                            <div class="col-md-9">
+                                                <input type="date" name="date" class="form-control" value="{{ $news->date }}">
+                                            </div>
+                                        </div>
+
                                        
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
@@ -63,7 +85,6 @@
                                                   
                                                 });
                                             </script>
-                                       
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail EN <div style="font-size: 12px;"></div></label>
@@ -79,6 +100,43 @@
                                              
                                                 });
                                             </script>
+
+
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                    Description TH <div style="font-size: 12px;"></div></label>
+                                                    <div class="col-md-9">
+                                                        <textarea name="desth" id="summernote2">{!! $news->desth !!}</textarea>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#summernote2').summernote({
+                                                     
+                                                      tabsize: 2,
+                                                      height: 200,
+                                                      toolbar: []
+                                                        
+                                                      
+                                                    });
+                                                </script>
+                                           
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                    Description EN <div style="font-size: 12px;"></div></label>
+                                                    <div class="col-md-9">
+                                                        <textarea name="desen" id="summernote3">{!! $news->desen !!}</textarea>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#summernote3').summernote({
+                                                     
+                                                      tabsize: 2,
+                                                      height: 200,
+                                                      toolbar: []
+                                                 
+                                                    });
+                                                </script>
+
 
                                          <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">

@@ -24,73 +24,29 @@
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
                                 <div class="card-header"><strong>Catagory</strong></div>
-                                <form class="form-horizontal" action="/backoffice/partner/addsub" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="backoffice/partnergal/editsub" method="POST" enctype="multipart/form-data">
                                      <div class="card-body">
                                         @csrf
                                         
-                                
+                                        <input type="hidden" name="partnergal_id" value="{{ $partnergal->partnergal_id }}">
 
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Name TH <div style="font-size: 12px;"></div></label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="nameth" class="form-control">
-                                            </div>
-                                        </div>
                                        
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Name EN <div style="font-size: 12px;"></div></label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="nameen" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Detail TH <div style="font-size: 12px;"></div></label>
-                                                <div class="col-md-9">
-                                                    <textarea name="detailth" id="summernote"></textarea>
-                                                </div>
-                                            </div>
-                                            <script>
-                                                $('#summernote').summernote({
-                                                 
-                                                  tabsize: 2,
-                                                  height: 200,
-                                        
-                                                  
-                                                });
-                                            </script>
                                        
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
-                                                Detail EN <div style="font-size: 12px;"></div></label>
-                                                <div class="col-md-9">
-                                                    <textarea name="detailen" id="summernote1"></textarea>
-                                                </div>
-                                            </div>
-                                            <script>
-                                                $('#summernote1').summernote({
-                                                 
-                                                  tabsize: 2,
-                                                  height: 200,
-                                             
-                                                });
-                                            </script>
 
-                                         <!-- <div class="form-group row">
+                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
                                             <div class="col-md-9">
-                                                <input id="file-multiple-input" type="file" name="partner_img"
+                                                <img src="{{ $partnergal->partnergal_img }}" width='50%' alt=""><br>
+                                                <input id="file-multiple-input" type="file" name="partnergal_img"
                                                     multiple="">
                                             </div>
-                                        </div> -->
+                                        </div>
+                                       
                                     </div>
                                         <div class="card-footer">
                                             <button class="btn btn-sm btn-primary" type="submit">บันทึก</button>
-                                            <a href="/backoffice/partner" class="btn btn-sm btn-danger">กลับ</a>
+                                            <a href="/backoffice/partnergal" class="btn btn-sm btn-danger">กลับ</a>
 
                                         </div>
                                 </form>

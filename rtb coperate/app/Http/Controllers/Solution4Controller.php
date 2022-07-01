@@ -82,6 +82,9 @@ class Solution4Controller extends Controller
             }
         }
         $solution4->save();
+
+        $solution4->id=$solution4->solution4_id;
+        $solution4->save();
         return redirect('/backoffice/solution4');
     }
     public function edit($id){

@@ -129,11 +129,144 @@
                 </div>
             </div>
         </div>
+        
+
+        @if($itemp!=null)
+        <div class="bg-white">
+        <div class="container container-small py-xl-5 py-4">
+
+            @foreach($itemp as $itemps)
+            <div class="bg-gray4 px-lg-4 px-2 py-lg-4 py-2 mt-lg-5 mt-3">
+                <h3>{{$itemps['name'.session::get('lang')]}}</h3>
+                <p class="mt-3">{!!$itemps['detail'.session::get('lang')]!!}</p>
+                <div class="owl-carousel owl-theme" id="preProduct1">
+
+
+                <?php  $itemp=DB::table('solution5')->where('solution4_id',$itemps->solution4_id)->get();  ?>
+                @foreach($itemp as $itemps)
+                    <div class="item">
+                        <div class="row bg-white">
+                            <div class="col-sm-6 px-0">
+                                <img src="">
+                            </div>
+                            @if(session::get('lang')=='th')
+                            <div class="col-sm-6 px-0">
+                                <div class="bg-gray2 px-lg-4 px-3 py-lg-4 py-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h3>{{$itemps->nameth}}</h3>
+                                            <p class="text-gray">category : {{$itemps->catth}}</p>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-gray">Other Product</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-solution">
+                                    {{$itemps->desth}}
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <a class="btn bg-gray3 text-white" href="">More deatil</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @else
+                            <div class="col-sm-6 px-0">
+                                <div class="bg-gray2 px-lg-4 px-3 py-lg-4 py-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h3>{{$itemps->nameen}}</h3>
+                                            <p class="text-gray">category : {{$itemps->caten}}</p>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-gray">Other Product</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-solution">
+                                    {{$itemps->desen}}
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <a class="btn bg-gray3 text-white" href="">More deatil</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    @endforeach
+
+
+
+                </div>
+                <div class="text-center mt-4"><a class="btn btn-green rounded-pill px-4">Enquiry for more information</a></div>
+            </div>
+            @endforeach
+
+
+        </div>
+
+    </div>
+    @endif
+
+
     </div>
     @include('fontend.inc_footer')
     <script>
         $('#linkMenuTop .nav-item').eq(3).addClass('active');
     </script>
+
+
+    <script>
+        $('#preProduct1').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+        $('#preProduct2').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+        $('#preProduct3').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    </script>
+
+    
 </body>
 
 </html>
