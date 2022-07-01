@@ -171,6 +171,21 @@ class HomeController extends Controller
     }
 
 
+    
+    public function news_cat($id){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        $news=newsModel::where('cat_id',$id)->paginate(5);
+
+        $cat_news=cat_newsModel::get();
+        $cat=cat_newsModel::where('cat_news_id',$id)->first();
+
+        return view('fontend.news')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('news',$news)->with('cat_news',$cat_news)->with('cat',$cat);
+    }
+
     public function news(){
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();
@@ -193,6 +208,21 @@ class HomeController extends Controller
         return view('fontend.newsDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
         ->with('news',$news);
     }
+
+    public function innovation_cat($id){
+        $cata=catagoryModel::get();
+        $sub=subcatagoryModel::get();
+        $protype=producttypeModel::get();
+
+        $in=innovationModel::where('cat_id',$id)->paginate(3);
+
+        $cat=cat_inModel::where('cat_in_id',$id)->first();
+        $cat_in=cat_inModel::get();
+
+        return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
+        ->with('in',$in)->with('cat_in',$cat_in)->with('cat',$cat);
+    }
+
     public function innovation(){
         $cata=catagoryModel::get();
         $sub=subcatagoryModel::get();

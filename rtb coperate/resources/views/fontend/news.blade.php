@@ -12,7 +12,11 @@
         <div class="container-fluid">
             <div class="boxBannerTitle">
                 <div class="titleBanner-center">
+                @if(isset($cat))
+                <h1>{{$cat['name'.session::get('lang')]}}</h1>
+                    @else
                     <h1>News & Articles</h1>
+                    @endif
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -101,7 +105,7 @@
                 <div class="cateNews my-3">
                     <ul class="no-list-style px-lg-3 px-1">
                     @foreach($cat_news as $key=>$ss)
-                    <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">{{$ss['name'.session::get('lang')]}}</a></li>
+                    <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="{{session::get('lang')}}/news/{{$ss->cat_news_id}}">{{$ss['name'.session::get('lang')]}}</a></li>
                     @endforeach
                         <!-- <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">News & Promotion</a></li>
                         <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Contents</a></li>
