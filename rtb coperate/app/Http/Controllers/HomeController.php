@@ -26,6 +26,9 @@ use App\workModel;
 use App\innovationModel;
 use App\newsModel;
 
+use App\cat_newsModel;
+use App\cat_inModel;
+
 
 class HomeController extends Controller
 {   
@@ -175,8 +178,10 @@ class HomeController extends Controller
 
         $news=newsModel::paginate(5);
 
+        $cat_news=cat_newsModel::get();
+
         return view('fontend.news')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('news',$news);
+        ->with('news',$news)->with('cat_news',$cat_news);
     }
     public function newsDetail($id){
         $cata=catagoryModel::get();
@@ -195,8 +200,10 @@ class HomeController extends Controller
 
         $in=innovationModel::paginate(3);
 
+        $cat_in=cat_inModel::get();
+
         return view('fontend.innovation')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('in',$in);
+        ->with('in',$in)->with('cat_in',$cat_in);
     }
     public function innovationDetail($id){
         $cata=catagoryModel::get();

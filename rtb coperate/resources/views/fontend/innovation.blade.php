@@ -115,9 +115,12 @@
                     </div>
                     <div class="cateNews my-3">
                         <ul class="no-list-style px-lg-3 px-1">
-                            <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Technology inside digital workplace</a></li>
+                        @foreach($cat_in as $key=>$ss)
+                    <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">{{$ss['name'.session::get('lang')]}}</a></li>
+                    @endforeach
+                            <!-- <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Technology inside digital workplace</a></li>
                             <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Zoom room solution</a></li>
-                            <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Integrate Microsoft teams voice solution</a></li>
+                            <li><i class="fas fa-tag text-green"></i>&nbsp; <a href="#">Integrate Microsoft teams voice solution</a></li> -->
                         </ul>
                     </div>
                 </div>
