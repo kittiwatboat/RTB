@@ -33,8 +33,12 @@
                         <div class="border">
                             <img src="{{$ins->in_img}}" class="w-100">
                             <div class="card-news-text px-lg-3 px-1 py-3 mx-2">
-                            <?php  $ttt=DB::table('cat_in')->where('cat_in_id',$ins->in_id)->first(); ?>
-                                <span class="text-green fw-medium">{{$ttt['name'.session::get('lang')]}}</span>
+                            <?php  $ttt=DB::table('cat_in')->where('cat_in_id',$ins->cat_id)->first(); ?>
+                            @if(session::get('lang')=='th')
+                                <span class="text-green fw-medium">{{$ttt->nameth}}</span>
+                                @else
+                                <span class="text-green fw-medium">{{$ttt->nameen}}</span>
+                                @endif
                                 <h5>{{$ins['in_name'.session::get('lang')]}}</h5>
                                 <p class="text-news text-gray my-3">{!! $ins['in_description'.session::get('lang')] !!}</p>
                                 <div>

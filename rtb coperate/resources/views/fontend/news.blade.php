@@ -38,8 +38,12 @@
                                 <h5>{{$newss['name'.session::get('lang')]}}</h5>
                                 <div>
                                     <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> {{$newss['date'.session::get('lang')]}}</span>
-                                    <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$newss->news_id)->first(); ?>
-                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i>{{$ttt['name'.session::get('lang')]}}</span>
+                                    <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$newss->cat_id)->first(); ?>
+                                    @if(session::get('lang')=='th')
+                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i>{{$ttt->nameth}}</span>
+                                    @else
+                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i>{{$ttt->nameen}}</span>
+                                    @endif
                                 </div>
                                 <p class="text-news text-gray my-3">{!! $newss['des'.session::get('lang')] !!}</p>
                                 <div class="mt-4">

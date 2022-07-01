@@ -19,7 +19,7 @@
                         </ol>
                     </nav>
                     <h1 class="mt-4">{{$in['in_name'.session::get('lang')]}}</h1>
-                    <p><i class="fas fa-calendar-alt"></i> 08 September, 2021</p>
+                    <p><i class="fas fa-calendar-alt"></i> {{$in['date'.session::get('lang')]}}</p>
                 </div>
             </div>
         </div>

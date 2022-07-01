@@ -16,7 +16,12 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="news.php">News & Articles</a></li>
+                            <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$news->cat_id)->first(); ?>
+                            @if(session::get('lang')=='th')
+                            <li class="breadcrumb-item"><a href="news.php">{{$ttt->nameth}}</a></li>
+                            @else
+                            <li class="breadcrumb-item"><a href="news.php">{{$ttt->nameen}}</a></li>
+                            @endif
                             <li class="breadcrumb-item active" aria-current="page">{{$news['name'.session::get('lang')]}}</li>
                         </ol>
                     </nav>
