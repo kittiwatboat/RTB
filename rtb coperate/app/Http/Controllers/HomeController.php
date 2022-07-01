@@ -205,8 +205,10 @@ class HomeController extends Controller
 
         $news=newsModel::where('news_id',$id)->first();
 
+        $cat_news=cat_newsModel::get();
+
         return view('fontend.newsDetail')->with('cata',$cata)->with('sub',$sub)->with('protype',$protype)
-        ->with('news',$news);
+        ->with('news',$news)->with('cat_news',$cat_news);
     }
 
     public function innovation_cat($id){
