@@ -45,6 +45,9 @@
             {!!$in['in_detail'.session::get('lang')]!!}
         </div>
 
+
+        <?php  $last=DB::table('innovation')->where('in_id','!=',$in->in_id)->orderby('in_id','desc')->limit(3)->get();  ?>
+
         <div class="bottomFoot"></div>
         <div class="mb-5" id="news">
             <h5>Latest Post</h5>
@@ -52,14 +55,26 @@
                 <div class="progress-bar bg-green" style="width:5%"></div>
             </div>
             <div class="row mt-4">
+                @foreach($last as $lasts)
+                @if(session::get('lang')=='th')
                 <div class="col-sm-4">
-                    <img src="images/pexels-anna-shvets-4226140.jpg" class="w-100">
+                    <img src="{{$lasts->in_img}}" class="w-100">
                     <div class="text-center px-3 py-3">
-                        <h6>Congue quisque egestas diam in arcu cursus euismod quis viverra.</h6>
-                        <p class="text-gray">12 Jan, 2022</p>
+                        <h6>{{$lasts->in_nameth}}</h6>
+                        <p class="text-gray">{{$lasts->dateth}}</p>
                     </div>
                 </div>
+                @else
                 <div class="col-sm-4">
+                    <img src="{{$lasts->in_img}}" class="w-100">
+                    <div class="text-center px-3 py-3">
+                        <h6>{{$lasts->in_nameen}}</h6>
+                        <p class="text-gray">{{$lasts->dateen}}</p>
+                    </div>
+                </div>
+                @endif
+                @endforeach
+                <!-- <div class="col-sm-4">
                     <img src="images/pexels-julia-m-cameron-4144923.jpg" class="w-100">
                     <div class="text-center px-3 py-3">
                         <h6>Congue quisque egestas diam in arcu cursus euismod quis viverra.</h6>
@@ -72,7 +87,7 @@
                         <h6>Congue quisque egestas diam in arcu cursus euismod quis viverra.</h6>
                         <p class="text-gray">12 Jan, 2022</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
