@@ -230,3 +230,8 @@ Route::get('/backoffice/work/delete/{id}','WorkController@delete');
 Route::get('/backoffice/reccommand/{id}','CatagoryController@reccommand');
 Route::post('/backoffice/reccommand/submit','CatagoryController@recsubmit');
 Route::get('/backoffice/reccommand/delete/{id}','CatagoryController@recdelete');
+
+Route::get('/backoffice/brand','BrandController@index');
+Route::post('/backoffice/brand/addimg','BrandController@storeimg');
+Route::post('/backoffice/brand/add','BrandController@add')->name('form.data');
+Route::get('/backoffice/brand/delete/{id}','BrandController@delete');
