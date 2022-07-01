@@ -30,6 +30,28 @@
                                         
                                         <input type="hidden" name="news_id" value="{{ $news->news_id }}">
 
+
+
+                                        <?php  $for=DB::table('cat_news')->get();  ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Catagory</label>
+                                            <select name="cat_id" id="aaa" class="form-control">
+                                            @foreach($for as $fors)
+                                            <option <?php if(isset($news)){ if($news->cat_id == $fors->cat_news_id){echo 'selected';} } ?>
+                                             value="{{$fors->cat_news_id}}">{{$fors->nameen}}</option>
+                                            @endforeach
+                                                           
+                                             </select>
+                                             </div> 
+
+                                             <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                Date </label>
+                                            <div class="col-md-9">
+                                                <input type="date" name="date" class="form-control" value="{{ $news->date }}">
+                                            </div>
+                                        </div>
+
                                        
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">

@@ -17,7 +17,7 @@ class newsModel extends Model
     protected $table = 'news';
     protected $primaryKey = 'news_id';
 
-    protected $fillable = ['news_id','nameth','nameen','detailth','detailen','news_img','created','updated'];
+    protected $fillable = ['news_id','nameth','nameen','detailth','detailen','news_img','cat_id','date','dateth','dateen','created','updated'];
 
     const CREATED_AT = 'created';
 

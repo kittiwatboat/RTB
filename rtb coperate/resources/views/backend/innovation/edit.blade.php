@@ -30,6 +30,28 @@
                                         
                                         <input type="hidden" name="in_id" value="{{ $inno->in_id }}">
 
+
+
+                                        <?php  $for=DB::table('cat_in')->get();  ?>
+                                         <div class="form-group col-md-4">
+                                           <label for="aaa">Catagory</label>
+                                            <select name="cat_id" id="aaa" class="form-control">
+                                            @foreach($for as $fors)
+                                            <option <?php if(isset($inno)){ if($inno->cat_id == $fors->cat_in_id){echo 'selected';} } ?>
+                                             value="{{$fors->cat_in_id}}">{{$fors->nameen}}</option>
+                                            @endforeach
+                                                           
+                                             </select>
+                                             </div> 
+
+                                             <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                Date </label>
+                                            <div class="col-md-9">
+                                                <input type="date" name="date" class="form-control" value="{{ $inno->date }}">
+                                            </div>
+                                        </div>
+
                                        
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
