@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon ">
             {{-- <img class="logo_img" src="images/favicon.ico" width="55" alt=""> --}}
         </div>
-        
+
     </a>
 
     <!-- Divider -->
@@ -25,7 +25,7 @@
 
     <!-- Heading -->
     {{-- @if (Auth::user()->type == 'admin') --}}
-        
+
     <li class="nav-item active">
         <a class="nav-link" href="/backoffice/banner">
             <i class="fa fa-image"></i>
@@ -37,26 +37,16 @@
             <span>Brand slide</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/backoffice/cat_news">
-            <i class="fa fa-image"></i>
-            <span>Catagory News</span></a>
-    </li>
-    <li class="nav-item active">
         <a class="nav-link" href="/backoffice/news">
             <i class="fa fa-image"></i>
             <span>News</span></a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/backoffice/cat_in">
-            <i class="fa fa-image"></i>
-            <span>Catagory Innovation</span></a>
     </li>
     <li class="nav-item active">
         <a class="nav-link" href="/backoffice/innovation">
             <i class="fa fa-image"></i>
             <span>Innovation</span></a>
     </li>
-   
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
@@ -65,13 +55,15 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Catagory</h6>
+                <a class="collapse-item" href="/backoffice/brand">Manage Brands</a>
+
+                {{-- <h6 class="collapse-header"></h6>
                 <a class="collapse-item" href="/backoffice/catagory">Catagory</a>
                 <a class="collapse-item" href="/backoffice/subcatagory">Subcategory</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Product</h6>
                 <a class="collapse-item" href="/backoffice/product type">Product Type</a>
-                <a class="collapse-item" href="/backoffice/product">Product</a>
+                <a class="collapse-item" href="/backoffice/product">Product</a> --}}
             </div>
         </div>
     </li>
@@ -86,11 +78,11 @@
         <div id="collapseSolution" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Catagory</h6>
-                <a class="collapse-item" href="/backoffice/solutiontype">Solution Step 1</a>
-                <a class="collapse-item" href="/backoffice/solution2">Solution Step 2</a>
-                <a class="collapse-item" href="/backoffice/solution3">Solution Step 3</a>
-                <!-- <a class="collapse-item" href="/backoffice/solution4">Solution Step 4</a> -->
-                <a class="collapse-item" href="/backoffice/solution5">Solution Step Product</a>
+                <a class="collapse-item" href="/backoffice/solutiontype">Solution Type</a>
+                <a class="collapse-item" href="/backoffice/solution2">Solution 2</a>
+                <a class="collapse-item" href="/backoffice/solution3">Solution 3</a>
+                <a class="collapse-item" href="/backoffice/solution4">Solution 4</a>
+                <a class="collapse-item" href="/backoffice/solution5">Solution 5</a>
             </div>
         </div>
     </li>
@@ -105,11 +97,9 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Catagory</h6>
                 <a class="collapse-item" href="/backoffice/vision">Vision</a>
-                <a class="collapse-item" href="/backoffice/meet_type">Meetteam type</a>
                 <a class="collapse-item" href="/backoffice/meet_head">Meetteam Head</a>
                 <a class="collapse-item" href="/backoffice/meet_body">Meetteam</a>
                 <a class="collapse-item" href="/backoffice/partner">Partner</a>
-                <a class="collapse-item" href="/backoffice/partnergal">Partner Picture</a>
             </div>
         </div>
     </li>
@@ -133,7 +123,7 @@
     {{-- <div class="sidebar-heading">
        Report
     </div> --}}
-  
+
     <!-- Nav Item - Pages Collapse Menu -->
     {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
