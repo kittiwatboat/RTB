@@ -18,9 +18,9 @@
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$news->cat_id)->first(); ?>
                             @if(session::get('lang')=='th')
-                            <li class="breadcrumb-item"><a href="news.php">{{$ttt->nameth}}</a></li>
+                            <li class="breadcrumb-item"><a href="{{session::get('lang')}}/news/{{$ttt->cat_news_id}}">{{$ttt->nameth}}</a></li>
                             @else
-                            <li class="breadcrumb-item"><a href="news.php">{{$ttt->nameen}}</a></li>
+                            <li class="breadcrumb-item"><a href="{{session::get('lang')}}/news/{{$ttt->cat_news_id}}">{{$ttt->nameen}}</a></li>
                             @endif
                             <li class="breadcrumb-item active" aria-current="page">{{$news['name'.session::get('lang')]}}</li>
                         </ol>
