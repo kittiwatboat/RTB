@@ -106,7 +106,7 @@
                                                 <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                     Description TH <div style="font-size: 12px;"></div></label>
                                                     <div class="col-md-9">
-                                                        <textarea name="desth" id="summernote2">{!! $inno->desth !!}</textarea>
+                                                        <textarea name="desth" id="summernote2">{!! $news->desth !!}</textarea>
                                                     </div>
                                                 </div>
                                                 <script>
@@ -124,7 +124,7 @@
                                                 <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                     Description EN <div style="font-size: 12px;"></div></label>
                                                     <div class="col-md-9">
-                                                        <textarea name="desen" id="summernote3">{!! $inno->desen !!}</textarea>
+                                                        <textarea name="desen" id="summernote3">{!! $news->desen !!}</textarea>
                                                     </div>
                                                 </div>
                                                 <script>
