@@ -85,7 +85,6 @@
                                                   
                                                 });
                                             </script>
-                                       
                                         <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Detail EN <div style="font-size: 12px;"></div></label>
@@ -101,6 +100,43 @@
                                              
                                                 });
                                             </script>
+
+
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                    Description TH <div style="font-size: 12px;"></div></label>
+                                                    <div class="col-md-9">
+                                                        <textarea name="desth" id="summernote2">{!! $inno->desth !!}</textarea>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#summernote2').summernote({
+                                                     
+                                                      tabsize: 2,
+                                                      height: 200,
+                                                      toolbar: []
+                                                        
+                                                      
+                                                    });
+                                                </script>
+                                           
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                    Description EN <div style="font-size: 12px;"></div></label>
+                                                    <div class="col-md-9">
+                                                        <textarea name="desen" id="summernote3">{!! $inno->desen !!}</textarea>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    $('#summernote3').summernote({
+                                                     
+                                                      tabsize: 2,
+                                                      height: 200,
+                                                      toolbar: []
+                                                 
+                                                    });
+                                                </script>
+
 
                                          <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">

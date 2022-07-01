@@ -47,12 +47,12 @@
             <span>News</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/backoffice/news">
+        <a class="nav-link" href="/backoffice/cat_in">
             <i class="fa fa-image"></i>
             <span>Catagory Innovation</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/backoffice/cat_in">
+        <a class="nav-link" href="/backoffice/innovation">
             <i class="fa fa-image"></i>
             <span>Innovation</span></a>
     </li>

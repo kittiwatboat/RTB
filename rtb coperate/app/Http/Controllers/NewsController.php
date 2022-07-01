@@ -79,6 +79,8 @@ class NewsController extends Controller
         $news->dateth=$dd.' '.$ii.' '.$ff;
         $news->dateen=$dd.' '.$ei.' '.$ff;
 
+        $news->desth=$request->desth;
+        $news->desen=$request->desen;
 
         $news->nameth=$request->nameth;
         $news->nameen=$request->nameen;
@@ -145,7 +147,10 @@ class NewsController extends Controller
         $news->date=$request->date;
         $news->dateth=$dd.' '.$ii.' '.$ff;
         $news->dateen=$dd.' '.$ei.' '.$ff;
-        
+
+        $news->desth=$request->desth;
+        $news->desen=$request->desen;
+
         $news->nameth=$request->nameth;
         $news->nameen=$request->nameen;
         $news->detailth=$request->detailth;

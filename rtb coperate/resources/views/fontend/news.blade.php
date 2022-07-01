@@ -37,12 +37,11 @@
                             <div class="card-news-text px-lg-3 px-0 py-3 mx-lg-2 mx-0">
                                 <h5>{{$newss['name'.session::get('lang')]}}</h5>
                                 <div>
-                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> 08 September, 2021</span>
-                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i> News & Promotion</span>
+                                    <span class="fs-12 fw-medium me-2"><i class="fas fa-calendar-alt text-green"></i> {{$newss['date'.session::get('lang')]}}</span>
+                                    <?php  $ttt=DB::table('cat_news')->where('cat_news_id',$newss->news_id)->first(); ?>
+                                    <span class="fs-12 fw-medium"><i class="fas fa-tag text-green"></i>{{$ttt['name'.session::get('lang')]}}</span>
                                 </div>
-                                <p class="text-news text-gray my-3">RTB continues to open up a now experience of listening to
-                                    quality music continuously. delivering innovative head
-                                    phones Jabra Elite 2 and Jabra Elite....</p>
+                                <p class="text-news text-gray my-3">{!! $newss['des'.session::get('lang')] !!}</p>
                                 <div class="mt-4">
                                     <a class="btn fw-medium" href="{{session::get('lang')}}/newsDetail/{{$newss->news_id}}"><i class="fas fa-arrow-alt-circle-right text-green"></i>&nbsp; Read More</a>
                                 </div>

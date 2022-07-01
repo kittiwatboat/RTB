@@ -33,7 +33,8 @@
                         <div class="border">
                             <img src="{{$ins->in_img}}" class="w-100">
                             <div class="card-news-text px-lg-3 px-1 py-3 mx-2">
-                                <span class="text-green fw-medium">Technology inside digital workplace</span>
+                            <?php  $ttt=DB::table('cat_in')->where('cat_in_id',$ins->in_id)->first(); ?>
+                                <span class="text-green fw-medium">{{$ttt['name'.session::get('lang')]}}</span>
                                 <h5>{{$ins['in_name'.session::get('lang')]}}</h5>
                                 <p class="text-news text-gray my-3">{!! $ins['in_description'.session::get('lang')] !!}</p>
                                 <div>
@@ -43,7 +44,7 @@
                             <div class="border-top py-2">
                                 <a class="btn text-gray fs-12" href=""><i class="fas fa-user"></i> Admin</a>
                                 <span class="text-gray">|</span>
-                                <a class="btn text-gray fs-12" href=""><i class="fas fa-calendar-alt"></i> 08 September, 2021</a>
+                                <a class="btn text-gray fs-12" href=""><i class="fas fa-calendar-alt"></i>{{$ins['date'.session::get('lang')]}}</a>
                             </div>
                         </div>
                     </div>
