@@ -13,7 +13,7 @@
         @include('backend.head')
     </head>
     <body id="page-top">
-    
+
         <div id="wrapper">
             @include('backend.menu')
             <div id="content-wrapper" class="d-flex flex-column">
@@ -26,6 +26,12 @@
                                 <div class="card-header">จัดการ <strong>Product </strong> </div>
                                 <div class="card-body">
                                     <div class="text-right">
+                                    <form action="/uploadproduct" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <label for="">upload file</label>
+                                        <input type="file" name="file" id="">
+                                        <button type="submit" class="btn btn-success">Upload</button>
+                                    </form>
                                         <a href="/backoffice/product/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
                                     </div>
                                     <table class="table table-responsive-sm text-center">
@@ -55,7 +61,7 @@
                                         </tbody>
                                         {{ $pro->links() }}
                                     </table>
-                           
+
                                 </div>
                             </div>
                         </div>
@@ -76,9 +82,9 @@
     <script src="js/main.js"></script>
     <script src="javascript/sweetalert2.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script> 
+    <script>
     function batbal(pro_id){
-        
+
         Swal.fire({
         title:"ลบข้อมูล",text:"คุณต้องการลบข้อมูลใช่หรือไม่?",icon:"warning",showCancelButton:true,confirmButtonColor:"#DD6B55",showLoaderOnConfirm: true,
         preConfirm: () => {
