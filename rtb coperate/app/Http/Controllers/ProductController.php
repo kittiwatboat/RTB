@@ -11,6 +11,8 @@ use App\producttypeModel;
 use App\productModel;
 use App\colorModel;
 use App\albumcolorModel;
+use Maatwebsite\Excel\Facades\Excel;
+use App\imports\ProductImport;
 class ProductController extends Controller
 {
     public function imageSize($find = null)
@@ -39,6 +41,11 @@ class ProductController extends Controller
             }
         }
     }
+    public function importproduct(Request $request){
+        Excel::import(new ProductImport, $request->file);
+
+        return redirect()->back()->with('success', 'User Imported Successfully');
+    }
     public function protype(){
         $scat=subcatagoryModel::get();
         $protype=producttypeModel::join('subcatagory','subcatagory.scat_id','=','producttype.scat_id')
@@ -62,12 +69,12 @@ class ProductController extends Controller
         $protype->typenameen=$request->typenameen;
         $filename = 'type_img_' . date('dmY-His');
         $file = $request->type_img;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 // if($arti->type_img != null){
                 //     Storage::disk('public')->delete($arti->type_img);
-                // }                
+                // }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -97,12 +104,12 @@ class ProductController extends Controller
         $protype->typenameen=$request->typenameen;
         $filename = 'type_img_' . date('dmY-His');
         $file = $request->type_img;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 if($protype->type_img != null){
                     Storage::disk('public')->delete($protype->type_img);
-                }                
+                }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -153,12 +160,12 @@ class ProductController extends Controller
         $pro->price=$request->price;
         $filename = 'img_' . date('dmY-His');
         $file = $request->img;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 // if($pro->img != null){
                 //     Storage::disk('public')->delete($pro->img);
-                // }                
+                // }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -170,7 +177,7 @@ class ProductController extends Controller
         }
         $pro->save();
         return redirect('/backoffice/product');
-        
+
     }
     public function edit($id){
         $pro=productModel::find($id);
@@ -179,7 +186,7 @@ class ProductController extends Controller
         return view('backend.product.product.edit')->with('type',$type)->with('scat',$scat)->with('pro',$pro);
     }
     public function editsub(Request $request){
-        
+
         $pro= productModel::find($request->pro_id);
         $pro->pt_id=$request->pt_id;
         $pro->pro_nameth=$request->pro_nameth;
@@ -189,12 +196,12 @@ class ProductController extends Controller
         $pro->price=$request->price;
         $filename = 'img_' . date('dmY-His');
         $file = $request->img;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 if($pro->img != null){
                     Storage::disk('public')->delete($pro->img);
-                }                
+                }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -206,7 +213,7 @@ class ProductController extends Controller
         }
         $pro->save();
         return redirect()->back();
-        
+
     }
     public function color($id){
         $pro=productModel::find($id);
@@ -224,12 +231,12 @@ class ProductController extends Controller
         $color->colorcode=$request->colorcode;
         $filename = 'proimg_' . date('dmY-His');
         $file = $request->proimg;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 // if($color->proimg != null){
                 //     Storage::disk('public')->delete($color->proimg);
-                // }                
+                // }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -253,12 +260,12 @@ class ProductController extends Controller
         $color->colorcode=$request->colorcode;
         $filename = 'proimg_' . date('dmY-His');
         $file = $request->proimg;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 if($color->proimg != null){
                     Storage::disk('public')->delete($color->proimg);
-                }                
+                }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
@@ -294,12 +301,12 @@ class ProductController extends Controller
         $album->c_id = $request->c_id;
         $filename = 'al_img_' . date('dmY-His');
         $file = $request->al_img;
-        if($file){ 
+        if($file){
             $ima = $file->getClientOriginalExtension();
-            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){ 
+            if($ima=='png' || $ima=='jpg'|| $ima=='jpeg'){
                 if($album->al_img != null){
                     Storage::disk('public')->delete($album->al_img);
-                }                
+                }
             $lg = Image::make($file->getRealPath());
             $ext = explode("/", $lg->mime())[1];
             $size = $this->imageSize();
