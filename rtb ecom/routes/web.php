@@ -14,6 +14,6 @@
 
 route::get('/','HomeController@index');
 route::get('/cart','HomeController@cart');
-route::get('/paymmet/creadit/','PaymentControlller@creadit');
-route::get('/payment/QR','PaymentController@QR');
+route::get('/ecommerce/paymmet/creadit/','PaymentControlller@creadit');
+route::get('/ecommerce/payment/QR','PaymentController@QR');
 
