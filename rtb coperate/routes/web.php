@@ -73,10 +73,14 @@ Route::get('/applyForm_step6','HomeController@applyForm_step6');
 Route::get('/contact','HomeController@contact');
 
 Route::get('/product/{id}','HomeController@product');
-
+route::get('/ecommerce','HomeecomController@index');
+route::get('/cart','HomeecomController@cart');
+Route::get('/profile','HomeecomController@profile');
 });
 }
 });
+Route::post('/loginf','LoginController@loginf');
+Route::post('/register','RegisterController@register');
 Route::get('/backoffice','AdminController@index');
 
 Route::get('/backoffice/banner','BannerController@index');
