@@ -61,7 +61,11 @@
                                 </div>
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                <p class="fw-medium">{{$pro['pro_name'.session::get('lang')]}}</p>
+                                @if(session::get('lang')=='th')
+                                <p class="fw-medium">{{$pro->pro_nameth}}</p>
+                                @else
+                                <p class="fw-medium">{{$pro->pro_nameen}}</p>
+                                @endif
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
                                 <?php $price=number_format($pro->price,2); ?>
