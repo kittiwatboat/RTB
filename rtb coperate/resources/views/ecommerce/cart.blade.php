@@ -25,8 +25,6 @@
                 <h2>ตะกร้าสินค้า</h2>
             </div>
             <div class="row">
-<<<<<<< HEAD
-=======
 
 
             @if(isset(Auth::user()->id))
@@ -39,7 +37,6 @@
             ?>
 
           
->>>>>>> 16867966f032da4e46d2e783c7b3918aa97af8a9
                 <div class="col-sm-12 col-md-9 col-lg-9">
                     <div class="border bg-gray4 my-3 py-3 px-3">
                         <div class="row">
@@ -57,6 +54,8 @@
                             </div>
                         </div>
                     </div>
+
+                    @foreach($pros as $pro)
                     <div class="border my-3 py-3">
                         <div class="row w-100 ms-0">
                             <div class="col-12 col-sm-2 col-md-3">
@@ -65,7 +64,11 @@
                                 </div>
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                <p class="fw-medium">Jabra active Elite75T...</p>
+                                @if(session::get('lang')=='th')
+                                <p class="fw-medium">{{$pro->nameth}}</p>
+                                @else
+                                <p class="fw-medium">{{$pro->nameen}}</p>
+                                @endif
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
                                 <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿2,490.00</p>
@@ -93,8 +96,17 @@
 
                                 </div>
                             </div>
+                            @if(isset($pros->price_spa))
+                            @if($pros->price_spa!=null)
+                            <?php  $all_price=$pros->price_spa*$nums; $sm=number_format($all_price,2); ?>
+                            @else
+                            <?php  $all_price=$pros->price*$nums; $sm=number_format($all_price,2); ?>
+                            @endif
+                            @else
+                            <?php  $all_price=$pros->price*$nums; $sm=number_format($all_price,2); ?>
+                            @endif
                             <div class="col-4 col-sm-2 col-md-2">
-                                <p class="fw-medium text-darkGray mb-0">฿2,350.00</p>
+                                <p class="fw-medium text-darkGray mb-0">฿{{$sm}}</p>
                             </div>
 
                             @if(isset($all_price))
@@ -116,6 +128,9 @@
 
                         </div>
                     </div>
+                    @endforeach
+
+
                     <div class="col-sm-12 border my-3 my-lg-5 py-1 py-lg-3 px-2 px-lg-3">
                         <h5>NOTE</h5>
                         <p class="text-gray">เพิ่มคำแนะนำพิเศษสำหรับการสั่งซื้อของคุณ</p>
