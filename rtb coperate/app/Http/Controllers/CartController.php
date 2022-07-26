@@ -53,17 +53,19 @@ class CartController extends Controller
 
     public function promotion_code(Request $r){
         $po=DB::table('promotion')->where('code',$r->code)->first();
+        if($r->code!=null or $r->code!=''){
         if($po!=null){
             $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => $po->id]);
 
             return redirect()->back()->with('code','Code Success!');
-        }elseif($r->code==null or $r->code==''){
-            $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => null]);
-
-            return redirect()->back()->with('code','Remove Code!');
         }else{
            
             return redirect()->back()->with('code','Code Wrong!');
+        }
+        }else{
+            $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => null]);
+
+            return redirect()->back()->with('code','Remove Code!');
         }
     }
 
