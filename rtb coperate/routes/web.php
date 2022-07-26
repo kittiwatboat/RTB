@@ -44,12 +44,6 @@ Route::group(['middleware' => 'Language'], function () {
  foreach ($lang_db as $lang) {
   Route::prefix($lang->set)->group(function () {
 
-Route::post('/cart_add','CartController@cart_add');
-Route::post('/cart_minus','CartController@cart_minus');
-Route::post('/cart_remove','CartController@cart_remove');
-
-
-
 Route::get('/','HomeController@index');
 Route::get('/about','HomeController@about');
 Route::get('/products01','HomeController@product');
@@ -89,6 +83,14 @@ Route::get('/profile','HomeecomController@profile');
 Route::post('/loginf','LoginController@loginf');
 Route::post('/register','RegisterController@register');
 Route::get('/backoffice','AdminController@index');
+
+
+Route::post('/cart_add','CartController@cart_add');
+Route::post('/cart_minus','CartController@cart_minus');
+Route::post('/cart_remove','CartController@cart_remove');
+
+
+
 
 Route::get('/backoffice/banner','BannerController@index');
 Route::get('/backoffice/banner/add','BannerController@add');

@@ -89,17 +89,17 @@
                                  @csrf
                                  <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
                                 <input type="hidden" name="id_user" value="{{$user}}">
-                                    <button type="submit" class="btn bg-gray4 sub" type="button" id="sub">-</button>
+                                    <button type="submit" class="btn bg-gray4 " type="button" id="">-</button>
                                 </form>
 
                                 <?php  $num=DB::table('cart')->where('id_user',$user)->where('id_product',$pro->pro_id)->orderby('id_cart','desc')->get(); $nums=count($num);  ?>
                                     <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="{{$nums}}">
 
-                                    <form method="post" id="" action="{{session::get('lang')}}/cart_add" enctype="multipart/form-data">
+                                    <form method="post" id="" action="{{ url('/cart_add') }}" enctype="multipart/form-data">
                                      @csrf
                                      <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
                                 <input type="hidden" name="id_user" value="{{$user}}">
-                                    <button type="submit" class="btn bg-gray4 add" type="button" id="add">+</button>
+                                    <button type="submit" class="btn bg-gray4 " type="button" id="">+</button>
                                     </form>
 
                                 </div>
