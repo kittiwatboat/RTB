@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cartModel extends Model
+class promotionModel extends Model
 {
-    protected $table="cart";
+    protected $table="promotion";
     protected $primarykey ="id";
 }
