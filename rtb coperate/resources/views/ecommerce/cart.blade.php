@@ -247,7 +247,12 @@
 
                         <div class="d-flex justify-content-between py-2 my-2">
                             <p class="fs-18 fw-medium mb-0">รวมสุทธิ</p>
+                            @if($pro1!=null or $pro1!='')
+                            <?php $um=$check_pro1->price_minus; $sum2=$sum2-$um; $sum20=number_format($sum2,2);  ?>
                             <p class="fs-18 fw-medium mb-0">฿{{$sum20}}</p>
+                            @else
+                            <p class="fs-18 fw-medium mb-0">฿{{$sum20}}</p>
+                            @endif
                             <input type="hidden" name="sum2" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$sum2}}">
                         </div>
 

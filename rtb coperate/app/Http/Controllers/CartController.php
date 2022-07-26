@@ -73,7 +73,9 @@ class CartController extends Controller
 
     public function promotion_add(Request $r){
         $date=date('Y-m-d H:i:s');
-        $po=DB::table('promotion')->where('id',$r->id_promotion)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)->first();
+        $po=DB::table('promotion')->where('id',$r->id_promotion)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)
+        ->where('low_price','<=',$r->sum_all)
+        ->first();
 
         $user=DB::table('user')->where('pro1',$r->id_promotion)->first();
 
@@ -84,7 +86,7 @@ class CartController extends Controller
             return redirect()->back()->with('code','Promotion Success!');
         }else{
            
-            return redirect()->back()->with('code','Promotion Date End!');
+            return redirect()->back()->with('code','Promotion Date End! or Promotion Price Low Gain!');
         }
         }else{
             $user=DB::table('user')->where('id',$r->id_user)->update(['pro1' => null]);
