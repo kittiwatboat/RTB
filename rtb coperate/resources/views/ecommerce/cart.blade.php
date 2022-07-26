@@ -25,14 +25,6 @@
                 <h2>ตะกร้าสินค้า</h2>
             </div>
             <div class="row">
-
-
-            @if(isset(Auth::user()->id))
-            <?php $user=Auth::user()->id;  $pros=DB::table('cart')->where('id_user',$user)
-            ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id_cart')
-            ->orderby('id_cart','desc')->get();  ?>
-
-          
                 <div class="col-sm-12 col-md-9 col-lg-9">
                     <div class="border bg-gray4 my-3 py-3 px-3">
                         <div class="row">
@@ -50,9 +42,6 @@
                             </div>
                         </div>
                     </div>
-
-                    @foreach($pros as $pro)
-                    <?php $price_sum=0;  ?>
                     <div class="border my-3 py-3">
                         <div class="row w-100 ms-0">
                             <div class="col-12 col-sm-2 col-md-3">
@@ -61,87 +50,61 @@
                                 </div>
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                @if(session::get('lang')=='th')
-                                <p class="fw-medium">{{$pro->pro_nameth}}</p>
-                                @else
-                                <p class="fw-medium">{{$pro->pro_nameen}}</p>
-                                @endif
+                                <p class="fw-medium">Jabra active Elite75T...</p>
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                <?php $price=number_format($pro->price,2); ?>
-                                @if(isset($pro->price_spa))
-                                @if($pro->price_spa!=null)
-                                <?php $price_spa=number_format($pro->price_spa,2); ?>
-                                <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿{{$price_spa}}</p>
-                                <p class="fw-medium text-darkGray mb-0">฿{{$price}}</p>
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$price}}</p>
-                                @endif
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$price}}</p>
-                                @endif
+                                <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿2,490.00</p>
+                                <p class="fw-medium text-darkGray mb-0">฿2,490.00</p>
                             </div>
-
                             <div class="col-6 col-sm-3 col-md-2">
                                 <div class="input-group w-100 mb-3">
-
-                                <form method="post" id="" action="{{ url('/cart_minus') }}" enctype="multipart/form-data">
-                                 @csrf
-                                 <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
-                                <input type="hidden" name="id_user" value="{{$user}}">
-                                    <button type="submit" class="btn bg-gray4 sub" type="button" id="sub">-</button>
-                                </form>
-
-                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('id_product',$pro->pro_id)->orderby('id_cart','desc')->get(); $nums=count($num);  ?>
-                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="{{$nums}}">
-
-                                    <form method="post" id="" action="{{session::get('lang')}}/cart_add" enctype="multipart/form-data">
-                                     @csrf
-                                     <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
-                                <input type="hidden" name="id_user" value="{{$user}}">
-                                    <button type="submit" class="btn bg-gray4 add" type="button" id="add">+</button>
-                                    </form>
-
+                                    <button class="btn bg-gray4 sub" type="button" id="sub">-</button>
+                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="1">
+                                    <button class="btn bg-gray4 add" type="button" id="add">+</button>
                                 </div>
                             </div>
-
                             <div class="col-4 col-sm-2 col-md-2">
-                            <?php $all=DB::table('product')->where('pro_id',$pro->pro_id)->first(); $all_price=$all->price*$nums; $p_all=number_format($all_price,2); ?>
-                            @if(isset($pro->price_spa))
-                                @if($pro->price_spa!=null)
-                                <?php $all=DB::table('product')->where('pro_id',$pro->pro_id)->first(); $all_price=$all->price_spa*$nums; $p_all=number_format($all_price,2); ?>
-                                <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
-                                @endif
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
-                                @endif
+                                <p class="fw-medium text-darkGray mb-0">฿2,350.00</p>
                             </div>
-                            <?php $price_sum=$price_sum+$all_price;  ?>
-
-                            <form method="post" id="" action="{{ url('/cart_remove') }}" enctype="multipart/form-data">
-                             @csrf
-                            <div class=" col-2 col-sm-1 col-md-1">
-                            <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
-                                <input type="hidden" name="id_user" value="{{$user}}">
-                                <button type="submit" class="btn btn-gray border py-0 px-2">x</button>
+                            <div class="col-2 col-sm-1 col-md-1">
+                                <a class="btn btn-gray border py-0 px-2">x</a>
                             </div>
-                            </form>
-
                         </div>
                     </div>
-                    @endforeach
-
+                    <div class="border my-3 py-3">
+                        <div class="row">
+                            <div class="col-12 col-sm-2 col-md-3">
+                                <div class="d-flex">
+                                    <img src="images/Product/listOrder4.png" class="w-100">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2 col-md-2">
+                                <p class="fw-medium">DOD 512G</p>
+                            </div>
+                            <div class="col-6 col-sm-2 col-md-2">
+                                <p class="fw-medium text-darkGray mb-0">฿9,590.00</p>
+                            </div>
+                            <div class="col-6 col-sm-3 col-md-2">
+                                <div class="input-group w-100 mb-3">
+                                    <button class="btn bg-gray4 sub" type="button" id="sub">-</button>
+                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="1">
+                                    <button class="btn bg-gray4 add" type="button" id="add">+</button>
+                                </div>
+                            </div>
+                            <div class="col-4 col-sm-2 col-md-2">
+                                <p class="fw-medium text-darkGray mb-0">฿19,180.00</p>
+                            </div>
+                            <div class=" col-2 col-sm-1 col-md-1">
+                                <a class="btn btn-gray border py-0 px-2">x</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-12 border my-3 my-lg-5 py-1 py-lg-3 px-2 px-lg-3">
                         <h5>NOTE</h5>
                         <p class="text-gray">เพิ่มคำแนะนำพิเศษสำหรับการสั่งซื้อของคุณ</p>
                         <textarea rows="5" class="bg-gray4 border-0 w-100"></textarea>
                     </div>
                 </div>
-
-
-                <?php $sum=number_format($price_sum,2); ?>
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
                         <div class="border-bottom border-2 border-dark">
@@ -149,11 +112,11 @@
                         </div>
                         <div class="d-flex justify-content-between border-bottom my-3">
                             <p class="fw-medium">รวม</p>
-                            <p class="fw-medium">฿{{$sum}}</p>
+                            <p class="fw-medium">฿21,530.00</p>
                         </div>
                         <div class="border py-2 px-3 my-2">
                             <p class="fs-18 fw-medium">คูปอง</p>
-                            <a href="#" class="btn px-0 py-0 d-flex justify-content-between">
+                            <a href="#" class="btn px-0 py-0 d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#coupon">
                                 <p class="text-gray mb-0">เลือกคูปอง</p>
                                 <p class="text-gray mb-0">></p>
                             </a>
@@ -179,7 +142,7 @@
                         </div>
                         <div class="d-flex justify-content-between py-2 my-2">
                             <p class="fs-18 fw-medium mb-0">รวมสุทธิ</p>
-                            <p class="fs-18 fw-medium mb-0">฿{{$sum}}</p>
+                            <p class="fs-18 fw-medium mb-0">฿21,300.00</p>
                         </div>
                         <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
                             <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการชำระเงิน</a>
@@ -192,12 +155,6 @@
                         <a class="text-green" href="#">สมัครสมาชิกตอนนี้</a> <span>หรือ</span> <a class="text-green" href="#">เข้าสู่ระบบ</a>
                     </div>
                 </div>
-
-
-                @endif
-
-
-
             </div>
             <div class="bottomFoot"></div>
         </div>
@@ -218,6 +175,59 @@
                                 <a class="btn bg-gray3 text-white rounded-pill px-5 my-2">เข้าสู่ระบบ</a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form>
+        <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="couponLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="couponLabel">เลือกคูปอง</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row gx-2">
+                            <div class="col-md-6 col-lg-4 col-sm-4">
+                                <label class="w-100" id="couponSelect">
+                                    <div class="card m-2 rounded-0">
+                                        <div class="card-coupon-head py-3">
+                                            <i class="fas fa-shipping-fast fs-150"></i>
+                                            <div class="text-pro">
+                                                <h5>คูปองจัดส่งฟรี</h5>
+                                                <p>ซื้อขั้นต่ำ 99.-</p>
+                                            </div>
+                                        </div>
+                                        <div class="card-coupon-foot text-center pt-3 border-top">
+                                            <p class="fs-12 text-gray mb-2">2021.12.07 <span>00:00</span> - 2021.12.31 <span>00:00</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
+                                            <a class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-sm-4">
+                                <label class="w-100" id="couponSelect">
+                                    <div class="card m-2 rounded-0">
+                                        <div class="card-coupon-head py-3">
+                                            <i class="fas fa-shopping-bag fs-150"></i>
+                                            <div class="text-pro">
+                                                <h5>฿ 100</h5>
+                                                <p>ซื้อขั้นต่ำ 500.-</p>
+                                            </div>
+                                        </div>
+                                        <div class="card-coupon-foot text-center pt-3 border-top">
+                                            <p class="fs-12 text-gray mb-2">2021.12.07 <span>00:00</span> - 2021.12.31 <span>00:00</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
+                                            <a class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-green rounded-pill px-5" type="submit">ยืนยัน</button>
                     </div>
                 </div>
             </div>
