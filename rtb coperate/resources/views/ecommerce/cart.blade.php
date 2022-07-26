@@ -55,6 +55,8 @@
                         </div>
                     </div>
 
+                    <?php $price_sum=0; ?>
+
                     @foreach($pros as $pro)
                     <div class="border my-3 py-3">
                         <div class="row w-100 ms-0">
@@ -154,7 +156,7 @@
                         </div>
                         <div class="d-flex justify-content-between border-bottom my-3">
                             <p class="fw-medium">รวม</p>
-                            <p class="fw-medium">฿21,530.00</p>
+                            <p class="fw-medium">฿{{$sum}}</p>
                         </div>
 
                         <div class="border py-2 px-3 my-2">
