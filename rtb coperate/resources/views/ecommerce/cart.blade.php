@@ -52,6 +52,7 @@
                     </div>
 
                     @foreach($pros as $pro)
+                    <?php $price_sum=0;  ?>
                     <div class="border my-3 py-3">
                         <div class="row w-100 ms-0">
                             <div class="col-12 col-sm-2 col-md-3">
@@ -113,6 +114,7 @@
                                 <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
                                 @endif
                             </div>
+                            <?php $price_sum=$price_sum+$p_all;  ?>
 
                             <form method="post" id="" action="{{ url('/cart_remove') }}" enctype="multipart/form-data">
                              @csrf
@@ -135,7 +137,7 @@
                 </div>
 
 
-
+                <?php $sum=number_format($price_sum,2); ?>
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
                         <div class="border-bottom border-2 border-dark">
@@ -143,7 +145,7 @@
                         </div>
                         <div class="d-flex justify-content-between border-bottom my-3">
                             <p class="fw-medium">รวม</p>
-                            <p class="fw-medium">฿21,530.00</p>
+                            <p class="fw-medium">฿{{$sum}}</p>
                         </div>
                         <div class="border py-2 px-3 my-2">
                             <p class="fs-18 fw-medium">คูปอง</p>
@@ -173,7 +175,7 @@
                         </div>
                         <div class="d-flex justify-content-between py-2 my-2">
                             <p class="fs-18 fw-medium mb-0">รวมสุทธิ</p>
-                            <p class="fs-18 fw-medium mb-0">฿21,300.00</p>
+                            <p class="fs-18 fw-medium mb-0">฿{{$sum}}</p>
                         </div>
                         <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
                             <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการชำระเงิน</a>
