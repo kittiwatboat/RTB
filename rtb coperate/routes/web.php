@@ -39,20 +39,16 @@ Route::get('/', function () use ($lang_db) {
 });
 
 
-
+Route::group(['middleware' => 'Language'], function () {
+ $lang_db = \App\LanguageModel::where('status', "on")->get();
+ foreach ($lang_db as $lang) {
+  Route::prefix($lang->set)->group(function () {
 
 Route::post('/cart_add','CartController@cart_add');
 Route::post('/cart_minus','CartController@cart_minus');
 Route::post('/cart_remove','CartController@cart_remove');
 
 
-
-
-
-Route::group(['middleware' => 'Language'], function () {
- $lang_db = \App\LanguageModel::where('status', "on")->get();
- foreach ($lang_db as $lang) {
-  Route::prefix($lang->set)->group(function () {
 
 Route::get('/','HomeController@index');
 Route::get('/about','HomeController@about');
