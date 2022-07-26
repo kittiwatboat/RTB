@@ -38,8 +38,19 @@
                                              value="1">แบบกรอกโค้ด</option>
                                              <option <?php if(isset($promotion)){ if($promotion->type == '2'){echo 'selected';} } ?>
                                              value="2">แบบส่วนลด</option>
+                                             <option <?php if(isset($promotion)){ if($promotion->type == '3'){echo 'selected';} } ?>
+                                             value="3">คูปองจัดส่งฟรี</option>
                                              </select>
                                              </div> 
+
+
+                                             <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                ราคาซื้อรวมขั้นต่ำ </label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="low_price" class="form-control" value="{{ $promotion->low_price }}">
+                                            </div>
+                                        </div>
 
                                        
                                         <div class="form-group row">
