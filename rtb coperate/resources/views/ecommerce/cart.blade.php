@@ -29,8 +29,8 @@
 
             @if(isset(Auth::user()->id))
             <?php $user=Auth::user()->id;  $busket=DB::table('cart')->where('id_user',$user)
-            // ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id_cart')
-            ->orderby('id_cart','desc')->get();  
+            // ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id')
+            ->orderby('id','desc')->get();  
 
             $pros=DB::table('product')->whereIn('pro_id',$busket->pluck('id_product')->toArray())->orderby('pro_id','desc')->get();
             
@@ -96,7 +96,7 @@
                                     <button type="submit" class="btn bg-gray4 " type="button" id="">-</button>
                                 </form>
 
-                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('id_product',$pro->pro_id)->orderby('id_cart','desc')->get(); $nums=count($num);  ?>
+                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('id_product',$pro->pro_id)->orderby('id','desc')->get(); $nums=count($num);  ?>
                                     <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="{{$nums}}">
 
                                     <form method="post" id="" action="{{ url('/cart_add') }}" enctype="multipart/form-data">

@@ -36,14 +36,15 @@ class CartController extends Controller
     }
 
     public function cart_minus(Request $r){
-        $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id_cart','desc')->first();
+        $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id','desc')->first();
+      
         $cart->delete();
 
         return redirect()->back()->with('cart','Delete Success');
     }
 
     public function cart_remove(Request $r){
-        $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id_cart','desc')->get();
+        $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id','desc')->get();
         $cart->delete();
 
         return redirect()->back()->with('cart','Remove Success');
