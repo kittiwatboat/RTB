@@ -219,7 +219,15 @@ Route::get('/backoffice/solution5/delete/{id}','Solution5Controller@delete');
 Route::post('/get_solution','Solution5Controller@get_solution');
 
 
+// Promotion
 
+Route::get('/backoffice/promotion','PromotionController@promotion');
+Route::get('/backoffice/promotion/add','PromotionController@add');
+Route::post('/backoffice/promotion/addsub','PromotionController@addsub');
+Route::get('/backoffice/promotion/edit/{id}','PromotionController@edit');
+Route::post('/backoffice/promotion/editsub','PromotionController@editsub');
+Route::get('/backoffice/promotion/delete/{id}','PromotionController@delete');
+// Promotion
 
 
 // About

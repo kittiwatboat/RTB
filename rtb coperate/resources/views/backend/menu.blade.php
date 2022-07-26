@@ -47,6 +47,12 @@
             <span>Innovation</span></a>
     </li>
 
+    <li class="nav-item active">
+        <a class="nav-link" href="/backoffice/promotion">
+            <i class="fa fa-image"></i>
+            <span>Promotion</span></a>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
