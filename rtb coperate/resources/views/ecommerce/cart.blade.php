@@ -168,13 +168,13 @@
                  @if($check_pro1!=null)
                 <?php  $pro1=Auth::user()->pro1; $boo1=$check_pro1->price_minus; $pro100=number_format($check_pro1->price_minus,2); ?>
                 @else
-                <?php  $pro1=null; $pro100=0; ?>
+                <?php  $pro1=null; $pro100=0; $boo1=0; ?>
                 @endif
 
                 @if($check_pro2!=null)
                 <?php  $pro2=Auth::user()->pro2; $boo2=$check_pro2->price_minus;  ?>
                 @else
-                <?php  $pro2=null; ?>
+                <?php  $pro2=null; $boo2=0; ?>
                 @endif
 
                 <div class="col-sm-12 col-md-3 col-lg-3">
