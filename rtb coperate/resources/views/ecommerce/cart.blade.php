@@ -24,10 +24,11 @@
             <div class="my-lg-4 my-3">
                 <h2>ตะกร้าสินค้า</h2>
             </div>
+
+            @if(isset(Auth::user()->id))
             <div class="row">
 
 
-            @if(isset(Auth::user()->id))
             <?php $user=Auth::user()->id;  $busket=DB::table('cart')->where('id_user',$user)
             // ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id')
             ->orderby('id','desc')->get();  
@@ -67,14 +68,25 @@
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
                                 @if(session::get('lang')=='th')
-                                <p class="fw-medium">{{$pro->nameth}}</p>
+                                <p class="fw-medium">{{$pro->pro_nameth}}</p>
                                 @else
-                                <p class="fw-medium">{{$pro->nameen}}</p>
+                                <p class="fw-medium">{{$pro->pro_nameen}}</p>
                                 @endif
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿2,490.00</p>
-                                <p class="fw-medium text-darkGray mb-0">฿2,490.00</p>
+                            @if(isset($pro->price_spa))
+                            @if($pro->price_spa!=null)
+                            <?php  $pr=number_format($pro->price,2);  $ps=number_format($pro->price_spa,2); ?>
+                                <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿{{$pr}}</p>
+                                <p class="fw-medium text-darkGray mb-0">฿{{$ps}}</p>
+                                @else
+                                <?php  $pr=number_format($pro->price,2);   ?>
+                                <p class="fw-medium text-darkGray mb-0">฿{{$pr}}</p>
+                                @endif
+                                @else
+                                <?php  $pr=number_format($pro->price,2);   ?>
+                                <p class="fw-medium text-darkGray mb-0">฿{{$pr}}</p>
+                                @endif
                             </div>
                             <div class="col-6 col-sm-3 col-md-2">
                                 <div class="input-group w-100 mb-3">
@@ -98,14 +110,14 @@
 
                                 </div>
                             </div>
-                            @if(isset($pros->price_spa))
-                            @if($pros->price_spa!=null)
-                            <?php  $all_price=$pros->price_spa*$nums; $sm=number_format($all_price,2); ?>
+                            @if(isset($pro->price_spa))
+                            @if($pro->price_spa!=null)
+                            <?php  $all_price=$pro->price_spa*$nums; $sm=number_format($all_price,2); ?>
                             @else
-                            <?php  $all_price=$pros->price*$nums; $sm=number_format($all_price,2); ?>
+                            <?php  $all_price=$pro->price*$nums; $sm=number_format($all_price,2); ?>
                             @endif
                             @else
-                            <?php  $all_price=$pros->price*$nums; $sm=number_format($all_price,2); ?>
+                            <?php  $all_price=$pro->price*$nums; $sm=number_format($all_price,2); ?>
                             @endif
                             <div class="col-4 col-sm-2 col-md-2">
                                 <p class="fw-medium text-darkGray mb-0">฿{{$sm}}</p>
@@ -219,6 +231,9 @@
                     </div>
                 </div>
             </div>
+
+            @endif
+
             <div class="bottomFoot"></div>
         </div>
     </div>
