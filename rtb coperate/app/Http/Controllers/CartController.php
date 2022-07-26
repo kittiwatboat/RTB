@@ -44,8 +44,7 @@ class CartController extends Controller
     }
 
     public function cart_remove(Request $r){
-        $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id','desc')->get();
-        $cart->delete();
+        $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id','desc')->delete();
 
         return redirect()->back()->with('cart','Remove Success');
     }

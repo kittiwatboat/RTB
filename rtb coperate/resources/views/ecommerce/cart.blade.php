@@ -122,7 +122,12 @@
                                 <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
                                 @endif
                             </div>
+
+                            @if(isset($all_price))
                             <?php $price_sum=$price_sum+$all_price;  ?>
+                            @else
+                            <?php $price_sum=$price_sum;  ?>
+                            @endif
 
                            
                             <div class=" col-2 col-sm-1 col-md-1">
@@ -146,8 +151,11 @@
                     </div>
                 </div>
 
-
+                @if(isset($all_price))
                 <?php $sum=number_format($price_sum,2); ?>
+                @else
+                <?php $sum=0; ?>
+                @endif
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
                         <div class="border-bottom border-2 border-dark">
