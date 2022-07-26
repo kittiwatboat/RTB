@@ -32,7 +32,7 @@
             // ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id_cart')
             ->orderby('id_cart','desc')->get();  
 
-            $pros=DB::table('product')->whereIn('pro_id',$busket->pluck('id_product')->toArray())->orderby('id','desc')->get();
+            $pros=DB::table('product')->whereIn('pro_id',$busket->pluck('id_product')->toArray())->orderby('pro_id','desc')->get();
             
             ?>
 
