@@ -79,8 +79,6 @@ class promotionController extends Controller
     public function editsub(Request $request){
         $promotion= promotionModel::find($request->promotion_id);
 
-        $promotion->id=$request->promotion_id;
-
         $promotion->nameen=$request->nameen;
         $promotion->nameth=$request->nameth;
 

@@ -31,7 +31,7 @@
 
                                         <div class="form-group col-md-4">
                                            <label for="aaa">Type</label>
-                                            <select name="cat_id" id="aaa" class="form-control">
+                                            <select name="type" id="aaa" class="form-control">
                                             <option <?php if(isset($promotion)){ if($promotion->type == '1'){echo 'selected';} } ?>
                                              value="1">แบบกรอกโค้ด</option>
                                              <option <?php if(isset($promotion)){ if($promotion->type == '2'){echo 'selected';} } ?>
@@ -70,7 +70,7 @@
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Price </label>
                                             <div class="col-md-9">
-                                                <input type="text" name="price" class="form-control" value="">
+                                                <input type="text" name="price_minus" class="form-control" value="">
                                             </div>
                                         </div>
 
