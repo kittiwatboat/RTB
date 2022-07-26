@@ -272,7 +272,11 @@
                         <div class="row gx-2">
 
 
-                        <?php $pmo=DB::table('promotion')->where('type','!=',1)->orderby('id','desc')->get();  ?>
+                        <?php   $date=date('Y-m-d H:i:s');
+                        $pmo=DB::table('promotion')->where('type','!=',1)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)->orderby('id','desc')->get();  
+                    //   dd($pmo);
+                        // $time =date('H:i:s');
+                        ?>
                         @foreach($pmo as $pmos)
                         @if($pmos->type==3)
                             <div class="col-md-6 col-lg-4 col-sm-4">
@@ -286,7 +290,7 @@
                                             </div>
                                         </div>
                                         <div class="card-coupon-foot text-center pt-3 border-top">
-                                            <p class="fs-12 text-gray mb-2">2021.12.07 <span>00:00</span> - 2021.12.31 <span>00:00</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
+                                            <p class="fs-12 text-gray mb-2">{{$pmos->date_start}} <span>{{$pmos->time_start}}</span> - {{$pmos->date_end}} <span>{{$pmos->time_end}}</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
                                             <a class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</a>
                                         </div>
                                     </div>
@@ -305,7 +309,7 @@
                                             </div>
                                         </div>
                                         <div class="card-coupon-foot text-center pt-3 border-top">
-                                            <p class="fs-12 text-gray mb-2">2021.12.07 <span>00:00</span> - 2021.12.31 <span>00:00</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
+                                            <p class="fs-12 text-gray mb-2">{{$pmos->date_start}} <span>{{$pmos->time_start}}</span> - {{$pmos->date_end}} <span>{{$pmos->time_end}}</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
                                             <a class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</a>
                                         </div>
                                     </div>

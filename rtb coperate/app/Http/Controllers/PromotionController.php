@@ -54,6 +54,9 @@ class promotionController extends Controller
         $promotion->nameen=$request->nameen;
         $promotion->nameth=$request->nameth;
 
+        // $promotion->time_start=$request->time_start;
+        // $promotion->time_end=$request->time_end;
+
         $promotion->type=$request->type;
         $promotion->code=$request->code;
         $promotion->price_minus=$request->price_minus;
@@ -91,6 +94,9 @@ class promotionController extends Controller
 
         $promotion->date_start=$request->date_start;
         $promotion->date_end=$request->date_end;
+
+        // $promotion->time_start=$request->time_start;
+        // $promotion->time_end=$request->time_end;
 
      
         $promotion->type=$request->type;

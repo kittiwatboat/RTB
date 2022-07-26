@@ -84,6 +84,44 @@
                                             </div>
                                         </div>
 
+                                        <br>
+
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                วันเริ่มต้น </label>
+                                            <div class="col-md-9">
+                                                <input type="datetime-local" name="date_start" class="form-control" value="">
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                เวลาเริ่มต้น </label>
+                                            <div class="col-md-9">
+                                                <input type="time" name="time_start" class="form-control" value="">
+                                            </div>
+                                        </div> -->
+
+
+                                        <br>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                วันสิ้นสุด </label>
+                                            <div class="col-md-9">
+                                                <input type="datetime-local" name="date_end" class="form-control" value="">
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="file-multiple-input">
+                                                เวลาสิ้นสุด </label>
+                                            <div class="col-md-9">
+                                                <input type="time" name="time_end" class="form-control" value="">
+                                            </div>
+                                        </div> -->
+
                                          <!-- <div class="form-group row">
                                             <label class="col-md-3 col-form-label" for="file-multiple-input">
                                                 Image <div style="font-size: 12px;"></div></label>
