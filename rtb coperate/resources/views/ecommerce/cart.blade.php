@@ -124,14 +124,16 @@
                             </div>
                             <?php $price_sum=$price_sum+$all_price;  ?>
 
+                           
+                            <div class=" col-2 col-sm-1 col-md-1">
                             <form method="post" id="" action="{{ url('/cart_remove') }}" enctype="multipart/form-data">
                              @csrf
-                            <div class=" col-2 col-sm-1 col-md-1">
                             <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
                                 <input type="hidden" name="id_user" value="{{$user}}">
                                 <button type="submit" class="btn btn-gray border py-0 px-2">x</button>
+                                </form>
                             </div>
-                            </form>
+                         
 
                         </div>
                     </div>
