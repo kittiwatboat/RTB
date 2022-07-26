@@ -25,14 +25,6 @@
                 <h2>ตะกร้าสินค้า</h2>
             </div>
             <div class="row">
-
-
-            @if(isset(Auth::user()->id))
-            <?php $user=Auth::user()->id;  $pros=DB::table('cart')->where('id_user',$user)
-            ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id_cart')
-            ->orderby('id_cart','desc')->get();  ?>
-
-          
                 <div class="col-sm-12 col-md-9 col-lg-9">
                     <div class="border bg-gray4 my-3 py-3 px-3">
                         <div class="row">
@@ -50,9 +42,12 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
 
                     @foreach($pros as $pro)
                     <?php $price_sum=0; ?>
+=======
+>>>>>>> 1ad61f31b70b6d70dc83aebbf3786c372ee8e9e8
                     <div class="border my-3 py-3">
                         <div class="row w-100 ms-0">
                             <div class="col-12 col-sm-2 col-md-3">
@@ -61,59 +56,23 @@
                                 </div>
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                <p class="fw-medium">{{$pro['pro_name'.session::get('lang')]}}</p>
+                                <p class="fw-medium">Jabra active Elite75T...</p>
                             </div>
                             <div class="col-6 col-sm-2 col-md-2">
-                                <?php $price=number_format($pro->price,2); ?>
-                                @if(isset($pro->price_spa))
-                                @if($pro->price_spa!=null)
-                                <?php $price_spa=number_format($pro->price_spa,2); ?>
-                                <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿{{$price_spa}}</p>
-                                <p class="fw-medium text-darkGray mb-0">฿{{$price}}</p>
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$price}}</p>
-                                @endif
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$price}}</p>
-                                @endif
+                                <p class="fw-medium text-gray fs-12 mb-0" style="text-decoration: line-through;">฿2,490.00</p>
+                                <p class="fw-medium text-darkGray mb-0">฿2,490.00</p>
                             </div>
-
                             <div class="col-6 col-sm-3 col-md-2">
                                 <div class="input-group w-100 mb-3">
-
-                                <form method="post" id="" action="{{ url('/cart_minus') }}" enctype="multipart/form-data">
-                                 @csrf
-                                 <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
-                                <input type="hidden" name="id_user" value="{{$user}}">
-                                    <button type="submit" class="btn bg-gray4 sub" type="button" id="sub">-</button>
-                                </form>
-
-                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('pro_id',$pro->pro_id)->orderby('id_cart','desc')->get(); $nums=count($num);  ?>
-                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="{{$nums}}">
-
-                                    <form method="post" id="" action="{{ url('/cart_add') }}" enctype="multipart/form-data">
-                                     @csrf
-                                     <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
-                                <input type="hidden" name="id_user" value="{{$user}}">
-                                    <button type="submit" class="btn bg-gray4 add" type="button" id="add">+</button>
-                                    </form>
-
+                                    <button class="btn bg-gray4 sub" type="button" id="sub">-</button>
+                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="1">
+                                    <button class="btn bg-gray4 add" type="button" id="add">+</button>
                                 </div>
                             </div>
-
                             <div class="col-4 col-sm-2 col-md-2">
-                            <?php $all=DB::table('product')->where('pro_id',$pro->pro_id)->first(); $all_price=$all->price*$nums; $p_all=number_format($all_price,2); ?>
-                            @if(isset($pro->price_spa))
-                                @if($pro->price_spa!=null)
-                                <?php $all=DB::table('product')->where('pro_id',$pro->pro_id)->first(); $all_price=$all->price_spa*$nums; $p_all=number_format($all_price,2); ?>
-                                <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
-                                @endif
-                                @else
-                                <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
-                                @endif
+                                <p class="fw-medium text-darkGray mb-0">฿2,350.00</p>
                             </div>
+<<<<<<< HEAD
                             <?php $price_sum=$price_sum+$p_all;  ?>
 
                             <form method="post" id="" action="{{ url('/cart_remove') }}" enctype="multipart/form-data">
@@ -122,22 +81,47 @@
                             <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
                                 <input type="hidden" name="id_user" value="{{$user}}">
                                 <button type="submit" class="btn btn-gray border py-0 px-2">x</button>
+=======
+                            <div class="col-2 col-sm-1 col-md-1">
+                                <a class="btn btn-gray border py-0 px-2">x</a>
                             </div>
-                            </form>
-
                         </div>
                     </div>
-                    @endforeach
-
+                    <div class="border my-3 py-3">
+                        <div class="row">
+                            <div class="col-12 col-sm-2 col-md-3">
+                                <div class="d-flex">
+                                    <img src="images/Product/listOrder4.png" class="w-100">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-2 col-md-2">
+                                <p class="fw-medium">DOD 512G</p>
+                            </div>
+                            <div class="col-6 col-sm-2 col-md-2">
+                                <p class="fw-medium text-darkGray mb-0">฿9,590.00</p>
+                            </div>
+                            <div class="col-6 col-sm-3 col-md-2">
+                                <div class="input-group w-100 mb-3">
+                                    <button class="btn bg-gray4 sub" type="button" id="sub">-</button>
+                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="1">
+                                    <button class="btn bg-gray4 add" type="button" id="add">+</button>
+                                </div>
+                            </div>
+                            <div class="col-4 col-sm-2 col-md-2">
+                                <p class="fw-medium text-darkGray mb-0">฿19,180.00</p>
+                            </div>
+                            <div class=" col-2 col-sm-1 col-md-1">
+                                <a class="btn btn-gray border py-0 px-2">x</a>
+>>>>>>> 1ad61f31b70b6d70dc83aebbf3786c372ee8e9e8
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-12 border my-3 my-lg-5 py-1 py-lg-3 px-2 px-lg-3">
                         <h5>NOTE</h5>
                         <p class="text-gray">เพิ่มคำแนะนำพิเศษสำหรับการสั่งซื้อของคุณ</p>
                         <textarea rows="5" class="bg-gray4 border-0 w-100"></textarea>
                     </div>
                 </div>
-
-
-
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
                         <div class="border-bottom border-2 border-dark">
@@ -189,12 +173,6 @@
                         <a class="text-green" href="#">สมัครสมาชิกตอนนี้</a> <span>หรือ</span> <a class="text-green" href="#">เข้าสู่ระบบ</a>
                     </div>
                 </div>
-
-
-                @endif
-
-
-
             </div>
             <div class="bottomFoot"></div>
         </div>
