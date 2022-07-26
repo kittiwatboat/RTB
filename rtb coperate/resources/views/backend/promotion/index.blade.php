@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card col-10 mx-auto">
-                                <div class="card-header">จัดการ <strong>ข่าวสาร และ บทความ </strong> </div>
+                                <div class="card-header">จัดการ <strong>Promotion </strong> </div>
                                 <div class="card-body">
                                     <div class="text-right">
                                         <a href="/backoffice/promotion/add" type="button" class="btn btn-dark" > เพิ่ม </a><br><br>
