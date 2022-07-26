@@ -92,7 +92,7 @@
                                     <button type="submit" class="btn bg-gray4 sub" type="button" id="sub">-</button>
                                 </form>
 
-                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('pro_id',$pro->pro_id)->orderby('id_cart','desc')->get(); $nums=count($num);  ?>
+                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('id_product',$pro->pro_id)->orderby('id_cart','desc')->get(); $nums=count($num);  ?>
                                     <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="{{$nums}}">
 
                                     <form method="post" id="" action="{{ url('/cart_add') }}" enctype="multipart/form-data">
@@ -118,7 +118,7 @@
                                 <p class="fw-medium text-darkGray mb-0">฿{{$p_all}}</p>
                                 @endif
                             </div>
-                            <?php $price_sum=$price_sum+$p_all;  ?>
+                            <?php $price_sum=$price_sum+$all_price;  ?>
 
                             <form method="post" id="" action="{{ url('/cart_remove') }}" enctype="multipart/form-data">
                              @csrf
