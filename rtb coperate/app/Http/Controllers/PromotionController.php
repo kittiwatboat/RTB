@@ -51,7 +51,7 @@ class promotionController extends Controller
 
         $promotion->type=$request->type;
         $promotion->code=$request->code;
-        $promotion->minus=$request->minus;
+        $promotion->price_minus=$request->price_minus;
         // $filename = 'promotion_img_' . date('dmY-His');
         // $file = $request->promotion_img;
         // if($file){ 
@@ -87,7 +87,7 @@ class promotionController extends Controller
      
         $promotion->type=$request->type;
         $promotion->code=$request->code;
-        $promotion->minus=$request->minus;
+        $promotion->price_minus=$request->price_minus;
         // $filename = 'promotion_img_' . date('dmY-His');
         // $file = $request->promotion_img;
         // if($file){ 
@@ -113,7 +113,7 @@ class promotionController extends Controller
         // if($promotion->promotion_img != null){
         //     Storage::disk('public')->delete($promotion->promotion_img);
         // }
-        $a=promotionModel::destroy($promotion->promotion_id);
+        $a=promotionModel::destroy($promotion->id);
         if($a){
             return response()->json(true);
         }else{
