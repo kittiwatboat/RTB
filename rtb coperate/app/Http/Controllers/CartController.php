@@ -52,7 +52,8 @@ class CartController extends Controller
 
 
     public function promotion_code(Request $r){
-        $po=DB::table('promotion')->where('code',$r->code)->first();
+        $date=date('Y-m-d H:i:s');
+        $po=DB::table('promotion')->where('code',$r->code)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)->first();
         if($r->code!=null or $r->code!=''){
         if($po!=null){
             $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => $po->id]);
@@ -66,6 +67,29 @@ class CartController extends Controller
             $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => null]);
 
             return redirect()->back()->with('code','Remove Code!');
+        }
+    }
+
+
+    public function promotion_add(Request $r){
+        $date=date('Y-m-d H:i:s');
+        $po=DB::table('promotion')->where('id',$r->id_promotion)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)->first();
+
+        $user=DB::table('user')->where('pro1',$r->id_promotion)->first();
+
+        if($user==null or $user==''){
+        if($po!=null){
+            $user=DB::table('user')->where('id',$r->id_user)->update(['pro1' => $po->id]);
+
+            return redirect()->back()->with('code','Promotion Success!');
+        }else{
+           
+            return redirect()->back()->with('code','Promotion Date End!');
+        }
+        }else{
+            $user=DB::table('user')->where('id',$r->id_user)->update(['pro1' => null]);
+
+            return redirect()->back()->with('code','Remove Promotion!');
         }
     }
 

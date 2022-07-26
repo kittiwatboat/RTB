@@ -159,7 +159,23 @@
                 @endif
 
 
-              <?php  $pro1=Auth::user()->pro1; $pro2=Auth::user()->pro2; ?>
+                <?php $pro1=Auth::user()->pro1; $pro2=Auth::user()->pro2;
+                  $date=date('Y-m-d H:i:s');
+                  $check_pro1=DB::table('promotion')->where('id',$pro1)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)->first();
+                  $check_pro2=DB::table('promotion')->where('id',$pro2)->whereDate('date_start','<=',$date)->whereDate('date_end','>=',$date)->first();
+                 ?>
+                 
+                 @if($check_pro1!=null)
+                <?php  $pro1=Auth::user()->pro1; $pro100=number_format($check_pro1->price_minus,2); ?>
+                @else
+                <?php  $pro1=null; $pro100=0; ?>
+                @endif
+
+                @if($check_pro2!=null)
+                <?php  $pro2=Auth::user()->pro2;  ?>
+                @else
+                <?php  $pro2=null; ?>
+                @endif
 
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
@@ -174,13 +190,29 @@
                         <div class="border py-2 px-3 my-2">
                             <p class="fs-18 fw-medium">คูปอง</p>
                             <a href="#" class="btn px-0 py-0 d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#coupon">
+                            @if(session::get('lang')=='th')
+                            @if($check_pro1!=null)
+                                <p class="text-gray mb-0">{{$check_pro1->nameth}}</p>
+                                <p class="text-gray mb-0">></p>
+                                @else
                                 <p class="text-gray mb-0">เลือกคูปอง</p>
                                 <p class="text-gray mb-0">></p>
+                                @endif
+
+                                @else
+                                @if($check_pro1!=null)
+                                <p class="text-gray mb-0">{{$check_pro1->nameen}}</p>
+                                <p class="text-gray mb-0">></p>
+                                @else
+                                <p class="text-gray mb-0">Choose Coupon</p>
+                                <p class="text-gray mb-0">></p>
+                                @endif
+                                @endif
                             </a>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 my-2">
                             <p class="fw-medium mb-0">คูปอง<i class="fas fa-check-circle text-green"></i></p>
-                            <p class="text-gray fw-medium mb-0">-฿130.00</p>
+                            <p class="text-gray fw-medium mb-0">-฿{{$pro100}}</p>
                         </div>
 
                         <div>
@@ -260,7 +292,7 @@
     </form>
 
 
-    <form>
+ 
         <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="couponLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -279,7 +311,10 @@
                         ?>
                         @foreach($pmo as $pmos)
                         @if($pmos->type==3)
+                        
                             <div class="col-md-6 col-lg-4 col-sm-4">
+                            <form method="post" id="" action="{{ url('/promotion_add') }}" enctype="multipart/form-data">
+                             @csrf
                                 <label class="w-100" id="couponSelect">
                                     <div class="card m-2 rounded-0">
                                         <div class="card-coupon-head py-3">
@@ -287,18 +322,29 @@
                                             <div class="text-pro">
                                                 <h5>คูปองจัดส่งฟรี</h5>
                                                 <p>ซื้อขั้นต่ำ {{$pmos->low_price}}.-</p>
+                                                <input type="hidden" name="id_user" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$user}}">
+                                                <input type="hidden" name="id_promotion" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$pmos->id}}">
+                                                <input type="hidden" name="sum_all" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$sum_all}}">
                                             </div>
                                         </div>
                                         <div class="card-coupon-foot text-center pt-3 border-top">
                                             <p class="fs-12 text-gray mb-2">{{$pmos->date_start}} <span>{{$pmos->time_start}}</span> - {{$pmos->date_end}} <span>{{$pmos->time_end}}</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
-                                            <a class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</a>
+                                            @if($pro1==$pmos->id)
+                                            <button type="submit" class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ถอดโปรออก</button>
+                                            @else
+                                            <button type="submit" class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</button>
+                                            @endif
                                         </div>
                                     </div>
                                 </label>
+                                </form>
                             </div>
+                      
 
                             @elseif($pmos->type==2)
                             <div class="col-md-6 col-lg-4 col-sm-4">
+                            <form method="post" id="" action="{{ url('/promotion_add') }}" enctype="multipart/form-data">
+                             @csrf
                                 <label class="w-100" id="couponSelect">
                                     <div class="card m-2 rounded-0">
                                         <div class="card-coupon-head py-3">
@@ -306,15 +352,25 @@
                                             <div class="text-pro">
                                                 <h5>฿ {{$pmos->price_minus}}</h5>
                                                 <p>ซื้อขั้นต่ำ {{$pmos->low_price}}.-</p>
+                                                <input type="hidden" name="id_user" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$user}}">
+                                                <input type="hidden" name="id_promotion" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$pmos->id}}">
+                                                <input type="hidden" name="sum_all" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$sum_all}}">
                                             </div>
                                         </div>
                                         <div class="card-coupon-foot text-center pt-3 border-top">
                                             <p class="fs-12 text-gray mb-2">{{$pmos->date_start}} <span>{{$pmos->time_start}}</span> - {{$pmos->date_end}} <span>{{$pmos->time_end}}</span><button type="button" class="btn-pop" data-bs-toggle="popover" title="เงื่อนไข" data-bs-content="Some content inside the popover"><i class="fas fa-info-circle"></i></button> </p>
-                                            <a class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</a>
+                                            @if($pro1==$pmos->id)
+                                            <button type="submit" class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ถอดโปรออก</button>
+                                            @else
+                                            <button type="submit" class="btn bg-gray5 text-white rounded-pill px-4 py-1 mb-2" href="#">ช้อปเลย</button>
+                                            @endif
                                         </div>
                                     </div>
                                 </label>
+                                </form>
                             </div>
+                            
+
                             @endif
                             @endforeach
 
@@ -327,7 +383,6 @@
                 </div>
             </div>
         </div>
-    </form>
 
 
 
