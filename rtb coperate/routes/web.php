@@ -89,7 +89,7 @@ Route::post('/cart_add','CartController@cart_add');
 Route::post('/cart_minus','CartController@cart_minus');
 Route::post('/cart_remove','CartController@cart_remove');
 
-
+Route::post('/promotion_code','CartController@promotion_code');
 
 
 Route::get('/backoffice/banner','BannerController@index');

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 use App\cartModel;
+use DB;
 
 class CartController extends Controller
 {
@@ -32,7 +33,7 @@ class CartController extends Controller
         $cart->id_product=$r->id_product;
         $cart->save();
 
-        return redirect()->back()->with('cart','Add Success');
+        return redirect()->back()->with('cart','Add Success!');
     }
 
     public function cart_minus(Request $r){
@@ -40,13 +41,30 @@ class CartController extends Controller
       
         $cart->delete();
 
-        return redirect()->back()->with('cart','Delete Success');
+        return redirect()->back()->with('cart','Delete Success!');
     }
 
     public function cart_remove(Request $r){
         $cart=cartModel::where('id_user',$r->id_user)->where('id_product',$r->id_product)->orderby('id','desc')->delete();
 
-        return redirect()->back()->with('cart','Remove Success');
+        return redirect()->back()->with('cart','Remove Success!');
+    }
+
+
+    public function promotion_code(Request $r){
+        $po=DB::table('promotion')->where('code',$r->code)->first();
+        if($po!=null){
+            $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => $po->id]);
+
+            return redirect()->back()->with('code','Code Success!');
+        }elseif($r->code==null or $r->code==''){
+            $user=DB::table('user')->where('id',$r->id_user)->update(['pro2' => null]);
+
+            return redirect()->back()->with('code','Remove Code!');
+        }else{
+           
+            return redirect()->back()->with('code','Code Wrong!');
+        }
     }
 
 

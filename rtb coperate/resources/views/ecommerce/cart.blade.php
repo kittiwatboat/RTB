@@ -152,10 +152,14 @@
                 </div>
 
                 @if(isset($all_price))
-                <?php $sum=number_format($price_sum,2); ?>
+                <?php $sum=number_format($price_sum,2); $sum_all=$price_sum; ?>
                 @else
-                <?php $sum=0; ?>
+                <?php $sum=0; $sum_all=0; ?>
                 @endif
+
+
+              <?php  $pro1=Auth::user()->pro1; $pro2=Auth::user()->pro2; ?>
+
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
                         <div class="border-bottom border-2 border-dark">
@@ -165,6 +169,7 @@
                             <p class="fw-medium">รวม</p>
                             <p class="fw-medium">฿{{$sum}}</p>
                         </div>
+
                         <div class="border py-2 px-3 my-2">
                             <p class="fs-18 fw-medium">คูปอง</p>
                             <a href="#" class="btn px-0 py-0 d-flex justify-content-between">
@@ -176,25 +181,43 @@
                             <p class="fw-medium mb-0">คูปอง<i class="fas fa-check-circle text-green"></i></p>
                             <p class="text-gray fw-medium mb-0">-฿130.00</p>
                         </div>
+
                         <div>
+                        <form method="post" id="" action="{{ url('/promotion_code') }}" enctype="multipart/form-data">
+                             @csrf
                             <p class="fs-18 fw-medium">รหัสส่วนลด</p>
                             <div class="row px-3">
                                 <div class="col-9 col-sm-9 px-0 pe-2">
-                                    <input type="text" class="bg-gray7 form-control border-0 w-100 py-2">
+                                <input type="hidden" name="id_user" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$user}}">
+                                    <input type="text" name="code" class="bg-gray7 form-control border-0 w-100 py-2"  @if($pro2!=null or $pro2!='')
+                                    <?php $ooo2=DB::table('promotion')->where('id',$pro2)->first();  ?>
+                                     value="{{$ooo2->code}}"  @endif>
                                 </div>
                                 <div class="col-3 col-sm-3 px-0">
-                                    <a href="#" class="btn btn-lightgreen rounded-pill border-2">ตกลง</a>
+                                    <button type="submit"  class="btn btn-lightgreen rounded-pill border-2">ตกลง</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
+
+                        @if($pro2!=null or $pro2!='')
+                        <?php  $po2=DB::table('promotion')->where('id',$pro2)->first(); $po2=$po2->price_minus; $poo2=number_format($po2,2);
+                        $sum2=$sum_all-$po2; $sum20=number_format($sum2,2);
+                         ?>
+                        @else
+                        <?php  $po2=0; $poo2=number_format($po2,2); $sum2=$sum_all; $sum20=number_format($sum2,2); ?>
+                        @endif
                         <div class="d-flex justify-content-between border-bottom py-2 my-2">
                             <p class="fw-medium mb-0">ส่วนลด</p>
-                            <p class="text-gray fw-medium mb-0">-฿100.00</p>
+                            <p class="text-gray fw-medium mb-0">-฿{{$poo2}}</p>
                         </div>
+
                         <div class="d-flex justify-content-between py-2 my-2">
                             <p class="fs-18 fw-medium mb-0">รวมสุทธิ</p>
-                            <p class="fs-18 fw-medium mb-0">฿{{$sum}}</p>
+                            <p class="fs-18 fw-medium mb-0">฿{{$sum20}}</p>
+                            <input type="hidden" name="sum2" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$sum2}}">
                         </div>
+
                         <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
                             <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการชำระเงิน</a>
                             <a class="btn btn-gray rounded-pill w-100 my-1" href="#">เลือกซื้อสินค้าเพิ่มเติม</a>
@@ -259,6 +282,15 @@
             }
         });
     </script>
+
+
+      @if(session('code'))
+        <script>
+        alert('{{session("code")}}');
+        </script>
+        @endif
+
+
 </body>
 
 </html>
