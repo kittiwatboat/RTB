@@ -166,13 +166,13 @@
                  ?>
                  
                  @if($check_pro1!=null)
-                <?php  $pro1=Auth::user()->pro1; $pro100=number_format($check_pro1->price_minus,2); ?>
+                <?php  $pro1=Auth::user()->pro1; $boo1=$check_pro1->price_minus; $pro100=number_format($check_pro1->price_minus,2); ?>
                 @else
                 <?php  $pro1=null; $pro100=0; ?>
                 @endif
 
                 @if($check_pro2!=null)
-                <?php  $pro2=Auth::user()->pro2;  ?>
+                <?php  $pro2=Auth::user()->pro2; $boo2=$check_pro2->price_minus;  ?>
                 @else
                 <?php  $pro2=null; ?>
                 @endif
@@ -268,6 +268,11 @@
                     </div>
                 </div>
             </div>
+
+
+            <!-- ยอดรวมทุกอย่าง -->
+            <?php  $all_money=$sum2; $pom1=$boo1; $pom2=$boo2;   ?>
+            <!-- ยอดรวมทุกอย่าง -->
 
             @endif
 
