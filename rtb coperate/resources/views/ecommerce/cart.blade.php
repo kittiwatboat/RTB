@@ -25,6 +25,21 @@
                 <h2>ตะกร้าสินค้า</h2>
             </div>
             <div class="row">
+<<<<<<< HEAD
+=======
+
+
+            @if(isset(Auth::user()->id))
+            <?php $user=Auth::user()->id;  $busket=DB::table('cart')->where('id_user',$user)
+            // ->join('product', 'cart.id_product', '=', 'product.pro_id')->select('product.*', 'cart.id')
+            ->orderby('id','desc')->get();  
+
+            $pros=DB::table('product')->whereIn('pro_id',$busket->pluck('id_product')->toArray())->orderby('pro_id','desc')->get();
+            
+            ?>
+
+          
+>>>>>>> 16867966f032da4e46d2e783c7b3918aa97af8a9
                 <div class="col-sm-12 col-md-9 col-lg-9">
                     <div class="border bg-gray4 my-3 py-3 px-3">
                         <div class="row">
@@ -58,45 +73,47 @@
                             </div>
                             <div class="col-6 col-sm-3 col-md-2">
                                 <div class="input-group w-100 mb-3">
-                                    <button class="btn bg-gray4 sub" type="button" id="sub">-</button>
-                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="1">
-                                    <button class="btn bg-gray4 add" type="button" id="add">+</button>
+
+                                <form method="post" id="" action="{{ url('/cart_minus') }}" enctype="multipart/form-data">
+                                 @csrf
+                                 <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
+                                <input type="hidden" name="id_user" value="{{$user}}">
+                                    <button type="submit" class="btn bg-gray4 " type="button" id="">-</button>
+                                </form>
+
+                                <?php  $num=DB::table('cart')->where('id_user',$user)->where('id_product',$pro->pro_id)->orderby('id','desc')->get(); $nums=count($num);  ?>
+                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="{{$nums}}">
+
+                                    <form method="post" id="" action="{{ url('/cart_add') }}" enctype="multipart/form-data">
+                                     @csrf
+                                     <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
+                                <input type="hidden" name="id_user" value="{{$user}}">
+                                    <button type="submit" class="btn bg-gray4 " type="button" id="">+</button>
+                                    </form>
+
                                 </div>
                             </div>
                             <div class="col-4 col-sm-2 col-md-2">
                                 <p class="fw-medium text-darkGray mb-0">฿2,350.00</p>
                             </div>
-                            <div class="col-2 col-sm-1 col-md-1">
-                                <a class="btn btn-gray border py-0 px-2">x</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border my-3 py-3">
-                        <div class="row">
-                            <div class="col-12 col-sm-2 col-md-3">
-                                <div class="d-flex">
-                                    <img src="images/Product/listOrder4.png" class="w-100">
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-2 col-md-2">
-                                <p class="fw-medium">DOD 512G</p>
-                            </div>
-                            <div class="col-6 col-sm-2 col-md-2">
-                                <p class="fw-medium text-darkGray mb-0">฿9,590.00</p>
-                            </div>
-                            <div class="col-6 col-sm-3 col-md-2">
-                                <div class="input-group w-100 mb-3">
-                                    <button class="btn bg-gray4 sub" type="button" id="sub">-</button>
-                                    <input class="form-control border-0 text-center bg-gray4 field" placeholder="" type="text" id="1" value="1">
-                                    <button class="btn bg-gray4 add" type="button" id="add">+</button>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-2 col-md-2">
-                                <p class="fw-medium text-darkGray mb-0">฿19,180.00</p>
-                            </div>
+
+                            @if(isset($all_price))
+                            <?php $price_sum=$price_sum+$all_price;  ?>
+                            @else
+                            <?php $price_sum=$price_sum;  ?>
+                            @endif
+
+                           
                             <div class=" col-2 col-sm-1 col-md-1">
-                                <a class="btn btn-gray border py-0 px-2">x</a>
+                            <form method="post" id="" action="{{ url('/cart_remove') }}" enctype="multipart/form-data">
+                             @csrf
+                            <input type="hidden" name="id_product" value="{{$pro->pro_id}}">
+                                <input type="hidden" name="id_user" value="{{$user}}">
+                                <button type="submit" class="btn btn-gray border py-0 px-2">x</button>
+                                </form>
                             </div>
+                         
+
                         </div>
                     </div>
                     <div class="col-sm-12 border my-3 my-lg-5 py-1 py-lg-3 px-2 px-lg-3">
@@ -105,6 +122,16 @@
                         <textarea rows="5" class="bg-gray4 border-0 w-100"></textarea>
                     </div>
                 </div>
+
+                @if(isset($all_price))
+                <?php $sum=number_format($price_sum,2); $sum_all=$price_sum; ?>
+                @else
+                <?php $sum=0; $sum_all=0; ?>
+                @endif
+
+
+              <?php  $pro1=Auth::user()->pro1; $pro2=Auth::user()->pro2; ?>
+
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="border my-3 py-3 px-3">
                         <div class="border-bottom border-2 border-dark">
@@ -114,6 +141,7 @@
                             <p class="fw-medium">รวม</p>
                             <p class="fw-medium">฿21,530.00</p>
                         </div>
+
                         <div class="border py-2 px-3 my-2">
                             <p class="fs-18 fw-medium">คูปอง</p>
                             <a href="#" class="btn px-0 py-0 d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#coupon">
@@ -125,25 +153,43 @@
                             <p class="fw-medium mb-0">คูปอง<i class="fas fa-check-circle text-green"></i></p>
                             <p class="text-gray fw-medium mb-0">-฿130.00</p>
                         </div>
+
                         <div>
+                        <form method="post" id="" action="{{ url('/promotion_code') }}" enctype="multipart/form-data">
+                             @csrf
                             <p class="fs-18 fw-medium">รหัสส่วนลด</p>
                             <div class="row px-3">
                                 <div class="col-9 col-sm-9 px-0 pe-2">
-                                    <input type="text" class="bg-gray7 form-control border-0 w-100 py-2">
+                                <input type="hidden" name="id_user" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$user}}">
+                                    <input type="text" name="code" class="bg-gray7 form-control border-0 w-100 py-2"  @if($pro2!=null or $pro2!='')
+                                    <?php $ooo2=DB::table('promotion')->where('id',$pro2)->first();  ?>
+                                     value="{{$ooo2->code}}"  @endif>
                                 </div>
                                 <div class="col-3 col-sm-3 px-0">
-                                    <a href="#" class="btn btn-lightgreen rounded-pill border-2">ตกลง</a>
+                                    <button type="submit"  class="btn btn-lightgreen rounded-pill border-2">ตกลง</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
+
+                        @if($pro2!=null or $pro2!='')
+                        <?php  $po2=DB::table('promotion')->where('id',$pro2)->first(); $po2=$po2->price_minus; $poo2=number_format($po2,2);
+                        $sum2=$sum_all-$po2; $sum20=number_format($sum2,2);
+                         ?>
+                        @else
+                        <?php  $po2=0; $poo2=number_format($po2,2); $sum2=$sum_all; $sum20=number_format($sum2,2); ?>
+                        @endif
                         <div class="d-flex justify-content-between border-bottom py-2 my-2">
                             <p class="fw-medium mb-0">ส่วนลด</p>
-                            <p class="text-gray fw-medium mb-0">-฿100.00</p>
+                            <p class="text-gray fw-medium mb-0">-฿{{$poo2}}</p>
                         </div>
+
                         <div class="d-flex justify-content-between py-2 my-2">
                             <p class="fs-18 fw-medium mb-0">รวมสุทธิ</p>
-                            <p class="fs-18 fw-medium mb-0">฿21,300.00</p>
+                            <p class="fs-18 fw-medium mb-0">฿{{$sum20}}</p>
+                            <input type="hidden" name="sum2" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$sum2}}">
                         </div>
+
                         <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
                             <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการชำระเงิน</a>
                             <a class="btn btn-gray rounded-pill w-100 my-1" href="#">เลือกซื้อสินค้าเพิ่มเติม</a>
@@ -255,6 +301,15 @@
             }
         });
     </script>
+
+
+      @if(session('code'))
+        <script>
+        alert('{{session("code")}}');
+        </script>
+        @endif
+
+
 </body>
 
 </html>
