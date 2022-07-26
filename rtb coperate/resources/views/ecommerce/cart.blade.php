@@ -272,7 +272,7 @@
                         <div class="row gx-2">
 
 
-                        <?php $pmo=DB::table()->where('type','!=',1)->orderby('id','desc')->get();  ?>
+                        <?php $pmo=DB::table('promotion')->where('type','!=',1)->orderby('id','desc')->get();  ?>
                         @foreach($pmo as $pmos)
                         @if($pmos->type==3)
                             <div class="col-md-6 col-lg-4 col-sm-4">
@@ -300,7 +300,7 @@
                                         <div class="card-coupon-head py-3">
                                             <i class="fas fa-shopping-bag fs-150"></i>
                                             <div class="text-pro">
-                                                <h5>฿ 100</h5>
+                                                <h5>฿ {{$pmos->price_minus}}</h5>
                                                 <p>ซื้อขั้นต่ำ {{$pmos->low_price}}.-</p>
                                             </div>
                                         </div>
