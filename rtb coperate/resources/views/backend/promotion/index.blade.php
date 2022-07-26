@@ -40,7 +40,8 @@
                                             @foreach ($promotion as $item)
                                                 <tr>
                                                     <td>{{ $item->nameen }}</td>
-                                                    <td><img src="{{ $item->promotion_img }}" width="20%" alt=""></td>
+                                                    <td>{{ $item->code }}</td>
+                                                    <!-- <td><img src="{{ $item->promotion_img }}" width="20%" alt=""></td> -->
                                                     <td>
                                                         <a href="/backoffice/promotion/edit/{{ $item->id }}" class="btn btn-warning">แก้ไข</a>
                                                         <button type="button" class="btn btn-danger" onclick="batbal('{{$item->id}}')">ลบ</button>
