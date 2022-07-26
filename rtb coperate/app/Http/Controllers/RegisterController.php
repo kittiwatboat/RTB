@@ -21,6 +21,7 @@ class RegisterController extends Controller
                 $user->password=hash::make($request->password);
                 $user->firstname=$request->firstname;
                 $user->lastname=$request->lastname;
+                $user->status=$request->status;
                 $user->save();
                 return redirect()->back()->with('success',1);
             }

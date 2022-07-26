@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 class HomeecomController extends Controller
 {
     public function index(){
+
         return view('ecommerce.index');
     }
     public function cart(){
