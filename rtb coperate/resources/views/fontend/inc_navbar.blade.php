@@ -30,7 +30,7 @@
                         @foreach ($cata as $key => $ca)
                         <?php  $key=$key+1;  ?>
                         <a class="dropdown-item tablinks @if($loop->first) active @else @endif" onmouseover="openDropdownMenu(event, 'menu{{$ca->cat_id}}')" href="{{ session::get('lang') }}/product/{{$ca->cat_id}}">{{$ca['name'.session::get('lang')]}}</a>
- 
+
                         @endforeach
                         {{-- <a class="dropdown-item tablinks active" onmouseover="openDropdownMenu(event, 'menu1')" href="{{ session::get('lang') }}/product/{{$cata->cat_id}}">Jabra</a>
                         <a class="dropdown-item tablinks" onmouseover="openDropdownMenu(event, 'menu2')" href="#">Jabra Wireless Music</a>
@@ -51,11 +51,11 @@
                       </div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 py-4 py-4" id="menuMega">
-                      
+
                       @foreach ($cata as $key => $caa)
 
                       <div id="menu{{ $caa->cat_id }}" class="tabcontent" style="display: block;">
-             
+
                         @foreach ($sub as $item)
                           @if ($item->cat_id == $caa->cat_id )
                           <h6>{{ $item['subname'.session::get('lang')] }}</h6>
@@ -65,16 +65,16 @@
                               @if ($item->scat_id == $pt->scat_id)
 
                               <li><a href="#">{{ $pt['typename'.session::get('lang')] }}</a></li>
-                                  
+
                               @else
-                                  
+
                               @endif
 
                             @endforeach
 
                           </ul>
                           @else
-                          
+
                           @endif
                         @endforeach
                         {{-- <h6 class="mt-4">Jabra Call Center & Office Headsets</a></h6>
@@ -88,7 +88,7 @@
                           <li><a href="#">Conference Speakers</a></li>
                         </ul> --}}
                       </div>
-                      
+
                       @endforeach
 
                       <div id="menu2" class="tabcontent"></div>
@@ -144,7 +144,7 @@
           </li>
           <li class="nav-item">
             <div class="nav-link">
-              <a class="btn rounded-pill btn-green" href="http://baimon.ots.co.th/rtb-e-commerce/"><i class="fas fa-home"></i> RTB HOME PAGE</a>
+              <a class="btn rounded-pill btn-green" href="{{ session::get('lang') }}/ecommerce"><i class="fas fa-home"></i> RTB HOME PAGE</a>
             </div>
           </li>
         </ul>
