@@ -258,6 +258,8 @@
             </div>
         </div>
     </form>
+
+
     <form>
         <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="couponLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -268,6 +270,11 @@
                     </div>
                     <div class="modal-body">
                         <div class="row gx-2">
+
+
+                        <?php $pmo=DB::table()->where('type','!=',1)->orderby('id','desc')->get();  ?>
+                        @foreach($pmo as $pmos)
+                        @if($pmos->type==3)
                             <div class="col-md-6 col-lg-4 col-sm-4">
                                 <label class="w-100" id="couponSelect">
                                     <div class="card m-2 rounded-0">
@@ -275,7 +282,7 @@
                                             <i class="fas fa-shipping-fast fs-150"></i>
                                             <div class="text-pro">
                                                 <h5>คูปองจัดส่งฟรี</h5>
-                                                <p>ซื้อขั้นต่ำ 99.-</p>
+                                                <p>ซื้อขั้นต่ำ {{$pmos->low_price}}.-</p>
                                             </div>
                                         </div>
                                         <div class="card-coupon-foot text-center pt-3 border-top">
@@ -285,6 +292,8 @@
                                     </div>
                                 </label>
                             </div>
+
+                            @elseif($pmos->type==2)
                             <div class="col-md-6 col-lg-4 col-sm-4">
                                 <label class="w-100" id="couponSelect">
                                     <div class="card m-2 rounded-0">
@@ -292,7 +301,7 @@
                                             <i class="fas fa-shopping-bag fs-150"></i>
                                             <div class="text-pro">
                                                 <h5>฿ 100</h5>
-                                                <p>ซื้อขั้นต่ำ 500.-</p>
+                                                <p>ซื้อขั้นต่ำ {{$pmos->low_price}}.-</p>
                                             </div>
                                         </div>
                                         <div class="card-coupon-foot text-center pt-3 border-top">
@@ -302,6 +311,10 @@
                                     </div>
                                 </label>
                             </div>
+                            @endif
+                            @endforeach
+
+
                         </div>
                     </div>
                     <div class="modal-footer justify-content-center">
@@ -311,6 +324,9 @@
             </div>
         </div>
     </form>
+
+
+
     @include('ecommerce.inc_footer')
     <script>
         var unit = 1;
