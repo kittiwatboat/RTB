@@ -317,7 +317,7 @@
       @csrf
 
         <!-- ยอดรวมทุกอย่าง -->
-        <?php  $all_money=$sum2; $pom1=$boo1; $pom2=$boo2; ?>
+        <?php  $all_money=$sum2; $pom1=$boo1; $pom2=$boo2;  $a1=number_format($all_money,2); $a2=number_format($pom1,2); $a3=number_format($pom2,2);?>
           @if(Auth::user()->pro1==1)
           <?php  $free=1; ?>
           @else
@@ -347,9 +347,10 @@
                             @if(Auth::user()->pro1==1)
                             <p class="fw-medium mb-0">ใช้คูปองส่งฟรี</p>
                             @endif
-                            <p class="fw-medium mb-0">ส่วนลดแบบคูปอง  ฿{{$pom1}}</p>
-                            <p class="fw-medium mb-0">ส่วนลดแบบโค้ด  ฿{{$pom2}}</p>
-                            <p class="fw-medium mb-0">ราคารวม  ฿{{$all_money}}</p>
+                            <p class="fw-medium mb-0">ส่วนลดแบบคูปอง  ฿{{$a2}}</p>
+                            <p class="fw-medium mb-0">ส่วนลดแบบโค้ด  ฿{{$a3}}</p>
+                            <br>
+                            <p class="fw-medium mb-0">ราคารวม  ฿{{$a1}}</p>
                                 <button type="submit" class="btn btn-gray rounded-pill my-2 mt-4">ดำเนินการต่อ</button><br>
                                 <!-- <a class="btn bg-gray3 text-white rounded-pill px-5 my-2" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a> -->
                             </div>
