@@ -276,6 +276,22 @@
 
             @endif
 
+
+            @else
+
+            <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
+                            <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการโดยไม่สมัครสมาชิก</a>
+                            <a class="btn btn-gray rounded-pill w-100 my-1" href="#">เข้าสู่ระบบ</a>
+                        </div>
+
+                        <div>
+                        <a class="text-green" href="#">สมัครสมาชิกตอนนี้</a> <span>หรือ</span> <a class="text-green" href="#">เข้าสู่ระบบ</a>
+                    </div>
+            
+
+
+            @endif
+
             <div class="bottomFoot"></div>
         </div>
     </div>
