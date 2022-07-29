@@ -211,7 +211,11 @@
                             </a>
                         </div>
                         <div class="d-flex justify-content-between border-bottom py-2 my-2">
+                            @if($pro100!=0)
                             <p class="fw-medium mb-0">คูปอง<i class="fas fa-check-circle text-green"></i></p>
+                            @else
+                            <p class="fw-medium mb-0">คูปอง</p>
+                            @endif
                             <p class="text-gray fw-medium mb-0">-฿{{$pro100}}</p>
                         </div>
 
