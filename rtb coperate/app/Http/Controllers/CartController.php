@@ -101,9 +101,10 @@ class CartController extends Controller
 
         $all_money=$r->all_money; $pom1=$r->pom1; $pom2=$r->pom2; 
         $free=$r->free;
+        $id_user=$r->id_user;
 
-        dd($all_money,$pom1,$pom2,$free);
-        
+        dd($all_money,$pom1,$pom2,$free,$id_user);
+
 
         if($all_money!=0 and $pom1=0 and $pom2=0){
         return redirect()->back()->with('code','Pay Error!');

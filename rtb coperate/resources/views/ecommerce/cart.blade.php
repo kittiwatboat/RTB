@@ -218,7 +218,7 @@
                         <div>
                         <form method="post" id="" action="{{ url('/promotion_code') }}" enctype="multipart/form-data">
                              @csrf
-                            <p class="fs-18 fw-medium">รหัสส่วนลด</p>
+                            <p class="fs-18 fw-medium">รหัสส่วนลด<p class="text-gray fw-medium mb-0">(ลบโค้ดออกหากต้องการยกเลิกการใช้งานส่วนลด)</p></p>
                             <div class="row px-3">
                                 <div class="col-9 col-sm-9 px-0 pe-2">
                                 <input type="hidden" name="id_user" class="bg-gray7 form-control border-0 w-100 py-2" value="{{$user}}">
@@ -344,6 +344,12 @@
 
                             <h4>ต้องการดำเนินการชำระเงินต่อ?</h4>
                             <div class="">
+                            @if(Auth::user()->pro1==1)
+                            <p class="fw-medium mb-0">ใช้คูปองส่งฟรี</p>
+                            @endif
+                            <p class="fw-medium mb-0">ส่วนลดแบบคูปอง  {{$pom1}}</p>
+                            <p class="fw-medium mb-0">ส่วนลดแบบโค้ด  {{$pom2}}</p>
+                            <p class="fw-medium mb-0">ราคารวม  {{$all_money}}</p>
                                 <button type="submit" class="btn btn-gray rounded-pill my-2 mt-4">ดำเนินการต่อ</button><br>
                                 <!-- <a class="btn bg-gray3 text-white rounded-pill px-5 my-2" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a> -->
                             </div>
