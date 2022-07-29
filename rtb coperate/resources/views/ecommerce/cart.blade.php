@@ -367,7 +367,7 @@
     @endif
 
 
- 
+    @if(Auth::check())
         <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="couponLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -458,6 +458,7 @@
                 </div>
             </div>
         </div>
+        @endif
 
 
 
