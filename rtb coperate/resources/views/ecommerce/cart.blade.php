@@ -257,7 +257,7 @@
                         </div>
 
                         <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
-                            <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการชำระเงิน</a>
+                            <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#aaa">ดำเนินการชำระเงิน</a>
                             <a class="btn btn-gray rounded-pill w-100 my-1" href="#">เลือกซื้อสินค้าเพิ่มเติม</a>
                         </div>
                     </div>
@@ -269,23 +269,15 @@
                 </div>
             </div>
 
-
-            <!-- ยอดรวมทุกอย่าง -->
-            <?php  $all_money=$sum2; $pom1=$boo1; $pom2=$boo2;   ?>
-            <!-- ยอดรวมทุกอย่าง -->
-
-            @endif
-
-
             @else
 
             <div class="col-sm-12 mt-2 mt-lg-4 mb-2 mb-lg-4">
                             <a class="btn btn-green rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#cartContinue">ดำเนินการโดยไม่สมัครสมาชิก</a>
-                            <a class="btn btn-gray rounded-pill w-100 my-1" href="#">เข้าสู่ระบบ</a>
+                            <a class="btn btn-gray rounded-pill w-100 my-1" href="#" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a>
                         </div>
 
                         <div>
-                        <a class="text-green" href="#">สมัครสมาชิกตอนนี้</a> <span>หรือ</span> <a class="text-green" href="#">เข้าสู่ระบบ</a>
+                        <a class="text-green" data-bs-toggle="modal" data-bs-target="#register" href="#">สมัครสมาชิกตอนนี้</a> <span>หรือ</span> <a class="text-green" href="#" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a>
                     </div>
             
 
@@ -308,7 +300,7 @@
                             <h4>ต้องการดำเนินการต่อโดยไม่เข้าสู่ระบบ?</h4>
                             <div class="">
                                 <a class="btn btn-gray rounded-pill my-2 mt-4">ดำเนินการต่อ โดยไม่เข้าสู่ระบบ</a><br>
-                                <a class="btn bg-gray3 text-white rounded-pill px-5 my-2">เข้าสู่ระบบ</a>
+                                <!-- <a class="btn bg-gray3 text-white rounded-pill px-5 my-2" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a> -->
                             </div>
                         </div>
                     </div>
@@ -316,6 +308,52 @@
             </div>
         </div>
     </form>
+
+
+
+    @if(Auth::check())
+
+    <form method="post" id="" action="{{ url('/cart_pay') }}" enctype="multipart/form-data">
+      @csrf
+
+        <!-- ยอดรวมทุกอย่าง -->
+        <?php  $all_money=$sum2; $pom1=$boo1; $pom2=$boo2; ?>
+          @if(Auth::user()->pro1==1)
+          <?php  $free=1; ?>
+          @else
+          <?php  $free=null; ?>
+          @endif
+            <!-- ยอดรวมทุกอย่าง -->
+
+
+        <div class="modal fade" id="aaa" tabindex="-1" aria-labelledby="aaaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6>ดำเนินการชำระเงิน</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center mb-5 pt-4">
+
+                        <input type="hidden" name="id_user" value="{{$user}}">
+                        <input type="hidden" name="all_money" value="{{$all_money}}">
+                        <input type="hidden" name="pom1" value="{{$pom1}}">
+                        <input type="hidden" name="pom2" value="{{$pom2}}">
+                        <input type="hidden" name="free" value="{{$free}}">
+
+                            <h4>ต้องการดำเนินการชำระเงินต่อ?</h4>
+                            <div class="">
+                                <button type="submit" class="btn btn-gray rounded-pill my-2 mt-4">ดำเนินการต่อ</button><br>
+                                <!-- <a class="btn bg-gray3 text-white rounded-pill px-5 my-2" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    @endif
 
 
  
