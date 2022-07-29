@@ -97,4 +97,23 @@ class CartController extends Controller
 
 
 
+    public function cart_pay(Request $r){
+
+        $all_money=$r->all_money; $pom1=$r->pom1; $pom2=$r->pom2; 
+        $free=$r->free;
+
+        dd($all_money,$pom1,$pom2,$free);
+        
+
+        if($all_money!=0 and $pom1=0 and $pom2=0){
+        return redirect()->back()->with('code','Pay Error!');
+
+
+        }else{
+        return redirect()->back()->with('code','Pay Success!');
+        }
+    }
+
+
+
 }

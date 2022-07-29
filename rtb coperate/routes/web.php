@@ -89,6 +89,8 @@ Route::post('/cart_add','CartController@cart_add');
 Route::post('/cart_minus','CartController@cart_minus');
 Route::post('/cart_remove','CartController@cart_remove');
 
+Route::post('/cart_pay','CartController@cart_pay');
+
 Route::post('/promotion_code','CartController@promotion_code');
 Route::post('/promotion_add','CartController@promotion_add');
 
