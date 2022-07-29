@@ -290,3 +290,10 @@ Route::get('/backoffice/brand','BrandController@index');
 Route::post('/backoffice/brand/addimg','BrandController@storeimg');
 Route::post('/backoffice/brand/add','BrandController@add')->name('form.data');
 Route::get('/backoffice/brand/delete/{id}','BrandController@delete');
+
+Route::get('/payment/callback','PaymentController@callback');
+Route::get('/payment/notify','PaymentController@notify');
+Route::get('/payment/qr','PaymentController@qr');
+Route::get('/payment/alipay/callback','PaymentController@alipaycallback');
+Route::get('/payment/alipay/notify','PaymentController@alipaynotify');
+Route::get('/payment/wechat/notify','PaymentController@wechatnotify');
