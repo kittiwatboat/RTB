@@ -347,9 +347,9 @@
                             @if(Auth::user()->pro1==1)
                             <p class="fw-medium mb-0">ใช้คูปองส่งฟรี</p>
                             @endif
-                            <p class="fw-medium mb-0">ส่วนลดแบบคูปอง  {{$pom1}}</p>
-                            <p class="fw-medium mb-0">ส่วนลดแบบโค้ด  {{$pom2}}</p>
-                            <p class="fw-medium mb-0">ราคารวม  {{$all_money}}</p>
+                            <p class="fw-medium mb-0">ส่วนลดแบบคูปอง  ฿{{$pom1}}</p>
+                            <p class="fw-medium mb-0">ส่วนลดแบบโค้ด  ฿{{$pom2}}</p>
+                            <p class="fw-medium mb-0">ราคารวม  ฿{{$all_money}}</p>
                                 <button type="submit" class="btn btn-gray rounded-pill my-2 mt-4">ดำเนินการต่อ</button><br>
                                 <!-- <a class="btn bg-gray3 text-white rounded-pill px-5 my-2" data-bs-toggle="modal" data-bs-target="#login">เข้าสู่ระบบ</a> -->
                             </div>
